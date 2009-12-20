@@ -41,7 +41,7 @@
 	CWMatrix* newMatrix = [[CWMatrix alloc] initWithRows:self.rows andColumns:self.columns];
 	assert(newMatrix);
 	
-	memccpy(newMatrix.data, _data, _rows*_columns, sizeof(double));
+	memcpy(newMatrix.data, _data, _rows*_columns*sizeof(double));
 	
 	return newMatrix;
 }
@@ -111,13 +111,12 @@
 	CWMatrix* matris = [CWMatrix matrixWithRows:_rows columns:mColumns];
 	double* dataArg = matrix.data;
 	double* dataResult = matris.data;
-	for(NSUInteger i = 0; i < _rows; i++)
-	{
-		for(NSUInteger j = 0; j < mColumns; j++)
-		{
+	for(NSUInteger i = 0; i < _rows; i++) {
+		for(NSUInteger j = 0; j < mColumns; j++) {
 			double sum = 0.0;
-			for(NSUInteger k = 0; k < _columns; k++)
+			for(NSUInteger k = 0; k < _columns; k++) {
 				sum += _data[i*_columns+k] * dataArg[k*mColumns+j];
+			}
 			
 			dataResult[i*mColumns+j] = sum;
 		}
@@ -153,15 +152,24 @@
 }
 
 #pragma mark debug
-- (void) debugTrace {
-	for( int i=0; i < self.rows; ++i ) {
-		NSMutableString* rowData = [NSMutableString string];
-		for ( int j=0; j < self.columns; ++j ) {
 
+- (NSString*)description{
+	NSMutableString* str = [NSMutableString new];
+	[str appendString:@"{"];
+	for(NSUInteger i = 0; i < _rows; i++){
+		[str appendString:@"{"];
+		for(NSUInteger j = 0; j < _columns; j++){
+			[str appendFormat:@"%g", _data[i*_columns+j]];
+			if(j+1 != _columns)
+				[str appendString:@","];
 		}
-		
-		NSLog(@"%@", rowData);
+		[str appendString:@"}"];
+		if(i+1 != _rows)
+			[str appendString:@",\n"];
 	}
+	[str appendString:@"}"];
+	[str autorelease];
+	return str;
 }
 
 @end

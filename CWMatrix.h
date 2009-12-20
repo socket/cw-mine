@@ -27,7 +27,7 @@
 - (double) valueForRow:(int)row column:(int)column;
 - (void) setValue:(double)value row:(int)row column:(int)column;
 
-- (void) debugTrace;
+- (NSString*)description;
 
 //
 
