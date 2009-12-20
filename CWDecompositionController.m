@@ -8,6 +8,7 @@
 
 #import "CWDecompositionController.h"
 #import "CWMatrixInitializer.h"
+#import "CWMethodExecutor.h"
 
 @interface CWDecompositionController ()
 
@@ -67,7 +68,7 @@
 	NSLog( @"SRC:\n %@", [_srcMatrixView.matrix description] );
 	CWMatrixLUDecOperation* op = [[[CWMatrixLUDecOperation alloc] initWithMatrix:_srcMatrixView.matrix] autorelease];
 	op.delegate = self;
-	[[NSOperationQueue currentQueue] addOperation:op];
+	[[CWMethodExecutor sharedInstance] addOperation:op];
 }
 
 #pragma mark operation delegate
@@ -79,7 +80,6 @@
 		NSLog( @"L:\n %@", [_lMatrixView.matrix description] );
 		NSLog( @"U:\n %@", [_uMatrixView.matrix description] );
 		NSLog( @"LU:\n %@", [_lMatrixView.matrix multiplyByMatrix:_uMatrixView.matrix] );
-
 	}
 	else if ( 0 ) {
 		

@@ -20,6 +20,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
+	
 	_matrixInputController = [[CWMatrixInputController alloc] initWithWindowNibName:@"CWMatrixInputController"];	
 	_solutionController = [[CWSolutionWindowController alloc] initWithWindowNibName:@"CWSolutionWindowController"];
 	

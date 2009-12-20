@@ -16,6 +16,7 @@
 		B81B1A7810CFB77F00605363 /* CWSolutionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */; };
 		B81B1A9110CFBCF900605363 /* CWSolutionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B81B1A9010CFBCF900605363 /* CWSolutionWindowController.xib */; };
 		B83B69A310DE2AFD009F6373 /* CWDecompositionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */; };
+		B83B6B3810DE7EA8009F6373 /* CWMethodExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6B3710DE7EA8009F6373 /* CWMethodExecutor.m */; };
 		B86661E510BEFB31008E8942 /* CWMatrixInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */; };
 		B86661EA10BEFB9C008E8942 /* CWCourseWorkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */; };
 		B86661EB10BEFB9C008E8942 /* CWMatrixInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E910BEFB9C008E8942 /* CWMatrixInputController.m */; };
@@ -52,6 +53,8 @@
 		B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWSolutionWindowController.m; sourceTree = "<group>"; };
 		B81B1A9010CFBCF900605363 /* CWSolutionWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CWSolutionWindowController.xib; sourceTree = "<group>"; };
 		B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CWDecompositionController.xib; sourceTree = "<group>"; };
+		B83B6B3610DE7EA8009F6373 /* CWMethodExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethodExecutor.h; sourceTree = "<group>"; };
+		B83B6B3710DE7EA8009F6373 /* CWMethodExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethodExecutor.m; sourceTree = "<group>"; };
 		B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CWMatrixInputController.xib; path = Resources/CWMatrixInputController.xib; sourceTree = "<group>"; };
 		B86661E610BEFB9C008E8942 /* CWCourseWorkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWCourseWorkAppDelegate.h; path = Classes/CWCourseWorkAppDelegate.h; sourceTree = "<group>"; };
 		B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCourseWorkAppDelegate.m; path = Classes/CWCourseWorkAppDelegate.m; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */,
 				B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */,
 				B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */,
+				B83B6B3610DE7EA8009F6373 /* CWMethodExecutor.h */,
+				B83B6B3710DE7EA8009F6373 /* CWMethodExecutor.m */,
 			);
 			name = Method;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				B81B1A7810CFB77F00605363 /* CWSolutionWindowController.m in Sources */,
 				B802F2C510DA71BA0018F124 /* CWMatrixLUDecOperation.m in Sources */,
 				B8777C9510DE173B00DE59B5 /* CWDecompositionController.m in Sources */,
+				B83B6B3810DE7EA8009F6373 /* CWMethodExecutor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
