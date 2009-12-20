@@ -159,7 +159,7 @@
 	for(NSUInteger i = 0; i < _rows; i++){
 		[str appendString:@"{"];
 		for(NSUInteger j = 0; j < _columns; j++){
-			[str appendFormat:@"%g", _data[i*_columns+j]];
+			[str appendFormat:@"%g", _data[j*_columns+i]];
 			if(j+1 != _columns)
 				[str appendString:@","];
 		}
