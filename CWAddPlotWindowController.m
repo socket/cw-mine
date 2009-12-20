@@ -1,0 +1,48 @@
+//
+//  CWNewPlotWindowController.m
+//  MMCourseWork
+//
+//  Created by Alexey Streltsow on 12/21/09.
+//  Copyright 2009 Karma World LLC. All rights reserved.
+//
+
+#import "CWAddPlotWindowController.h"
+
+NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method";
+
+@implementation CWAddPlotWindowController
+
+@synthesize methodAddButton = _methodAddButton;
+@synthesize methodNameComboBox = _methodNameComboBox, methodKeyComboBox = _methodKeyComboBox;
+@synthesize methodColor = _methodColor, methodPrecision = _methodPrecision;
+
+
++ controller {
+	id controller = [[[self class] alloc] initWithWindowNibName:@"CWAddPlotWindowController"];
+	return [controller autorelease];
+}
+
+#pragma mark -
+
+- (id) initWithWindowNibName:(NSString *)windowNibName {
+	if ( self = [super initWithWindowNibName:windowNibName] ) {
+		
+	}
+	return self;
+}
+
+- (IBAction)performAdd:(id)sender {
+	
+}
+
+
+-(void) dealloc {
+	self.methodAddButton = nil;
+	self.methodNameComboBox = nil;
+	self.methodColor = nil;
+	self.methodKeyComboBox = nil;
+	self.methodPrecision = nil;
+	
+	[super dealloc];
+}
+@end

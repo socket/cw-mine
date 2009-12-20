@@ -20,6 +20,8 @@
 		B83B6B6C10DE86AB009F6373 /* CWGraphPlotDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6B6B10DE86AB009F6373 /* CWGraphPlotDataSource.m */; };
 		B83B6C1110DEA8F2009F6373 /* CWMethodKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6C1010DEA8F2009F6373 /* CWMethodKeys.m */; };
 		B83B6C3A10DEB22B009F6373 /* NSArray+TableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6C3910DEB22B009F6373 /* NSArray+TableDataSource.m */; };
+		B83B6CDF10DED045009F6373 /* CWAddPlotWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6CDE10DED045009F6373 /* CWAddPlotWindowController.m */; };
+		B83B6CE910DED198009F6373 /* CWAddPlotWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83B6CE810DED198009F6373 /* CWAddPlotWindowController.xib */; };
 		B86661E510BEFB31008E8942 /* CWMatrixInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */; };
 		B86661EA10BEFB9C008E8942 /* CWCourseWorkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */; };
 		B86661EB10BEFB9C008E8942 /* CWMatrixInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E910BEFB9C008E8942 /* CWMatrixInputController.m */; };
@@ -64,6 +66,9 @@
 		B83B6C1010DEA8F2009F6373 /* CWMethodKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethodKeys.m; sourceTree = "<group>"; };
 		B83B6C3810DEB22B009F6373 /* NSArray+TableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TableDataSource.h"; sourceTree = "<group>"; };
 		B83B6C3910DEB22B009F6373 /* NSArray+TableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TableDataSource.m"; sourceTree = "<group>"; };
+		B83B6CDD10DED045009F6373 /* CWAddPlotWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWAddPlotWindowController.h; sourceTree = "<group>"; };
+		B83B6CDE10DED045009F6373 /* CWAddPlotWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWAddPlotWindowController.m; sourceTree = "<group>"; };
+		B83B6CE810DED198009F6373 /* CWAddPlotWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CWAddPlotWindowController.xib; sourceTree = "<group>"; };
 		B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CWMatrixInputController.xib; path = Resources/CWMatrixInputController.xib; sourceTree = "<group>"; };
 		B86661E610BEFB9C008E8942 /* CWCourseWorkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWCourseWorkAppDelegate.h; path = Classes/CWCourseWorkAppDelegate.h; sourceTree = "<group>"; };
 		B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCourseWorkAppDelegate.m; path = Classes/CWCourseWorkAppDelegate.m; sourceTree = "<group>"; };
@@ -172,6 +177,7 @@
 				B8F2FF7A10C5B3230058F307 /* CWGraphicWindowController.xib */,
 				B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */,
 				B81B1A9010CFBCF900605363 /* CWSolutionWindowController.xib */,
+				B83B6CE810DED198009F6373 /* CWAddPlotWindowController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -215,6 +221,8 @@
 				B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */,
 				B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */,
 				B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */,
+				B83B6CDD10DED045009F6373 /* CWAddPlotWindowController.h */,
+				B83B6CDE10DED045009F6373 /* CWAddPlotWindowController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 				B8F2FF7B10C5B3230058F307 /* CWGraphicWindowController.xib in Resources */,
 				B81B1A9110CFBCF900605363 /* CWSolutionWindowController.xib in Resources */,
 				B83B69A310DE2AFD009F6373 /* CWDecompositionController.xib in Resources */,
+				B83B6CE910DED198009F6373 /* CWAddPlotWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +354,7 @@
 				B83B6B6C10DE86AB009F6373 /* CWGraphPlotDataSource.m in Sources */,
 				B83B6C1110DEA8F2009F6373 /* CWMethodKeys.m in Sources */,
 				B83B6C3A10DEB22B009F6373 /* NSArray+TableDataSource.m in Sources */,
+				B83B6CDF10DED045009F6373 /* CWAddPlotWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
