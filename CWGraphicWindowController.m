@@ -21,6 +21,8 @@
 @synthesize graphListTableView = _graphListTableView;
 @synthesize addButton = _addButton;
 @synthesize removeButton = _removeButton;
+@synthesize methodAddPane = _methodAddPane, methodNameComboBox = _methodNameComboBox, methodKeyComboBox = _methodKeyComboBox;
+@synthesize methodColor = _methodColor, methodPrecision = _methodPrecision;
 
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
@@ -30,6 +32,15 @@
 }
 
 - (void) dealloc {
+	self.addButton = nil;
+	self.removeButton = nil;
+	self.graphListTableView = nil;
+	self.methodAddPane = nil;
+	self.methodNameComboBox = nil;
+	self.methodColor = nil;
+	self.methodKeyComboBox = nil;
+	self.methodPrecision = nil;
+	
 	[super dealloc];
 }
 
@@ -41,11 +52,31 @@
 #pragma mark actions
 
 
+- (IBAction) segmentedSelector:(id)sender {
+	
+}
+
 - (IBAction) addMethod:(id)sender {
 	
 }
 
 - (IBAction) removeMethod:(id)sender {
+	
+}
+
+- (IBAction) showSettings:(id)sender {
+	
+}
+
+- (IBAction) hideSettings:(id)sender {
+	
+}
+
+- (IBAction) showAddMethodPane:(id)sender {
+	
+}
+
+- (IBAction) hideAddMethodPane:(id)sender {
 	
 }
 
