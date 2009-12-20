@@ -7,13 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CWGraphicPlotView.h"
+#import "CWGraphPlotView.h"
 #import "CWMethodDataSource.h"
 #import "CWMethodOperation.h"
 
 @interface CWGraphicWindowController : NSWindowController<NSTableViewDelegate> {
 	@private
-	CWGraphicPlotView*		_graphView;
+	CWGraphPlotView*		_graphView;
 	NSTableView*			_graphListTableView;
 	NSButton*				_addButton;
 	NSButton*				_removeButton;

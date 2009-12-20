@@ -9,16 +9,17 @@
 #import <Cocoa/Cocoa.h>
 
 typedef enum {
-	CWGraphicPlotAxisHorizontal,
-	CWGraphicPlotAxisVertical
-} CWGraphicPlotAxisType;
+	CWGraphPlotAxisHorizontal,
+	CWGraphPlotAxisVertical
+} CWGraphPlotAxisType;
 
 
-@interface CWGraphicPlotViewAxis : NSObject {
+@interface CWGraphPlotViewAxis : NSObject {
 @private
 	NSString*	_axisTitle;
 	double		_axisMinValue;
 	double		_axisMaxValue;
+	double		_step;
 }
 
 + (id) axisWithTitle:(NSString*)title minValue:(double)minValue maxValue:(double)maxValue;
@@ -27,5 +28,9 @@ typedef enum {
 @property (nonatomic, copy)   NSString* axisTitle;
 @property (nonatomic, assign) double axisMinValue;
 @property (nonatomic, assign) double axisMaxValue;
+@property (nonatomic, assign) double step;
+
+
+- (void) drawWithType:(CWGraphPlotAxisType)type context:(NSGraphicsContext*)aContext;
 
 @end

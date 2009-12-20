@@ -6,13 +6,14 @@
 //  Copyright 2009 Karma World LLC. All rights reserved.
 //
 
-#import "CWGraphicPlotViewAxis.h"
+#import "CWGraphPlotViewAxis.h"
 
 
-@implementation CWGraphicPlotViewAxis
+@implementation CWGraphPlotViewAxis
 @synthesize axisTitle = _axisTitle;
 @synthesize axisMinValue = _axisMinValue;
 @synthesize axisMaxValue = _axisMaxValue;
+@synthesize step = _step;
 
 + (id) axisWithTitle:(NSString*)title minValue:(double)minValue maxValue:(double)maxValue {
 	return [[[[self class] alloc] initWithTitle:title minValue:minValue maxValue:maxValue] autorelease];
@@ -23,8 +24,13 @@
 		self.axisTitle = title;
 		_axisMinValue = minValue;
 		_axisMaxValue = maxValue;
+		_step = 0.1;
 	}
 	return self;
+}
+
+- (void) drawWithType:(CWGraphPlotAxisType)type context:(NSGraphicsContext*)aContext{
+	
 }
 
 - (void) dealloc {

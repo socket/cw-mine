@@ -17,6 +17,7 @@
 		B81B1A9110CFBCF900605363 /* CWSolutionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B81B1A9010CFBCF900605363 /* CWSolutionWindowController.xib */; };
 		B83B69A310DE2AFD009F6373 /* CWDecompositionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */; };
 		B83B6B3810DE7EA8009F6373 /* CWMethodExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6B3710DE7EA8009F6373 /* CWMethodExecutor.m */; };
+		B83B6B6C10DE86AB009F6373 /* CWGraphPlotDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6B6B10DE86AB009F6373 /* CWGraphPlotDataSource.m */; };
 		B86661E510BEFB31008E8942 /* CWMatrixInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */; };
 		B86661EA10BEFB9C008E8942 /* CWCourseWorkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */; };
 		B86661EB10BEFB9C008E8942 /* CWMatrixInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E910BEFB9C008E8942 /* CWMatrixInputController.m */; };
@@ -25,10 +26,10 @@
 		B866625710BF1B2D008E8942 /* CWMatrixDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B866625610BF1B2D008E8942 /* CWMatrixDataSource.m */; };
 		B866625A10BF1FB6008E8942 /* CWMatrixTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B866625910BF1FB6008E8942 /* CWMatrixTableView.m */; };
 		B8777C9510DE173B00DE59B5 /* CWDecompositionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */; };
-		B8C3A21110C5656800BE164C /* CWGraphicPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */; };
+		B8C3A21110C5656800BE164C /* CWGraphPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21010C5656800BE164C /* CWGraphPlotView.m */; };
 		B8C3A21410C565A600BE164C /* CWMethodOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21310C565A600BE164C /* CWMethodOperation.m */; };
 		B8C3A21710C565CA00BE164C /* CWMethodDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */; };
-		B8C3A22210C5695800BE164C /* CWGraphicPlotViewAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A22110C5695800BE164C /* CWGraphicPlotViewAxis.m */; };
+		B8C3A22210C5695800BE164C /* CWGraphPlotViewAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A22110C5695800BE164C /* CWGraphPlotViewAxis.m */; };
 		B8F2FF7B10C5B3230058F307 /* CWGraphicWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F2FF7A10C5B3230058F307 /* CWGraphicWindowController.xib */; };
 		B8F2FF7E10C5B33B0058F307 /* CWGraphicWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2FF7D10C5B33B0058F307 /* CWGraphicWindowController.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,8 @@
 		B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CWDecompositionController.xib; sourceTree = "<group>"; };
 		B83B6B3610DE7EA8009F6373 /* CWMethodExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethodExecutor.h; sourceTree = "<group>"; };
 		B83B6B3710DE7EA8009F6373 /* CWMethodExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethodExecutor.m; sourceTree = "<group>"; };
+		B83B6B6A10DE86AB009F6373 /* CWGraphPlotDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphPlotDataSource.h; sourceTree = "<group>"; };
+		B83B6B6B10DE86AB009F6373 /* CWGraphPlotDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphPlotDataSource.m; sourceTree = "<group>"; };
 		B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CWMatrixInputController.xib; path = Resources/CWMatrixInputController.xib; sourceTree = "<group>"; };
 		B86661E610BEFB9C008E8942 /* CWCourseWorkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWCourseWorkAppDelegate.h; path = Classes/CWCourseWorkAppDelegate.h; sourceTree = "<group>"; };
 		B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCourseWorkAppDelegate.m; path = Classes/CWCourseWorkAppDelegate.m; sourceTree = "<group>"; };
@@ -69,14 +72,14 @@
 		B866625910BF1FB6008E8942 /* CWMatrixTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixTableView.m; sourceTree = "<group>"; };
 		B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWDecompositionController.h; sourceTree = "<group>"; };
 		B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWDecompositionController.m; sourceTree = "<group>"; };
-		B8C3A20F10C5656800BE164C /* CWGraphicPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphicPlotView.h; sourceTree = "<group>"; };
-		B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphicPlotView.m; sourceTree = "<group>"; };
+		B8C3A20F10C5656800BE164C /* CWGraphPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphPlotView.h; sourceTree = "<group>"; };
+		B8C3A21010C5656800BE164C /* CWGraphPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphPlotView.m; sourceTree = "<group>"; };
 		B8C3A21210C565A600BE164C /* CWMethodOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethodOperation.h; sourceTree = "<group>"; };
 		B8C3A21310C565A600BE164C /* CWMethodOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethodOperation.m; sourceTree = "<group>"; };
 		B8C3A21510C565CA00BE164C /* CWMethodDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethodDataSource.h; sourceTree = "<group>"; };
 		B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethodDataSource.m; sourceTree = "<group>"; };
-		B8C3A22010C5695800BE164C /* CWGraphicPlotViewAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphicPlotViewAxis.h; sourceTree = "<group>"; };
-		B8C3A22110C5695800BE164C /* CWGraphicPlotViewAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphicPlotViewAxis.m; sourceTree = "<group>"; };
+		B8C3A22010C5695800BE164C /* CWGraphPlotViewAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphPlotViewAxis.h; sourceTree = "<group>"; };
+		B8C3A22110C5695800BE164C /* CWGraphPlotViewAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphPlotViewAxis.m; sourceTree = "<group>"; };
 		B8F2FF7A10C5B3230058F307 /* CWGraphicWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CWGraphicWindowController.xib; sourceTree = "<group>"; };
 		B8F2FF7C10C5B33B0058F307 /* CWGraphicWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphicWindowController.h; sourceTree = "<group>"; };
 		B8F2FF7D10C5B33B0058F307 /* CWGraphicWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphicWindowController.m; sourceTree = "<group>"; };
@@ -205,10 +208,12 @@
 		B86661C410BEF870008E8942 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				B8C3A20F10C5656800BE164C /* CWGraphicPlotView.h */,
-				B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */,
-				B8C3A22010C5695800BE164C /* CWGraphicPlotViewAxis.h */,
-				B8C3A22110C5695800BE164C /* CWGraphicPlotViewAxis.m */,
+				B8C3A20F10C5656800BE164C /* CWGraphPlotView.h */,
+				B8C3A21010C5656800BE164C /* CWGraphPlotView.m */,
+				B8C3A22010C5695800BE164C /* CWGraphPlotViewAxis.h */,
+				B8C3A22110C5695800BE164C /* CWGraphPlotViewAxis.m */,
+				B83B6B6A10DE86AB009F6373 /* CWGraphPlotDataSource.h */,
+				B83B6B6B10DE86AB009F6373 /* CWGraphPlotDataSource.m */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -309,16 +314,17 @@
 				B866625710BF1B2D008E8942 /* CWMatrixDataSource.m in Sources */,
 				B866625A10BF1FB6008E8942 /* CWMatrixTableView.m in Sources */,
 				B818960810BF4D7C00502F39 /* CWMatrixInitializer.m in Sources */,
-				B8C3A21110C5656800BE164C /* CWGraphicPlotView.m in Sources */,
+				B8C3A21110C5656800BE164C /* CWGraphPlotView.m in Sources */,
 				B8C3A21410C565A600BE164C /* CWMethodOperation.m in Sources */,
 				B8C3A21710C565CA00BE164C /* CWMethodDataSource.m in Sources */,
-				B8C3A22210C5695800BE164C /* CWGraphicPlotViewAxis.m in Sources */,
+				B8C3A22210C5695800BE164C /* CWGraphPlotViewAxis.m in Sources */,
 				B8F2FF7E10C5B33B0058F307 /* CWGraphicWindowController.m in Sources */,
 				B81B1A5E10CFB5AA00605363 /* CWMatrixEditableDataSource.m in Sources */,
 				B81B1A7810CFB77F00605363 /* CWSolutionWindowController.m in Sources */,
 				B802F2C510DA71BA0018F124 /* CWMatrixLUDecOperation.m in Sources */,
 				B8777C9510DE173B00DE59B5 /* CWDecompositionController.m in Sources */,
 				B83B6B3810DE7EA8009F6373 /* CWMethodExecutor.m in Sources */,
+				B83B6B6C10DE86AB009F6373 /* CWGraphPlotDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

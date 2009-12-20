@@ -101,24 +101,8 @@
 	
 	return [newMatrix autorelease];
 }
-/*for i = 1 to n do  
- 
- 
- for j = 1 to n do  
- 
- 
- for k = 1 to n do  
- 
- 
- c[i,j] = c[i,j] + a[i,k] * b[k,j] ; od
- 
- 
- od 
- 
- 
- od 
- 
-*/ 
+
+
 - (CWMatrix*)multiplyByMatrix:(CWMatrix*)matrix{
 	if(_columns != matrix.rows){
 		return nil;
@@ -126,8 +110,7 @@
 	
 	NSUInteger mColumns = matrix.columns;
 	CWMatrix* matris = [CWMatrix matrixWithRows:_rows columns:mColumns];
-	double* dataArg = matrix.data;
-	double* dataResult = matris.data;
+
 	for(NSUInteger i = 0; i < _rows; i++) {
 		for(NSUInteger j = 0; j < mColumns; j++) {
 			double sum = 0.0;
