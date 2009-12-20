@@ -11,4 +11,25 @@
 
 @implementation CWGraphPlotDataSource
 
+-(id)initWithResourceClass:(Class)aClass inputValues:(NSDictionary*)inputs outputKey:(NSString*)aKey {
+	
+}
+
+- (double) graphicPlotView:(CWGraphPlotView*)plotView valueForArgument:(double)arg {
+	
+}
+
+
+- (void)prepareDataInRangeBegin:(double)argBegin rangeEnd:(double)argEnd delegate:(id<CWOperationDelegate>)delegate
+{
+	
+}
+
+- (BOOL) canProvideDataForArgument:(double)arg {
+	
+}
+
+- (BOOL) enabled {
+	
+}
 @end

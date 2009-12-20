@@ -13,7 +13,7 @@
 
 @protocol CWGraphPlotViewDataSource<NSObject>
 - (double) graphicPlotView:(CWGraphPlotView*)plotView valueForArgument:(double)arg;
-- (BOOL) canProvideDataForArgument:(double)argBegin endArgument:(double)argEnd;
+- (BOOL) canProvideDataForArgument:(double)arg;
 - (BOOL) enabled;
 @end
 

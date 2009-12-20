@@ -61,7 +61,7 @@ const int AXIS_SPACING = 20;
 	[self drawAxisToContext:context];
 	
 	for (id<CWGraphPlotViewDataSource> dataSource in _dataSources) {
-		if ( ![dataSource enabled] || ![dataSource canProvideDataForArgument:_horAxis.axisMinValue endArgument:_horAxis.axisMaxValue step:_horAxis.step]) {
+		if ( ![dataSource enabled] ) {
 			continue;
 		}
 		
@@ -71,11 +71,15 @@ const int AXIS_SPACING = 20;
 		}
 		
 		for (double curArg = _horAxis.axisMinValue; curArg <= _horAxis.axisMaxValue; curArg += _horAxis.step) {
-			double value = [dataSource graphicPlotView:self valueForArgument:curArg];
+			if ( [dataSource canProvideDataForArgument:curArg] ) {
+				double value = [dataSource graphicPlotView:self valueForArgument:curArg];
+				break;
+			}
 			
 			//FIXME: add to path
 		}
-						
+		
+		
 	}
 	
 	[super drawRect:dirtyRect];
