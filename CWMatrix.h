@@ -11,7 +11,10 @@
 
 @interface CWMatrix : NSObject {
 	@private
-	NSMutableArray*	_data;
+	double*		_data;
+	
+	NSUInteger	_rows;
+	NSUInteger	_columns;
 }
 
 + (id) matrixWithRows:(int)rows andColumns:(int)columns;
@@ -28,7 +31,6 @@
 
 //
 
-@property (nonatomic, retain)	NSMutableArray* data;
 @property (nonatomic, readonly) BOOL square;
 @property (nonatomic, readonly) NSUInteger rows;
 @property (nonatomic, readonly) NSUInteger columns;

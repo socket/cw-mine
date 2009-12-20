@@ -8,6 +8,12 @@
 
 #import "CWMatrix.h"
 
+@interface CWMatrix ()
+
+@property (nonatomic, readonly) double* data;
+
+@end
+
 @implementation CWMatrix
 @synthesize data = _data;
 
@@ -16,15 +22,16 @@
 }
 
 - (id) initWithRows:(int)rows andColumns:(int)columns {
+	if ( rows == 0 || columns == 0 ) {
+		[self release];
+		return nil;
+	}
+	
 	if ( self = [super init] ) {
-		self.data = [NSMutableArray arrayWithCapacity:rows];
-		while( rows-- ) {
-			NSMutableArray* colArray = [NSMutableArray arrayWithCapacity:columns];
-			for ( int curCol = 0; curCol < columns; ++curCol ) {
-				[colArray addObject:[NSNumber numberWithFloat:0.0]];
-			}
-			[_data addObject:colArray];
-		}
+		_columns = columns;
+		_rows = rows;
+		
+		_data = calloc(columns*rows, sizeof(double));
 	}
 	
 	return self;
@@ -34,22 +41,19 @@
 	CWMatrix* newMatrix = [[CWMatrix alloc] initWithRows:self.rows andColumns:self.columns];
 	assert(newMatrix);
 	
-	// FIXME
+	memccpy(newMatrix.data, _data, _rows*_columns, sizeof(double));
 	
 	return newMatrix;
 }
 
 #pragma mark Accessors
 - (void) setValue:(double)value row:(int)row column:(int)column {
-	assert( row < [_data count] );
-	assert( column < [[_data objectAtIndex:row] count] );
-	
-	if ( column >= [[_data objectAtIndex:row] count] || row >= [_data count] ) {
+	if ( column >= _columns || row >= _rows ) {
 		NSLog(@"SET Matrix value out of bounds %d, %d", row, column);
 		return;
 	}
 	
-	[[_data objectAtIndex:row] replaceObjectAtIndex:column withObject:[NSNumber numberWithDouble:value]];
+	_data[ column*_columns + row ] = value;
 }
 
 - (double) valueForRow:(int)row column:(int)column {	
@@ -58,7 +62,7 @@
 		return NAN;
 	}
 
-	return [[[_data objectAtIndex:row] objectAtIndex:column] doubleValue];
+	return _data[ column*_columns + row ];
 }
 
 #pragma mark Base Matrix Operations
@@ -68,16 +72,7 @@
 	}
 	
 	CWMatrix* newMatrix = [self copy];
-	for( int i=0; i < [newMatrix.data count]; ++i ) {
-		NSMutableArray* rowArray = [newMatrix.data objectAtIndex:i];
-		NSMutableArray* rowArray2 = [matrix.data objectAtIndex:i];
-		
-		assert( rowArray );
-		for ( int j=0; j < [rowArray count]; ++j ) {
-			[rowArray replaceObjectAtIndex:j withObject: [NSNumber numberWithDouble:([ [rowArray objectAtIndex:j] doubleValue ] + [[rowArray2 objectAtIndex:j] doubleValue]) ] ];
-		}
-	}
-	
+
 	return [newMatrix autorelease];
 }
 
@@ -89,23 +84,17 @@
 
 - (CWMatrix*) multiplyByScalar:(NSNumber*)scalar {
 	CWMatrix* newMatrix = [self copy];
-	for( int i=0; i < [newMatrix.data count]; ++i ) {
-		NSMutableArray* rowArray = [newMatrix.data objectAtIndex:i];
-		assert( rowArray );
-		for ( int j=0; j < [rowArray count]; ++j ) {
-			[rowArray replaceObjectAtIndex:j withObject: [NSNumber numberWithDouble:([ [rowArray objectAtIndex:j] doubleValue ] * [scalar doubleValue]) ] ];
-		}
-	}
+
 	return [newMatrix autorelease];
 }
 
 #pragma mark Properties
 - (NSUInteger) rows {
-	return [_data count];
+	return _rows;
 }
 
 - (NSUInteger) columns {
-	return [_data count] ? [[_data objectAtIndex:0] count] : 0;
+	return _columns;
 }
 
 - (NSUInteger ) rank {
@@ -120,7 +109,7 @@
 }
 
 - (void) dealloc {
-	self.data = nil;
+	free(_data);
 	
 	[super dealloc];
 }
@@ -130,8 +119,9 @@
 	for( int i=0; i < self.rows; ++i ) {
 		NSMutableString* rowData = [NSMutableString string];
 		for ( int j=0; j < self.columns; ++j ) {
-			[rowData appendFormat:@"%0.3f\t", [self valueForRow:i column:j]];
+
 		}
+		
 		NSLog(@"%@", rowData);
 	}
 }
