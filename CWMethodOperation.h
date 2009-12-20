@@ -35,6 +35,8 @@
 @property (nonatomic, assign) id<CWOperationDelegate> delegate;
 @property (nonatomic, retain) NSError*	error;
 
++ (NSArray*) outputKeys;
+
 -(NSMutableDictionary*) outputs;
 -(NSMutableDictionary*) inputs;
 

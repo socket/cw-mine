@@ -83,4 +83,8 @@
 	return @"Generic method operation";
 }
 
++ (NSArray*) outputKeys {
+	return [NSArray arrayWithObjects:kMethodElapsed, kMethodDateBegin, kMethodDateEnd];
+}
+
 @end
