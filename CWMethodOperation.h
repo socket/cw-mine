@@ -33,11 +33,9 @@
 @property (nonatomic, retain) NSError*	error;
 @property (nonatomic, retain) NSMutableDictionary* output;
 
-- (void) main;
 - (void) lock;
 - (void) unlock;
 
 - (void) succceed;
 - (void) fail;
-
 @end

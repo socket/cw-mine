@@ -65,6 +65,22 @@
 			B81B1B3C10D100A100605363 = B81B1B3C10D100A100605363 /* PBXTextBookmark */;
 			B81B1B3D10D100A100605363 = B81B1B3D10D100A100605363 /* PBXTextBookmark */;
 			B83B696310DE2139009F6373 /* PBXTextBookmark */ = B83B696310DE2139009F6373 /* PBXTextBookmark */;
+			B83B696B10DE259A009F6373 /* XCBuildMessageTextBookmark */ = B83B696B10DE259A009F6373 /* XCBuildMessageTextBookmark */;
+			B83B696C10DE259A009F6373 /* PBXTextBookmark */ = B83B696C10DE259A009F6373 /* PBXTextBookmark */;
+			B83B697710DE262F009F6373 /* PBXTextBookmark */ = B83B697710DE262F009F6373 /* PBXTextBookmark */;
+			B83B697810DE262F009F6373 /* PBXTextBookmark */ = B83B697810DE262F009F6373 /* PBXTextBookmark */;
+			B83B697910DE262F009F6373 /* PBXTextBookmark */ = B83B697910DE262F009F6373 /* PBXTextBookmark */;
+			B83B697A10DE262F009F6373 /* PBXTextBookmark */ = B83B697A10DE262F009F6373 /* PBXTextBookmark */;
+			B83B697B10DE262F009F6373 /* PBXTextBookmark */ = B83B697B10DE262F009F6373 /* PBXTextBookmark */;
+			B83B697C10DE262F009F6373 /* PBXTextBookmark */ = B83B697C10DE262F009F6373 /* PBXTextBookmark */;
+			B83B697F10DE2682009F6373 /* PBXTextBookmark */ = B83B697F10DE2682009F6373 /* PBXTextBookmark */;
+			B83B698010DE2682009F6373 /* XCBuildMessageTextBookmark */ = B83B698010DE2682009F6373 /* XCBuildMessageTextBookmark */;
+			B83B698110DE2682009F6373 /* PBXTextBookmark */ = B83B698110DE2682009F6373 /* PBXTextBookmark */;
+			B83B698210DE2688009F6373 /* PBXTextBookmark */ = B83B698210DE2688009F6373 /* PBXTextBookmark */;
+			B83B698310DE2688009F6373 /* PBXTextBookmark */ = B83B698310DE2688009F6373 /* PBXTextBookmark */;
+			B83B698410DE2688009F6373 /* PBXTextBookmark */ = B83B698410DE2688009F6373 /* PBXTextBookmark */;
+			B83B698510DE2688009F6373 /* PBXTextBookmark */ = B83B698510DE2688009F6373 /* PBXTextBookmark */;
+			B83B698610DE2688009F6373 /* PBXTextBookmark */ = B83B698610DE2688009F6373 /* PBXTextBookmark */;
 			B86661EC10BEFBAE008E8942 = B86661EC10BEFBAE008E8942 /* PlistBookmark */;
 			B866625E10BF1FFE008E8942 = B866625E10BF1FFE008E8942 /* PBXTextBookmark */;
 			B866634F10BF4443008E8942 = B866634F10BF4443008E8942 /* PBXTextBookmark */;
@@ -109,15 +125,15 @@
 	B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {937, 656}}";
-			sepNavSelRange = "{315, 0}";
-			sepNavVisRange = "{0, 375}";
+			sepNavSelRange = "{258, 0}";
+			sepNavVisRange = "{0, 484}";
 		};
 	};
 	B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 728}}";
-			sepNavSelRange = "{1431, 0}";
-			sepNavVisRange = "{53, 1447}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 767}}";
+			sepNavSelRange = "{251, 0}";
+			sepNavVisRange = "{50, 1558}";
 		};
 	};
 	B802F31310DA80940018F124 /* PBXTextBookmark */ = {
@@ -357,10 +373,168 @@
 		fRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */;
 		name = "CWMatrixLUDecOperation.m: 49";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1628;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 53;
+	};
+	B83B696B10DE259A009F6373 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'kLMatrix' undeclared (first use in this function)";
+		fRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 66;
+		rType = 1;
+	};
+	B83B696C10DE259A009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */;
+		name = "CWDecompositionController.m: 67";
+		rLen = 58;
+		rLoc = 1745;
+		rType = 0;
+		vrLen = 631;
+		vrLoc = 1360;
+	};
+	B83B697710DE262F009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */;
+		name = "CWDecompositionController.h: 28";
+		rLen = 0;
+		rLoc = 876;
+		rType = 0;
+		vrLen = 962;
+		vrLoc = 0;
+	};
+	B83B697810DE262F009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8C3A21210C565A600BE164C /* CWMethodOperation.h */;
+		name = "CWMethodOperation.h: 40";
+		rLen = 0;
+		rLoc = 778;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	B83B697910DE262F009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */;
+		name = "CWDecompositionController.m: 67";
+		rLen = 58;
+		rLoc = 1745;
+		rType = 0;
+		vrLen = 1391;
+		vrLoc = 839;
+	};
+	B83B697A10DE262F009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */;
+		name = "CWMatrixLUDecOperation.h: 14";
+		rLen = 0;
+		rLoc = 275;
+		rType = 0;
+		vrLen = 486;
+		vrLoc = 0;
+	};
+	B83B697B10DE262F009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */;
+		name = "CWMatrixLUDecOperation.m: 11";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 1572;
+		vrLoc = 50;
+	};
+	B83B697C10DE262F009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */;
+		name = "CWMatrixLUDecOperation.m: 12";
+		rLen = 0;
+		rLoc = 235;
+		rType = 0;
+		vrLen = 1566;
+		vrLoc = 50;
+	};
+	B83B697F10DE2682009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */;
+		name = "CWDecompositionController.m: 67";
+		rLen = 58;
+		rLoc = 1745;
+		rType = 0;
+		vrLen = 631;
+		vrLoc = 1360;
+	};
+	B83B698010DE2682009F6373 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Unused variable 'aContext'";
+		fRef = B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 38;
+		rType = 1;
+	};
+	B83B698110DE2682009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */;
+		name = "CWGraphicPlotView.m: 39";
+		rLen = 70;
+		rLoc = 730;
+		rType = 0;
+		vrLen = 293;
+		vrLoc = 612;
+	};
+	B83B698210DE2688009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */;
+		name = "CWMatrixLUDecOperation.m: 12";
+		rLen = 0;
+		rLoc = 251;
+		rType = 0;
+		vrLen = 1558;
+		vrLoc = 50;
+	};
+	B83B698310DE2688009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */;
+		name = "CWMatrixLUDecOperation.h: 13";
+		rLen = 0;
+		rLoc = 258;
+		rType = 0;
+		vrLen = 484;
+		vrLoc = 0;
+	};
+	B83B698410DE2688009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */;
+		name = "CWGraphicPlotView.m: 40";
+		rLen = 0;
+		rLoc = 801;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 0;
+	};
+	B83B698510DE2688009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */;
+		name = "CWDecompositionController.m: 67";
+		rLen = 58;
+		rLoc = 1745;
+		rType = 0;
+		vrLen = 1391;
+		vrLoc = 839;
+	};
+	B83B698610DE2688009F6373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */;
+		name = "CWDecompositionController.m: 69";
+		rLen = 0;
+		rLoc = 1863;
+		rType = 0;
+		vrLen = 1391;
+		vrLoc = 839;
 	};
 	B86661AB10BEF7E6008E8942 /* MMCourseWork */ = {
 		isa = PBXExecutable;
@@ -537,15 +711,15 @@
 	B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {937, 656}}";
-			sepNavSelRange = "{834, 35}";
-			sepNavVisRange = "{0, 876}";
+			sepNavSelRange = "{876, 0}";
+			sepNavVisRange = "{0, 962}";
 		};
 	};
 	B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 1001}}";
-			sepNavSelRange = "{1401, 0}";
-			sepNavVisRange = "{551, 1142}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 1235}}";
+			sepNavSelRange = "{1863, 0}";
+			sepNavVisRange = "{839, 1391}";
 		};
 	};
 	B8777CC210DE20FC00DE59B5 /* PBXTextBookmark */ = {
@@ -643,7 +817,7 @@
 		fRef = B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */;
 		name = "CWDecompositionController.h: 28";
 		rLen = 35;
-		rLoc = 834;
+		rLoc = 920;
 		rType = 0;
 		vrLen = 876;
 		vrLoc = 0;
@@ -653,7 +827,7 @@
 		fRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */;
 		name = "CWDecompositionController.m: 61";
 		rLen = 0;
-		rLoc = 1401;
+		rLoc = 1990;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 551;
@@ -680,7 +854,7 @@
 		fRef = B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */;
 		name = "CWMatrixLUDecOperation.h: 15";
 		rLen = 0;
-		rLoc = 315;
+		rLoc = 382;
 		rType = 0;
 		vrLen = 375;
 		vrLoc = 0;
@@ -710,7 +884,7 @@
 		fRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */;
 		name = "CWMatrixLUDecOperation.m: 44";
 		rLen = 0;
-		rLoc = 1410;
+		rLoc = 1607;
 		rType = 0;
 		vrLen = 1404;
 		vrLoc = 50;
@@ -720,7 +894,7 @@
 		fRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */;
 		name = "CWMatrixLUDecOperation.m: 49";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1628;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 98;
@@ -734,16 +908,16 @@
 	};
 	B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {899, 650}}";
-			sepNavSelRange = "{347, 0}";
-			sepNavVisRange = "{3, 902}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 656}}";
+			sepNavSelRange = "{801, 0}";
+			sepNavVisRange = "{0, 905}";
 		};
 	};
 	B8C3A21210C565A600BE164C /* CWMethodOperation.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {937, 656}}";
-			sepNavSelRange = "{528, 0}";
-			sepNavVisRange = "{0, 800}";
+			sepNavSelRange = "{778, 0}";
+			sepNavVisRange = "{0, 784}";
 		};
 	};
 	B8C3A21310C565A600BE164C /* CWMethodOperation.m */ = {

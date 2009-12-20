@@ -9,8 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "CWMatrix.h"
 #import "CWMatrixTableView.h"
+#import "CWMethodOperation.h"
+#import "CWMatrixLUDecOperation.h"
 
-@interface CWDecompositionController : NSWindowController<NSTextFieldDelegate> {
+@interface CWDecompositionController : NSWindowController<NSTextFieldDelegate, CWOperationDelegate> {
 	@private
 	CWMatrixTableView*	_srcMatrixView;
 	CWMatrixTableView*	_lMatrixView;

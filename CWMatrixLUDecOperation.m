@@ -8,12 +8,20 @@
 
 #import "CWMatrixLUDecOperation.h"
 
+NSString* const kLMatrix = @"u_matrix";
+NSString* const kUMatrix = @"l_matrix";
 
 @implementation CWMatrixLUDecOperation
 @synthesize srcMatrix = _srcMatrix;
 
 // Computing the LU decomposition using either of these algorithms requires 2n^3 / 3 floating point operations, 
 // ignoring lower order terms. 
+- (id) initWithMatrix:(CWMatrix*)matrix {
+	if ( self = [self init] ) {
+		self.srcMatrix = matrix;
+	}
+	return self;
+}
 
 - (void) main {
 	unsigned int rank = [_srcMatrix rank];

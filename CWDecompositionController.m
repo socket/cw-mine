@@ -56,7 +56,24 @@
 }
 
 - (IBAction) calculate:(id)sender {
-	
+	CWMatrixLUDecOperation* op = [[[CWMatrixLUDecOperation alloc] initWithMatrix:_srcMatrixView.matrix] autorelease];
+	op.delegate = self;
+	[[NSOperationQueue currentQueue] addOperation:op];
+}
+
+#pragma mark operation delegate
+-(void)operationSucceeded:(CWMethodOperation*)operation {
+	if ( [operation isKindOfClass:[CWMatrixLUDecOperation class]] ) {
+		_lMatrixView.matrix = [operation valueForKey:kLMatrix];
+		_uMatrixView.matrix = [operation valueForKey:kUMatrix];
+	}
+	else if ( 0 ) {
+		
+	}
+}
+
+-(void)operationFailed:(CWMethodOperation*)operation {
+	[NSAlert alertWithError:operation.error];
 }
 
 #pragma mark -

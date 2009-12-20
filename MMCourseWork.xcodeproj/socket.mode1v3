@@ -277,15 +277,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
-									<integer>10</integer>
-									<integer>9</integer>
+									<integer>36</integer>
+									<integer>26</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {260, 660}}</string>
+							<string>{{0, 60}, {260, 660}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CWMatrixLUDecOperation.m</string>
+								<string>CWDecompositionController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CWMatrixLUDecOperation.m</string>
+										<string>CWDecompositionController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B83B696310DE2139009F6373</string>
+										<string>B83B698610DE2688009F6373</string>
 										<key>history</key>
 										<array>
 											<string>B86661EC10BEFBAE008E8942</string>
@@ -351,7 +350,6 @@
 											<string>B81B1B0010CFC93700605363</string>
 											<string>B81B1B3A10D100A100605363</string>
 											<string>B81B1B3C10D100A100605363</string>
-											<string>B81B1B3D10D100A100605363</string>
 											<string>B802F31310DA80940018F124</string>
 											<string>B802F31410DA80940018F124</string>
 											<string>B802F32E10DA81860018F124</string>
@@ -368,13 +366,14 @@
 											<string>B8777CC810DE20FC00DE59B5</string>
 											<string>B8777CC910DE20FC00DE59B5</string>
 											<string>B8777CCA10DE20FC00DE59B5</string>
-											<string>B8777CCB10DE20FC00DE59B5</string>
-											<string>B8777CCC10DE20FC00DE59B5</string>
 											<string>B8777CCD10DE20FC00DE59B5</string>
-											<string>B8777CCF10DE20FC00DE59B5</string>
-											<string>B8777CD010DE20FC00DE59B5</string>
 											<string>B8777CD110DE20FC00DE59B5</string>
-											<string>B8777CD310DE20FC00DE59B5</string>
+											<string>B83B697710DE262F009F6373</string>
+											<string>B83B697810DE262F009F6373</string>
+											<string>B83B698210DE2688009F6373</string>
+											<string>B83B698310DE2688009F6373</string>
+											<string>B83B698410DE2688009F6373</string>
+											<string>B83B698510DE2688009F6373</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -597,7 +596,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>CWGraphicPlotView.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -614,6 +613,8 @@
 							<string>301pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
