@@ -18,9 +18,7 @@
 
 @implementation CWGraphicWindowController
 
-@synthesize graphListTableView = _graphListTableView;
-@synthesize addButton = _addButton;
-@synthesize removeButton = _removeButton;
+@synthesize graphListTableView = _graphListTableView, graphView = _graphView;;
 @synthesize methodAddPane = _methodAddPane, methodNameComboBox = _methodNameComboBox, methodKeyComboBox = _methodKeyComboBox;
 @synthesize methodColor = _methodColor, methodPrecision = _methodPrecision;
 
@@ -32,14 +30,13 @@
 }
 
 - (void) dealloc {
-	self.addButton = nil;
-	self.removeButton = nil;
 	self.graphListTableView = nil;
 	self.methodAddPane = nil;
 	self.methodNameComboBox = nil;
 	self.methodColor = nil;
 	self.methodKeyComboBox = nil;
 	self.methodPrecision = nil;
+	self.graphView = nil;
 	
 	[super dealloc];
 }

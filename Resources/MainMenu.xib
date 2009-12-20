@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="535"/>
+			<integer value="539"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -294,7 +294,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="668507830">
+								<object class="NSMenuItem" id="837564135">
 									<reference key="NSMenu" ref="847055137"/>
 									<string key="NSTitle">Decompose Matrix</string>
 									<string key="NSKeyEquiv"/>
@@ -302,7 +302,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="1050163411">
+								<object class="NSMenuItem" id="941077580">
 									<reference key="NSMenu" ref="847055137"/>
 									<string key="NSTitle">Plot</string>
 									<string key="NSKeyEquiv"/>
@@ -571,9 +571,17 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">showDecomposeWindow:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="668507830"/>
+						<reference key="destination" ref="837564135"/>
 					</object>
 					<int key="connectionID">545</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showGraphWindow:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="941077580"/>
+					</object>
+					<int key="connectionID">546</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -888,8 +896,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="141383195"/>
-							<reference ref="668507830"/>
-							<reference ref="1050163411"/>
+							<reference ref="837564135"/>
+							<reference ref="941077580"/>
 						</object>
 						<reference key="parent" ref="168527382"/>
 					</object>
@@ -900,12 +908,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">543</int>
-						<reference key="object" ref="668507830"/>
+						<reference key="object" ref="837564135"/>
 						<reference key="parent" ref="847055137"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">544</int>
-						<reference key="object" ref="1050163411"/>
+						<reference key="object" ref="941077580"/>
 						<reference key="parent" ref="847055137"/>
 					</object>
 				</object>
@@ -1115,7 +1123,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">545</int>
+			<int key="maxID">546</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1128,11 +1136,13 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>showDecomposeWindow:</string>
+							<string>showGraphWindow:</string>
 							<string>showMatrixInputWindow:</string>
 							<string>showSolutionWindow:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>

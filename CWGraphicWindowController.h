@@ -18,8 +18,6 @@
 	@private
 	CWGraphPlotView*		_graphView;
 	NSTableView*			_graphListTableView;
-	NSButton*				_addButton;
-	NSButton*				_removeButton;
 	
 	NSArray*				_methodsDataSource;					// list of all available methods
 	NSMutableArray*			_methodsSelected;			// list of current methods
@@ -44,8 +42,7 @@
 - (IBAction) hideAddMethodPane:(id)sender;
 
 @property (nonatomic, retain) IBOutlet NSTableView*			graphListTableView;
-@property (nonatomic, retain) IBOutlet NSButton*			addButton;
-@property (nonatomic, retain) IBOutlet NSButton*			removeButton;
+@property (nonatomic, retain) IBOutlet CWGraphPlotView*		graphView;
 
 @property (nonatomic, retain) IBOutlet NSView*				methodAddPane;
 @property (nonatomic, retain) IBOutlet NSComboBox*			methodNameComboBox;

@@ -19,6 +19,7 @@
 - (IBAction) showMatrixInputWindow:	(id)sender;
 - (IBAction) showSolutionWindow:	(id)sender;
 - (IBAction) showDecomposeWindow:	(id)sender;
+- (IBAction) showGraphWindow:		(id)sender;
 
 @property (assign) IBOutlet NSWindow *window;
 
