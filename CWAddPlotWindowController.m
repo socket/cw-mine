@@ -25,7 +25,6 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 }
 
 #pragma mark -
-
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
 		
@@ -40,11 +39,12 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 }
 
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
+	// update available keys
 	
 }
 
 - (IBAction)performAdd:(id)sender {
-	
+	[self.window close];
 }
 
 
