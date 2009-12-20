@@ -38,7 +38,7 @@
 		NSTableColumn* column = [[[NSTableColumn alloc]	initWithIdentifier:[NSNumber numberWithInt:i]] autorelease];
 		[column setDataCell:[[[NSCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
 		[column setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:[NSString stringWithFormat:@"x%d", i]] autorelease]];
-		[column setEditable:NO];
+		[column setEditable:YES];
 		
 		[self addTableColumn:column];
 	}

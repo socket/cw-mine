@@ -23,6 +23,7 @@
 - (CWMatrix*) addMatrix:(CWMatrix*)matrix;
 - (CWMatrix*) substractMatrix:(CWMatrix*)matrix;
 - (CWMatrix*) multiplyByScalar:(double)scalar;
+- (CWMatrix*)multiplyByMatrix:(CWMatrix*)matrix;
 
 - (double) valueForRow:(int)row column:(int)column;
 - (void) setValue:(double)value row:(int)row column:(int)column;

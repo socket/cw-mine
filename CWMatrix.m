@@ -53,7 +53,7 @@
 		return;
 	}
 	
-	_data[ column*_columns + row ] = value;
+	_data[ row*_columns + column ] = value;
 }
 
 - (double) valueForRow:(int)row column:(int)column {	
@@ -62,7 +62,7 @@
 		return NAN;
 	}
 
-	return _data[ column*_columns + row ];
+	return _data[ row*_columns + column ];
 }
 
 #pragma mark Base Matrix Operations
@@ -72,8 +72,8 @@
 	}
 	
 	CWMatrix* newMatrix = [self copy];
-	for (int i=0; i<_columns; ++i)
-		for (int j=0; j<_rows; ++j) 
+	for (int i=0; i<_rows; ++i)
+		for (int j=0; j<_columns; ++j) 
 			newMatrix.data[i*_columns + j] += matrix.data[i*_columns+j];
 	
 	return [newMatrix autorelease];
@@ -85,8 +85,8 @@
 	}
 	
 	CWMatrix* newMatrix = [self copy];
-	for (int i=0; i<_columns; ++i)
-		for (int j=0; j<_rows; ++j) 
+	for (int i=0; i<_rows; ++i)
+		for (int j=0; j<_columns; ++j) 
 			newMatrix.data[i*_columns + j] -= matrix.data[i*_columns+j];
 	
 	return [newMatrix autorelease];
@@ -95,8 +95,8 @@
 - (CWMatrix*) multiplyByScalar:(double)scalar {
 	CWMatrix* newMatrix = [self copy];
 	
-	for (int i=0; i<_columns; ++i)
-		for (int j=0; j<_rows; ++j) 
+	for (int i=0; i<_rows; ++i)
+		for (int j=0; j<_columns; ++j) 
 			newMatrix.data[i*_columns + j] *= scalar;
 	
 	return [newMatrix autorelease];
@@ -159,7 +159,7 @@
 	for(NSUInteger i = 0; i < _rows; i++){
 		[str appendString:@"{"];
 		for(NSUInteger j = 0; j < _columns; j++){
-			[str appendFormat:@"%g", _data[j*_columns+i]];
+			[str appendFormat:@"%g", [self valueForRow:i column:j]];
 			if(j+1 != _columns)
 				[str appendString:@","];
 		}
