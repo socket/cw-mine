@@ -27,6 +27,8 @@
 
 - (IBAction) makeRandomValues:(id)sender;
 - (IBAction) makeDefaultValues:(id)sender;
+- (IBAction) doUpdateSourceMatrix:(id)sender;
+
 - (IBAction) calculate:(id)sender;
 
 

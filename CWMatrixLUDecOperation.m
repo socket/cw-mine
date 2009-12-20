@@ -8,8 +8,8 @@
 
 #import "CWMatrixLUDecOperation.h"
 
-NSString* const kLMatrix = @"u_matrix";
-NSString* const kUMatrix = @"l_matrix";
+NSString* const kLMatrix = @"l_matrix";
+NSString* const kUMatrix = @"u_matrix";
 
 @implementation CWMatrixLUDecOperation
 @synthesize srcMatrix = _srcMatrix;

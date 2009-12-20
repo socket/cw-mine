@@ -153,12 +153,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */,
 				B86661F110BEFBE3008E8942 /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* MMCourseWork-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */,
 				B8F2FF7A10C5B3230058F307 /* CWGraphicWindowController.xib */,
+				B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */,
 				B81B1A9010CFBCF900605363 /* CWSolutionWindowController.xib */,
 			);
 			name = Resources;

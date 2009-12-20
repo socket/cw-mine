@@ -35,8 +35,7 @@
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
 	int col = [[tableColumn identifier] intValue];
-	NSNumber* value = [NSNumber numberWithDouble:[_matrix valueForRow:row column:col]];
-	return [NSString stringWithFormat:@"%@", value];
+	return [NSString stringWithFormat:@"%0.3f", [_matrix valueForRow:row column:col]];
 }
 
 - (void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {

@@ -33,6 +33,14 @@
 	
 }
 
+- (void) windowDidLoad {
+	[self makeRandomValues:nil];
+}
+
+- (IBAction) doUpdateSourceMatrix:(id)sender {
+	[self updateSourceMatrix];
+}
+
 - (void) updateSourceMatrix {
 	if ( self.selectedRank != _srcMatrixView.matrix.rank ) {
 		// FIXME: copy old values
@@ -42,7 +50,7 @@
 
 - (NSInteger) selectedRank {
 	int rank = [_rankTextField intValue];
-	return MIN( MAX(0, rank), 100 );
+	return MIN( MAX(0, rank), 10000 );
 }
 
 #pragma mark -
@@ -64,8 +72,8 @@
 #pragma mark operation delegate
 -(void)operationSucceeded:(CWMethodOperation*)operation {
 	if ( [operation isKindOfClass:[CWMatrixLUDecOperation class]] ) {
-		_lMatrixView.matrix = [operation valueForKey:kLMatrix];
-		_uMatrixView.matrix = [operation valueForKey:kUMatrix];
+		_lMatrixView.matrix = [operation.output valueForKey:kLMatrix];
+		_uMatrixView.matrix = [operation.output valueForKey:kUMatrix];
 	}
 	else if ( 0 ) {
 		
