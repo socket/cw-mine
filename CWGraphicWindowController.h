@@ -17,10 +17,9 @@
 	NSTableView*			_graphListTableView;
 	NSButton*				_addButton;
 	NSButton*				_removeButton;
-	NSDrawer*				_optionsDrawer;
 	
-	NSArray*				_methods;			// list of all available methods
-	NSMutableArray*			_graphics;			// list of current methods
+	NSArray*				_methods;					// list of all available methods
+	NSMutableArray*			_methodsSelected;			// list of current methods
 }
 
 - (IBAction) addMethod:(id)sender;
