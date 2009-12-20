@@ -21,6 +21,7 @@
 @synthesize graphListTableView = _graphListTableView, graphView = _graphView;;
 @synthesize methodAddPane = _methodAddPane, methodNameComboBox = _methodNameComboBox, methodKeyComboBox = _methodKeyComboBox;
 @synthesize methodColor = _methodColor, methodPrecision = _methodPrecision;
+@synthesize segmentedControl = _segmentedControl;
 
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
@@ -37,6 +38,7 @@
 	self.methodKeyComboBox = nil;
 	self.methodPrecision = nil;
 	self.graphView = nil;
+	self.segmentedControl = nil;
 	
 	[super dealloc];
 }
@@ -50,7 +52,15 @@
 
 
 - (IBAction) segmentedSelector:(id)sender {
-	
+	if ( [_segmentedControl selectedSegment] == 0 ) {
+		[self showAddMethodPane:sender];
+	}
+	else if ( [_segmentedControl selectedSegment] == 1 ) {
+		[self removeMethod:sender];
+	}
+	else if ( [_segmentedControl selectedSegment] == 2 ) {
+		[self showSettings:sender];
+	}
 }
 
 - (IBAction) addMethod:(id)sender {
