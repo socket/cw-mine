@@ -17,12 +17,12 @@
 	NSUInteger	_columns;
 }
 
-+ (id) matrixWithRows:(int)rows andColumns:(int)columns;
++ (id) matrixWithRows:(int)rows columns:(int)columns;
 - (id) initWithRows:(int)rows andColumns:(int)columns;
 
 - (CWMatrix*) addMatrix:(CWMatrix*)matrix;
 - (CWMatrix*) substractMatrix:(CWMatrix*)matrix;
-- (CWMatrix*) multiplyByScalar:(NSNumber*)scalar;
+- (CWMatrix*) multiplyByScalar:(double)scalar;
 
 - (double) valueForRow:(int)row column:(int)column;
 - (void) setValue:(double)value row:(int)row column:(int)column;

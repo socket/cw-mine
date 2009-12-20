@@ -31,8 +31,8 @@
 	int rank = 10;
 	
 	_aMatrixTableView.matrix		= [CWMatrixInitializer matrixWithRank:rank qCoeff:0.994];
-	_bMatrixTableView.matrix		= [CWMatrix matrixWithRows:rank andColumns:1];
-	_resultMatrixTableView.matrix	= [CWMatrix matrixWithRows:rank andColumns:1];
+	_bMatrixTableView.matrix		= [CWMatrix matrixWithRows:rank columns:1];
+	_resultMatrixTableView.matrix	= [CWMatrix matrixWithRows:rank columns:1];
 	
 	[_aMatrixTableView reloadData];
 }

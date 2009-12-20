@@ -44,7 +44,7 @@
 - (void) updateSourceMatrix {
 	if ( self.selectedRank != _srcMatrixView.matrix.rank ) {
 		// FIXME: copy old values
-		_srcMatrixView.matrix = [CWMatrix matrixWithRows:self.selectedRank andColumns:self.selectedRank];
+		_srcMatrixView.matrix = [CWMatrix matrixWithRows:self.selectedRank columns:self.selectedRank];
 	}
 }
 

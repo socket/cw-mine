@@ -20,7 +20,7 @@
 }
 
 + (CWMatrix*) matrixWithRank:(NSUInteger)rank qCoeff:(double)qCoeff {
-	CWMatrix* matrix = [CWMatrix matrixWithRows:rank andColumns:rank];
+	CWMatrix* matrix = [CWMatrix matrixWithRows:rank columns:rank];
 	double cCoeff = [self cCoeffForRank:rank qCoeff:qCoeff];
 	
 	for ( int i = 0; i < rank; ++i ) {
@@ -35,7 +35,7 @@
 	return matrix;
 }
 + (CWMatrix*) randomMatrixWithRank:(NSUInteger)rank {
-	CWMatrix* matrix = [CWMatrix matrixWithRows:rank andColumns:rank];
+	CWMatrix* matrix = [CWMatrix matrixWithRows:rank columns:rank];
 	
 	for ( int i = 0; i < rank; ++i ) {
 		for ( int j = 0; j < rank; ++j ) {			

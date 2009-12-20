@@ -26,7 +26,7 @@ NSString* const kUMatrix = @"u_matrix";
 - (void) main {
 	unsigned int rank = [_srcMatrix rank];
 	CWMatrix* u_matrix = [[_srcMatrix copy] autorelease]; // A(0) -- U-matrix
-	CWMatrix* l_matrix = [CWMatrix matrixWithRows:rank andColumns:rank];
+	CWMatrix* l_matrix = [CWMatrix matrixWithRows:rank columns:rank];
 	
 	// get L- and U- matrices
 	for ( int n = 0; n < rank; ++n ) { // iterations

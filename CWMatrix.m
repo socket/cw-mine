@@ -17,7 +17,7 @@
 @implementation CWMatrix
 @synthesize data = _data;
 
-+ (id) matrixWithRows:(int)rows andColumns:(int)columns {
++ (id) matrixWithRows:(int)rows columns:(int)columns {
 	return [[[CWMatrix alloc] initWithRows:rows andColumns:columns] autorelease];
 }
 
@@ -72,21 +72,59 @@
 	}
 	
 	CWMatrix* newMatrix = [self copy];
-
+	for (int i=0; i<_columns; ++i)
+		for (int j=0; j<_rows; ++j) 
+			newMatrix.data[i*_columns + j] += matrix.data[i*_columns+j];
+	
 	return [newMatrix autorelease];
 }
 
 - (CWMatrix*) substractMatrix:(CWMatrix*)matrix {
-	// FIXME: not a fast method but code is compact
-	CWMatrix* subMatrix = [matrix multiplyByScalar:[NSNumber numberWithDouble:(-1)]];
-	return [self addMatrix:subMatrix];
-}
-
-- (CWMatrix*) multiplyByScalar:(NSNumber*)scalar {
+	if ( matrix.rows != self.rows || matrix.columns != self.columns ) {
+		return nil;
+	}
+	
 	CWMatrix* newMatrix = [self copy];
-
+	for (int i=0; i<_columns; ++i)
+		for (int j=0; j<_rows; ++j) 
+			newMatrix.data[i*_columns + j] -= matrix.data[i*_columns+j];
+	
 	return [newMatrix autorelease];
 }
+
+- (CWMatrix*) multiplyByScalar:(double)scalar {
+	CWMatrix* newMatrix = [self copy];
+	
+	for (int i=0; i<_columns; ++i)
+		for (int j=0; j<_rows; ++j) 
+			newMatrix.data[i*_columns + j] *= scalar;
+	
+	return [newMatrix autorelease];
+}
+
+- (CWMatrix*)multiplyByMatrix:(CWMatrix*)matrix{
+	if(_columns != matrix.rows){
+		return nil;
+	}
+	
+	NSUInteger mColumns = matrix.columns;
+	CWMatrix* matris = [CWMatrix matrixWithRows:_rows columns:mColumns];
+	double* dataArg = matrix.data;
+	double* dataResult = matris.data;
+	for(NSUInteger i = 0; i < _rows; i++)
+	{
+		for(NSUInteger j = 0; j < mColumns; j++)
+		{
+			double sum = 0.0;
+			for(NSUInteger k = 0; k < _columns; k++)
+				sum += _data[i*_columns+k] * dataArg[k*mColumns+j];
+			
+			dataResult[i*mColumns+j] = sum;
+		}
+	}
+	return matris;
+}
+
 
 #pragma mark Properties
 - (NSUInteger) rows {
