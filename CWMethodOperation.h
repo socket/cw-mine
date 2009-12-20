@@ -26,15 +26,21 @@
 	NSError*	_error;
 	id<CWOperationDelegate> _delegate;
 	
-	NSMutableDictionary*	_output;
+	NSMutableDictionary*	_outputs;
+	NSMutableDictionary*	_inputs;
+	
 }
 
 @property (nonatomic, assign) id<CWOperationDelegate> delegate;
 @property (nonatomic, retain) NSError*	error;
-@property (nonatomic, retain) NSMutableDictionary* output;
+
+-(NSMutableDictionary*) outputs;
+-(NSMutableDictionary*) inputs;
 
 - (void) lock;
 - (void) unlock;
+
+- (BOOL) process;		// this should be overridden
 
 - (void) succceed;
 - (void) fail;

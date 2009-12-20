@@ -74,8 +74,8 @@
 #pragma mark operation delegate
 -(void)operationSucceeded:(CWMethodOperation*)operation {
 	if ( [operation isKindOfClass:[CWMatrixLUDecOperation class]] ) {
-		_lMatrixView.matrix = [operation.output valueForKey:kLMatrix];
-		_uMatrixView.matrix = [operation.output valueForKey:kUMatrix];
+		_lMatrixView.matrix = [operation.outputs valueForKey:kLMatrix];
+		_uMatrixView.matrix = [operation.outputs valueForKey:kUMatrix];
 
 		NSLog( @"L:\n %@", [_lMatrixView.matrix description] );
 		NSLog( @"U:\n %@", [_uMatrixView.matrix description] );

@@ -8,24 +8,47 @@
 
 #import "CWMethodOperation.h"
 
+@interface CWMethodOperation ( )
+
+
+@property (nonatomic, retain) NSMutableDictionary* outputs;
+@property (nonatomic, retain) NSMutableDictionary* inputs;
+
+@end
 
 @implementation CWMethodOperation
-@synthesize delegate = _delegate;
-@synthesize error = _error;
-@synthesize output = _output;
+@synthesize delegate	= _delegate;
+@synthesize error		= _error;
+@synthesize outputs		= _outputs;
+@synthesize inputs		= _inputs;
 
 - (id) init {
 	self = [super init];
 	if (self != nil) {
 		_locker = [[NSLock alloc] init];
-		self.output = [NSMutableDictionary dictionary];
+		self.outputs =	[NSMutableDictionary dictionary];
+		self.inputs	 =	[NSMutableDictionary dictionary];
 		
 	}
 	return self;
 }
 
 - (void) main {
-	[self succceed];
+	// benchmarking code
+	NSDate* beginDate = [NSDate date];
+	[self.outputs setValue:beginDate forKey:@"time-begin"];
+	
+	BOOL result = [self process];
+	
+	NSDate* endDate = [NSDate date];
+	[self.outputs setValue:endDate forKey:@"time-end"];
+	[self.outputs setValue:[NSNumber numberWithDouble: [beginDate timeIntervalSinceNow] ] forKey:@"time-delta"];
+	
+	result ? [self succceed] : [self fail];
+}
+
+- (BOOL) process {
+	return YES;
 }
 
 - (void) lock {
@@ -41,7 +64,8 @@
 - (void) dealloc {
 	[_locker release];
 	[_error release];
-	[_output release];
+	[_outputs release];
+	[_inputs release];
 	
 	[super dealloc];
 }

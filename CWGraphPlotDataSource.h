@@ -17,6 +17,7 @@
 	NSMutableDictionary*		_outputValues;  // contains dictionary->outputKey
 	NSString*					_outputKey;
 	Class						_resource;
+	
 }
 
 + (id)dataSourceWithResourceClass:	(Class)aClass inputValues:(NSDictionary*)inputs outputKey:(NSString*)aKey;

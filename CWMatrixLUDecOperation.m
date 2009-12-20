@@ -23,13 +23,7 @@ NSString* const kUMatrix = @"u_matrix";
 	return self;
 }
 
-/* For each row k from 1 to n-1 in order,
- 
- column normlisation -- The elements in the colum below the diagonal element A(k,k) are divided by the diagonal element.
- submatrix modification -- The value of each element A(i,j) in the submatrix of A below and to the right of the diagonal element A(k,k), ie, A(k+1:n,k+1:n) is modified by subtracting A(i,k)*A(k,j)
- */
-
-- (void) main {
+- (BOOL) process {
 	unsigned int rank = [_srcMatrix rank];
 	CWMatrix* u_matrix = [[_srcMatrix copy] autorelease]; // A(0) -- U-matrix
 	CWMatrix* l_matrix = [CWMatrix matrixWithRows:rank columns:rank];
@@ -55,10 +49,10 @@ NSString* const kUMatrix = @"u_matrix";
 		[l_matrix setValue:1.0 row:n column:n];
 	}
 	
-	[self.output setValue:u_matrix forKey:@"u_matrix"];
-	[self.output setValue:l_matrix forKey:@"l_matrix"];
+	[self.outputs setValue:u_matrix forKey:@"u_matrix"];
+	[self.outputs setValue:l_matrix forKey:@"l_matrix"];
 	
-	[self succceed];
+	return YES;
 }
 
 - (void) dealloc {
