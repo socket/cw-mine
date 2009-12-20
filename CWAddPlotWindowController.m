@@ -7,6 +7,8 @@
 //
 
 #import "CWAddPlotWindowController.h"
+#import "NSArray+ComboDataSource.h"
+#import "CWMethodDataSource.h"
 
 NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method";
 
@@ -29,6 +31,16 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 		
 	}
 	return self;
+}
+
+- (void) awakeFromNib {
+	[_methodNameComboBox setDataSource:[CWMethodDataSource useableMethodArray]];
+	[_methodNameComboBox setDelegate:self];
+	[_methodNameComboBox reloadData];
+}
+
+- (void)comboBoxSelectionDidChange:(NSNotification *)notification {
+	
 }
 
 - (IBAction)performAdd:(id)sender {

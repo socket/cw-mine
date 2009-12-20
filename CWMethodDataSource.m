@@ -7,8 +7,16 @@
 //
 
 #import "CWMethodDataSource.h"
-
+#import "CWMethodOperation.h"
+#import "CWMatrixLUDecOperation.h"
 
 @implementation CWMethodDataSource
+
++ (NSArray*) useableMethodArray {
+	return [[NSArray arrayWithObjects:
+			 [CWMatrixLUDecOperation class], 
+			 [CWMethodOperation class], nil] 
+			retain];
+}
 
 @end

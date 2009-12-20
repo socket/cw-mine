@@ -37,7 +37,7 @@
 }
 
 - (void) populateMethodClasses {
-	_methodsDataSource = [[NSArray arrayWithObjects:[CWMatrixLUDecOperation class], [CWMethodOperation class], nil] retain];
+	//_methodsDataSource = [[NSArray arrayWithObjects:[CWMatrixLUDecOperation class], [CWMethodOperation class], nil] retain];
 }
 
 #pragma mark -
@@ -46,7 +46,8 @@
 
 - (IBAction) segmentedSelector:(id)sender {
 	if ( [_segmentedControl selectedSegment] == 0 ) {
-		//[self showAddMethodPane:sender];
+		CWAddPlotWindowController* controller = [[CWAddPlotWindowController controller] retain];  // FIXME: MEMORY LEAK
+		[controller showWindow:self];
 	}
 	else if ( [_segmentedControl selectedSegment] == 1 ) {
 		//[self removeMethod:sender];

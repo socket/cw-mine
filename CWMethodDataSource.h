@@ -13,4 +13,6 @@
 
 }
 
++ (NSArray*) useableMethodArray;
+
 @end
