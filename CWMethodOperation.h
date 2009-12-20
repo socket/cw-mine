@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CWMethodKeys.h"
 
 @class CWMethodOperation;
 

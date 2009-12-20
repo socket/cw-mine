@@ -8,24 +8,20 @@
 
 #import "CWMatrixLUDecOperation.h"
 
-NSString* const kLMatrix = @"l_matrix";
-NSString* const kUMatrix = @"u_matrix";
-
 @implementation CWMatrixLUDecOperation
-@synthesize srcMatrix = _srcMatrix;
 
 // Computing the LU decomposition using either of these algorithms requires 2n^3 / 3 floating point operations, 
 // ignoring lower order terms. 
 - (id) initWithMatrix:(CWMatrix*)matrix {
 	if ( self = [self init] ) {
-		self.srcMatrix = matrix;
+		[_inputs setValue:matrix forKey:kSourceMatrix];
 	}
 	return self;
 }
 
 - (BOOL) process {
-	unsigned int rank = [_srcMatrix rank];
-	CWMatrix* u_matrix = [[_srcMatrix copy] autorelease]; // A(0) -- U-matrix
+	unsigned int rank = [self.srcMatrix rank];
+	CWMatrix* u_matrix = [[self.srcMatrix  copy] autorelease]; // A(0) -- U-matrix
 	CWMatrix* l_matrix = [CWMatrix matrixWithRows:rank columns:rank];
 	
 	// get L- and U- matrices
@@ -49,14 +45,17 @@ NSString* const kUMatrix = @"u_matrix";
 		[l_matrix setValue:1.0 row:n column:n];
 	}
 	
-	[self.outputs setValue:u_matrix forKey:@"u_matrix"];
-	[self.outputs setValue:l_matrix forKey:@"l_matrix"];
+	[self.outputs setValue:u_matrix forKey:kUMatrix];
+	[self.outputs setValue:l_matrix forKey:kLMatrix];
 	
 	return YES;
 }
 
+-(CWMatrix*) srcMatrix {
+	return [_inputs valueForKey:kSourceMatrix];
+}
+
 - (void) dealloc {
-	[_srcMatrix release];
 	[super dealloc];
 }
 

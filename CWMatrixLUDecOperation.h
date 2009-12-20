@@ -10,14 +10,10 @@
 #import "CWMethodOperation.h"
 #import "CWMatrix.h"
 
-extern NSString* const kLMatrix;
-extern NSString* const kUMatrix;
-
 @interface CWMatrixLUDecOperation : CWMethodOperation {
-	CWMatrix*		_srcMatrix;
 }
 
-@property (nonatomic, retain) CWMatrix* srcMatrix;
+-(CWMatrix*) srcMatrix;
 
 - (id) initWithMatrix:(CWMatrix*)matrix;
 

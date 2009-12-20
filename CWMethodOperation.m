@@ -36,13 +36,13 @@
 - (void) main {
 	// benchmarking code
 	NSDate* beginDate = [NSDate date];
-	[self.outputs setValue:beginDate forKey:@"time-begin"];
+	[self.outputs setValue:beginDate forKey:kMethodDateBegin];
 	
 	BOOL result = [self process];
 	
 	NSDate* endDate = [NSDate date];
-	[self.outputs setValue:endDate forKey:@"time-end"];
-	[self.outputs setValue:[NSNumber numberWithDouble: [beginDate timeIntervalSinceNow] ] forKey:@"time-delta"];
+	[self.outputs setValue:endDate forKey:kMethodDateEnd];
+	[self.outputs setValue:[NSNumber numberWithDouble: [beginDate timeIntervalSinceNow] ] forKey:kMethodElapsed];
 	
 	result ? [self succceed] : [self fail];
 }
