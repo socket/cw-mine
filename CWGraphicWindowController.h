@@ -18,7 +18,7 @@
 	NSButton*				_addButton;
 	NSButton*				_removeButton;
 	
-	NSArray*				_methods;					// list of all available methods
+	NSArray*				_methodsDataSource;					// list of all available methods
 	NSMutableArray*			_methodsSelected;			// list of current methods
 }
 

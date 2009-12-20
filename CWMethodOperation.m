@@ -79,4 +79,8 @@
 	[self.delegate operationFailed:self];
 }
 
++ (NSString*) description {
+	return @"Generic method operation";
+}
+
 @end

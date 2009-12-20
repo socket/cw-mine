@@ -19,6 +19,7 @@
 		B83B6B3810DE7EA8009F6373 /* CWMethodExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6B3710DE7EA8009F6373 /* CWMethodExecutor.m */; };
 		B83B6B6C10DE86AB009F6373 /* CWGraphPlotDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6B6B10DE86AB009F6373 /* CWGraphPlotDataSource.m */; };
 		B83B6C1110DEA8F2009F6373 /* CWMethodKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6C1010DEA8F2009F6373 /* CWMethodKeys.m */; };
+		B83B6C3A10DEB22B009F6373 /* NSArray+TableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6C3910DEB22B009F6373 /* NSArray+TableDataSource.m */; };
 		B86661E510BEFB31008E8942 /* CWMatrixInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */; };
 		B86661EA10BEFB9C008E8942 /* CWCourseWorkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */; };
 		B86661EB10BEFB9C008E8942 /* CWMatrixInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E910BEFB9C008E8942 /* CWMatrixInputController.m */; };
@@ -61,6 +62,8 @@
 		B83B6B6B10DE86AB009F6373 /* CWGraphPlotDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphPlotDataSource.m; sourceTree = "<group>"; };
 		B83B6C0F10DEA8F2009F6373 /* CWMethodKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethodKeys.h; sourceTree = "<group>"; };
 		B83B6C1010DEA8F2009F6373 /* CWMethodKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethodKeys.m; sourceTree = "<group>"; };
+		B83B6C3810DEB22B009F6373 /* NSArray+TableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TableDataSource.h"; sourceTree = "<group>"; };
+		B83B6C3910DEB22B009F6373 /* NSArray+TableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TableDataSource.m"; sourceTree = "<group>"; };
 		B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CWMatrixInputController.xib; path = Resources/CWMatrixInputController.xib; sourceTree = "<group>"; };
 		B86661E610BEFB9C008E8942 /* CWCourseWorkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWCourseWorkAppDelegate.h; path = Classes/CWCourseWorkAppDelegate.h; sourceTree = "<group>"; };
 		B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCourseWorkAppDelegate.m; path = Classes/CWCourseWorkAppDelegate.m; sourceTree = "<group>"; };
@@ -107,7 +110,7 @@
 				B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */,
 				B86661C410BEF870008E8942 /* Drawing */,
 				B86661C310BEF863008E8942 /* Model */,
-				B86661C210BEF85A008E8942 /* Windows */,
+				B86661C210BEF85A008E8942 /* Controllers */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -182,7 +185,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B86661C210BEF85A008E8942 /* Windows */ = {
+		B83B6C3710DEB1C7009F6373 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B866625510BF1B2D008E8942 /* CWMatrixDataSource.h */,
+				B866625610BF1B2D008E8942 /* CWMatrixDataSource.m */,
+				B81B1A5C10CFB5AA00605363 /* CWMatrixEditableDataSource.h */,
+				B81B1A5D10CFB5AA00605363 /* CWMatrixEditableDataSource.m */,
+				B83B6B6A10DE86AB009F6373 /* CWGraphPlotDataSource.h */,
+				B83B6B6B10DE86AB009F6373 /* CWGraphPlotDataSource.m */,
+				B8C3A21510C565CA00BE164C /* CWMethodDataSource.h */,
+				B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */,
+				B83B6C3810DEB22B009F6373 /* NSArray+TableDataSource.h */,
+				B83B6C3910DEB22B009F6373 /* NSArray+TableDataSource.m */,
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		B86661C210BEF85A008E8942 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B86661E810BEFB9C008E8942 /* CWMatrixInputController.h */,
@@ -196,12 +216,13 @@
 				B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */,
 				B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */,
 			);
-			name = Windows;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		B86661C310BEF863008E8942 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B83B6C3710DEB1C7009F6373 /* Data Sources */,
 				B8C3A20310C5646100BE164C /* Method */,
 				B8C3A20210C5645700BE164C /* Matrix */,
 			);
@@ -215,8 +236,6 @@
 				B8C3A21010C5656800BE164C /* CWGraphPlotView.m */,
 				B8C3A22010C5695800BE164C /* CWGraphPlotViewAxis.h */,
 				B8C3A22110C5695800BE164C /* CWGraphPlotViewAxis.m */,
-				B83B6B6A10DE86AB009F6373 /* CWGraphPlotDataSource.h */,
-				B83B6B6B10DE86AB009F6373 /* CWGraphPlotDataSource.m */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -226,10 +245,6 @@
 			children = (
 				B866623C10BF0CAC008E8942 /* CWMatrix.h */,
 				B866623D10BF0CAC008E8942 /* CWMatrix.m */,
-				B866625510BF1B2D008E8942 /* CWMatrixDataSource.h */,
-				B866625610BF1B2D008E8942 /* CWMatrixDataSource.m */,
-				B81B1A5C10CFB5AA00605363 /* CWMatrixEditableDataSource.h */,
-				B81B1A5D10CFB5AA00605363 /* CWMatrixEditableDataSource.m */,
 				B818960610BF4D7C00502F39 /* CWMatrixInitializer.h */,
 				B818960710BF4D7C00502F39 /* CWMatrixInitializer.m */,
 			);
@@ -241,8 +256,6 @@
 			children = (
 				B8C3A21210C565A600BE164C /* CWMethodOperation.h */,
 				B8C3A21310C565A600BE164C /* CWMethodOperation.m */,
-				B8C3A21510C565CA00BE164C /* CWMethodDataSource.h */,
-				B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */,
 				B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */,
 				B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */,
 				B83B6B3610DE7EA8009F6373 /* CWMethodExecutor.h */,
@@ -331,6 +344,7 @@
 				B83B6B3810DE7EA8009F6373 /* CWMethodExecutor.m in Sources */,
 				B83B6B6C10DE86AB009F6373 /* CWGraphPlotDataSource.m in Sources */,
 				B83B6C1110DEA8F2009F6373 /* CWMethodKeys.m in Sources */,
+				B83B6C3A10DEB22B009F6373 /* NSArray+TableDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

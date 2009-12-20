@@ -59,4 +59,8 @@
 	[super dealloc];
 }
 
++ (NSString*) description {
+	return @"LU-decomposition";
+}
+
 @end

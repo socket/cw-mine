@@ -45,4 +45,7 @@
 
 - (void) succceed;
 - (void) fail;
+
++ (NSString*) description;
+
 @end

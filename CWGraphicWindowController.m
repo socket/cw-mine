@@ -7,6 +7,9 @@
 //
 
 #import "CWGraphicWindowController.h"
+#import "CWMatrixLUDecOperation.h"
+#import "CWMethodOperation.h"
+#import "NSArray+TableDataSource.h"
 
 @interface CWGraphicWindowController ( )
 - (void) populateMethodClasses;
@@ -21,7 +24,7 @@
 
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
-		
+		[self populateMethodClasses];
 	}
 	return self;
 }
@@ -31,7 +34,7 @@
 }
 
 - (void) populateMethodClasses {
-	
+	_methodsDataSource = [[NSArray arrayWithObjects:[CWMatrixLUDecOperation class], [CWMethodOperation class], nil] retain];
 }
 
 #pragma mark -
