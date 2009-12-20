@@ -10,7 +10,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		B802F2C510DA71BA0018F124 /* CWMatrixLUDecOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */; };
+		B802F2C510DA71BA0018F124 /* CWMatrixLUDecomposition.m in Sources */ = {isa = PBXBuildFile; fileRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecomposition.m */; };
 		B818960810BF4D7C00502F39 /* CWMatrixInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B818960710BF4D7C00502F39 /* CWMatrixInitializer.m */; };
 		B81B1A5E10CFB5AA00605363 /* CWMatrixEditableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A5D10CFB5AA00605363 /* CWMatrixEditableDataSource.m */; };
 		B81B1A7810CFB77F00605363 /* CWSolutionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */; };
@@ -22,9 +22,8 @@
 		B866623E10BF0CAC008E8942 /* CWMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = B866623D10BF0CAC008E8942 /* CWMatrix.m */; };
 		B866625710BF1B2D008E8942 /* CWMatrixDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B866625610BF1B2D008E8942 /* CWMatrixDataSource.m */; };
 		B866625A10BF1FB6008E8942 /* CWMatrixTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B866625910BF1FB6008E8942 /* CWMatrixTableView.m */; };
-		B8777C9510DE173B00DE59B5 /* CWDecompositionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */; };
 		B8C3A21110C5656800BE164C /* CWGraphicPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */; };
-		B8C3A21410C565A600BE164C /* CWMethodOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21310C565A600BE164C /* CWMethodOperation.m */; };
+		B8C3A21410C565A600BE164C /* CWMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21310C565A600BE164C /* CWMethod.m */; };
 		B8C3A21710C565CA00BE164C /* CWMethodDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */; };
 		B8C3A22210C5695800BE164C /* CWGraphicPlotViewAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A22110C5695800BE164C /* CWGraphicPlotViewAxis.m */; };
 		B8F2FF7B10C5B3230058F307 /* CWGraphicWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F2FF7A10C5B3230058F307 /* CWGraphicWindowController.xib */; };
@@ -41,8 +40,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* MMCourseWork-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MMCourseWork-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MMCourseWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMCourseWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixLUDecOperation.h; sourceTree = "<group>"; };
-		B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixLUDecOperation.m; sourceTree = "<group>"; };
+		B802F2C310DA71BA0018F124 /* CWMatrixLUDecomposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixLUDecomposition.h; sourceTree = "<group>"; };
+		B802F2C410DA71BA0018F124 /* CWMatrixLUDecomposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixLUDecomposition.m; sourceTree = "<group>"; };
 		B818960610BF4D7C00502F39 /* CWMatrixInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixInitializer.h; sourceTree = "<group>"; };
 		B818960710BF4D7C00502F39 /* CWMatrixInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixInitializer.m; sourceTree = "<group>"; };
 		B81B1A5C10CFB5AA00605363 /* CWMatrixEditableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixEditableDataSource.h; sourceTree = "<group>"; };
@@ -62,12 +61,10 @@
 		B866625610BF1B2D008E8942 /* CWMatrixDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixDataSource.m; sourceTree = "<group>"; };
 		B866625810BF1FB6008E8942 /* CWMatrixTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixTableView.h; sourceTree = "<group>"; };
 		B866625910BF1FB6008E8942 /* CWMatrixTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixTableView.m; sourceTree = "<group>"; };
-		B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWDecompositionController.h; sourceTree = "<group>"; };
-		B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWDecompositionController.m; sourceTree = "<group>"; };
 		B8C3A20F10C5656800BE164C /* CWGraphicPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphicPlotView.h; sourceTree = "<group>"; };
 		B8C3A21010C5656800BE164C /* CWGraphicPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphicPlotView.m; sourceTree = "<group>"; };
-		B8C3A21210C565A600BE164C /* CWMethodOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethodOperation.h; sourceTree = "<group>"; };
-		B8C3A21310C565A600BE164C /* CWMethodOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethodOperation.m; sourceTree = "<group>"; };
+		B8C3A21210C565A600BE164C /* CWMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethod.h; sourceTree = "<group>"; };
+		B8C3A21310C565A600BE164C /* CWMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethod.m; sourceTree = "<group>"; };
 		B8C3A21510C565CA00BE164C /* CWMethodDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethodDataSource.h; sourceTree = "<group>"; };
 		B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMethodDataSource.m; sourceTree = "<group>"; };
 		B8C3A22010C5695800BE164C /* CWGraphicPlotViewAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphicPlotViewAxis.h; sourceTree = "<group>"; };
@@ -181,8 +178,6 @@
 				B8F2FF7D10C5B33B0058F307 /* CWGraphicWindowController.m */,
 				B81B1A7610CFB77F00605363 /* CWSolutionWindowController.h */,
 				B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */,
-				B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */,
-				B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */,
 			);
 			name = Windows;
 			sourceTree = "<group>";
@@ -225,12 +220,12 @@
 		B8C3A20310C5646100BE164C /* Method */ = {
 			isa = PBXGroup;
 			children = (
-				B8C3A21210C565A600BE164C /* CWMethodOperation.h */,
-				B8C3A21310C565A600BE164C /* CWMethodOperation.m */,
+				B8C3A21210C565A600BE164C /* CWMethod.h */,
+				B8C3A21310C565A600BE164C /* CWMethod.m */,
 				B8C3A21510C565CA00BE164C /* CWMethodDataSource.h */,
 				B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */,
-				B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */,
-				B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */,
+				B802F2C310DA71BA0018F124 /* CWMatrixLUDecomposition.h */,
+				B802F2C410DA71BA0018F124 /* CWMatrixLUDecomposition.m */,
 			);
 			name = Method;
 			sourceTree = "<group>";
@@ -301,14 +296,13 @@
 				B866625A10BF1FB6008E8942 /* CWMatrixTableView.m in Sources */,
 				B818960810BF4D7C00502F39 /* CWMatrixInitializer.m in Sources */,
 				B8C3A21110C5656800BE164C /* CWGraphicPlotView.m in Sources */,
-				B8C3A21410C565A600BE164C /* CWMethodOperation.m in Sources */,
+				B8C3A21410C565A600BE164C /* CWMethod.m in Sources */,
 				B8C3A21710C565CA00BE164C /* CWMethodDataSource.m in Sources */,
 				B8C3A22210C5695800BE164C /* CWGraphicPlotViewAxis.m in Sources */,
 				B8F2FF7E10C5B33B0058F307 /* CWGraphicWindowController.m in Sources */,
 				B81B1A5E10CFB5AA00605363 /* CWMatrixEditableDataSource.m in Sources */,
 				B81B1A7810CFB77F00605363 /* CWSolutionWindowController.m in Sources */,
-				B802F2C510DA71BA0018F124 /* CWMatrixLUDecOperation.m in Sources */,
-				B8777C9510DE173B00DE59B5 /* CWDecompositionController.m in Sources */,
+				B802F2C510DA71BA0018F124 /* CWMatrixLUDecomposition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

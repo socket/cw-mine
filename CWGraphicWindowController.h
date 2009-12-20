@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "CWGraphicPlotView.h"
 #import "CWMethodDataSource.h"
-#import "CWMethod.h"
+#import "CWMethodOperation.h"
 
 @interface CWGraphicWindowController : NSWindowController<NSTableViewDelegate> {
 	@private

@@ -9,7 +9,7 @@
 #import "CWCourseWorkAppDelegate.h"
 
 #import "CWMatrix.h"
-#import "CWMatrixLUDecOperation.h"
+#import "CWMatrixLUDecomposition.h"
 #import "CWMatrixInitializer.h"
 
 @implementation CWCourseWorkAppDelegate
@@ -23,7 +23,7 @@
 	
 	// Test code
 	CWMatrix* matrix = [CWMatrixInitializer randomMatrixWithRank:3]; //[CWMatrixInitializer matrixWithRank:5 qCoeff:0.994];
-	CWMatrixLUDecOperation* ludec = [[[CWMatrixLUDecOperation alloc] init] autorelease];
+	CWMatrixLUDecomposition* ludec = [[[CWMatrixLUDecomposition alloc] init] autorelease];
 	ludec.srcMatrix = matrix;
 	/*
 	[matrix setElementValue:[NSNumber numberWithInt:4] atRow:0 andColumn:0];
