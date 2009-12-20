@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
+			<integer value="38"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -46,6 +46,7 @@
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
+				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="87682794">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -60,7 +61,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="602233251">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Входная матрица (Ax=)</string>
+								<string key="NSContents">Input Matrix (Ax=)</string>
 								<object class="NSFont" key="NSSupport" id="66111646">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">13</double>
@@ -96,7 +97,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="372733232">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Столбец B</string>
+								<string key="NSContents">Column B</string>
 								<reference key="NSSupport" ref="66111646"/>
 								<reference key="NSControlView" ref="419133792"/>
 								<reference key="NSBackgroundColor" ref="345264711"/>
@@ -106,13 +107,13 @@
 						<object class="NSTextField" id="62541103">
 							<reference key="NSNextResponder" ref="87682794"/>
 							<int key="NSvFlags">265</int>
-							<string key="NSFrame">{{471, 482}, {80, 17}}</string>
+							<string key="NSFrame">{{476, 482}, {80, 17}}</string>
 							<reference key="NSSuperview" ref="87682794"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="745314720">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Решение</string>
+								<string key="NSContents">Solution</string>
 								<reference key="NSSupport" ref="66111646"/>
 								<reference key="NSControlView" ref="62541103"/>
 								<reference key="NSBackgroundColor" ref="345264711"/>
@@ -138,7 +139,7 @@
 											<object class="NSTextFieldCell" key="NSCell" id="963971756">
 												<int key="NSCellFlags">68288064</int>
 												<int key="NSCellFlags2">272630784</int>
-												<string key="NSContents">Ранг матрицы:</string>
+												<string key="NSContents">Matrix rank:</string>
 												<reference key="NSSupport" ref="66111646"/>
 												<reference key="NSControlView" ref="326537821"/>
 												<reference key="NSBackgroundColor" ref="345264711"/>
@@ -154,7 +155,7 @@
 											<object class="NSTextFieldCell" key="NSCell" id="708355802">
 												<int key="NSCellFlags">68288064</int>
 												<int key="NSCellFlags2">272630784</int>
-												<string key="NSContents">Метод:</string>
+												<string key="NSContents">Method:</string>
 												<reference key="NSSupport" ref="66111646"/>
 												<reference key="NSControlView" ref="353197012"/>
 												<reference key="NSBackgroundColor" ref="345264711"/>
@@ -226,7 +227,7 @@
 												<int key="NSCellFlags2">272630784</int>
 												<string key="NSContents"/>
 												<reference key="NSSupport" ref="66111646"/>
-												<string key="NSPlaceholderString">Выберите метод</string>
+												<string key="NSPlaceholderString">Pick a method</string>
 												<reference key="NSControlView" ref="556556843"/>
 												<bool key="NSDrawsBackground">YES</bool>
 												<reference key="NSBackgroundColor" ref="93539059"/>
@@ -235,14 +236,14 @@
 												<bool key="NSHasVerticalScroller">YES</bool>
 												<object class="NSMutableArray" key="NSPopUpListData">
 													<bool key="EncodedWithXMLCoder">YES</bool>
-													<string>LR Разложение</string>
-													<string>QR Разложение</string>
+													<string>QR</string>
+													<string>LR</string>
 												</object>
 												<reference key="NSDelegate" ref="556556843"/>
 												<object class="NSComboTableView" key="NSTableView" id="525821747">
 													<reference key="NSNextResponder"/>
 													<int key="NSvFlags">274</int>
-													<string key="NSFrameSize">{13, 21}</string>
+													<string key="NSFrameSize">{13, 42}</string>
 													<reference key="NSSuperview"/>
 													<reference key="NSWindow"/>
 													<bool key="NSEnabled">YES</bool>
@@ -324,7 +325,7 @@
 							<object class="NSTextFieldCell" key="NSTitleCell">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">0</int>
-								<string key="NSContents">Параметры расчета</string>
+								<string key="NSContents">Evaluation parameters</string>
 								<object class="NSFont" key="NSSupport" id="26">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">11</double>
@@ -351,7 +352,7 @@
 							<object class="NSButtonCell" key="NSCell" id="845855888">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Решить систему</string>
+								<string key="NSContents">Evaluate system</string>
 								<reference key="NSSupport" ref="66111646"/>
 								<reference key="NSControlView" ref="540358377"/>
 								<int key="NSButtonFlags">-2038284033</int>
@@ -971,7 +972,6 @@
 						<reference key="object" ref="87682794"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="62541103"/>
 							<reference ref="419133792"/>
 							<reference ref="540358377"/>
 							<reference ref="347895631"/>
@@ -980,6 +980,7 @@
 							<reference ref="559269169"/>
 							<reference ref="537042172"/>
 							<reference ref="514645640"/>
+							<reference ref="62541103"/>
 						</object>
 						<reference key="parent" ref="732457344"/>
 					</object>

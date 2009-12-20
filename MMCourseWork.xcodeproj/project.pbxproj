@@ -15,6 +15,7 @@
 		B81B1A5E10CFB5AA00605363 /* CWMatrixEditableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A5D10CFB5AA00605363 /* CWMatrixEditableDataSource.m */; };
 		B81B1A7810CFB77F00605363 /* CWSolutionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */; };
 		B81B1A9110CFBCF900605363 /* CWSolutionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B81B1A9010CFBCF900605363 /* CWSolutionWindowController.xib */; };
+		B83B69A310DE2AFD009F6373 /* CWDecompositionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */; };
 		B86661E510BEFB31008E8942 /* CWMatrixInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */; };
 		B86661EA10BEFB9C008E8942 /* CWCourseWorkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */; };
 		B86661EB10BEFB9C008E8942 /* CWMatrixInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E910BEFB9C008E8942 /* CWMatrixInputController.m */; };
@@ -50,6 +51,7 @@
 		B81B1A7610CFB77F00605363 /* CWSolutionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWSolutionWindowController.h; sourceTree = "<group>"; };
 		B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWSolutionWindowController.m; sourceTree = "<group>"; };
 		B81B1A9010CFBCF900605363 /* CWSolutionWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CWSolutionWindowController.xib; sourceTree = "<group>"; };
+		B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CWDecompositionController.xib; sourceTree = "<group>"; };
 		B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CWMatrixInputController.xib; path = Resources/CWMatrixInputController.xib; sourceTree = "<group>"; };
 		B86661E610BEFB9C008E8942 /* CWCourseWorkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWCourseWorkAppDelegate.h; path = Classes/CWCourseWorkAppDelegate.h; sourceTree = "<group>"; };
 		B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCourseWorkAppDelegate.m; path = Classes/CWCourseWorkAppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B83B69A210DE2AFD009F6373 /* CWDecompositionController.xib */,
 				B86661F110BEFBE3008E8942 /* MainMenu.xib */,
 				8D1107310486CEB800E47090 /* MMCourseWork-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -283,6 +286,7 @@
 				B86661F210BEFBE3008E8942 /* MainMenu.xib in Resources */,
 				B8F2FF7B10C5B3230058F307 /* CWGraphicWindowController.xib in Resources */,
 				B81B1A9110CFBCF900605363 /* CWSolutionWindowController.xib in Resources */,
+				B83B69A310DE2AFD009F6373 /* CWDecompositionController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
