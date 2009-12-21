@@ -36,6 +36,7 @@
 @property (nonatomic, retain) NSError*	error;
 
 + (NSArray*) outputKeys;
++ (NSArray*) inputKeys;
 
 -(NSMutableDictionary*) outputs;
 -(NSMutableDictionary*) inputs;

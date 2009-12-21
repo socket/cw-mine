@@ -87,4 +87,8 @@
 	return [NSArray arrayWithObjects:kMethodElapsed, kMethodDateBegin, kMethodDateEnd, nil];
 }
 
++ (NSArray*) inputKeys {
+	return [NSArray array];
+}
+
 @end

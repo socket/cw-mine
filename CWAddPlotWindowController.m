@@ -17,7 +17,7 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 @synthesize methodAddButton = _methodAddButton;
 @synthesize methodNameComboBox = _methodNameComboBox, methodKeyComboBox = _methodKeyComboBox;
 @synthesize methodColor = _methodColor, methodPrecision = _methodPrecision;
-
+@synthesize methodInputKeyComboBox = _methodInputKeyComboBox;
 
 + controller {
 	id controller = [[[self class] alloc] initWithWindowNibName:@"CWAddPlotWindowController"];
@@ -52,13 +52,15 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 - (IBAction)performAdd:(id)sender {
 	Class selClass = [[CWMethodDataSource useableMethodArray] objectAtIndex:[_methodNameComboBox indexOfSelectedItem]];
 	NSArray* keys = [[selClass outputKeys] retain];
+	NSArray* inputKeys = [[selClass inputKeys] retain];
+	
 	NSString* selKey = [keys objectAtIndex: [_methodKeyComboBox indexOfSelectedItem]];
 	[keys release];
 	
-	NSDictionary* userInfo = [NSDictionary dictionary];
 	
+	
+	NSDictionary* userInfo = [NSDictionary dictionary];	
 	[[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAddPlotMethod object:self userInfo:userInfo];
-	
 	[self.window close];
 }
 
@@ -69,6 +71,7 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	self.methodColor = nil;
 	self.methodKeyComboBox = nil;
 	self.methodPrecision = nil;
+	self.methodInputKeyComboBox = nil;
 	
 	[super dealloc];
 }

@@ -15,6 +15,7 @@ extern NSString* const kNotificationAddPlotMethod;
 	NSButton*				_methodAddButton;
 	NSComboBox*				_methodNameComboBox;
 	NSComboBox*				_methodKeyComboBox;
+	NSComboBox*				_methodInputKeyComboBox;
 	NSColorWell*			_methodColor;
 	NSTextField*			_methodPrecision;
 }
@@ -26,6 +27,8 @@ extern NSString* const kNotificationAddPlotMethod;
 @property (nonatomic, retain) IBOutlet NSButton*			methodAddButton;
 @property (nonatomic, retain) IBOutlet NSComboBox*			methodNameComboBox;
 @property (nonatomic, retain) IBOutlet NSComboBox*			methodKeyComboBox;
+@property (nonatomic, retain) IBOutlet NSComboBox*			methodInputKeyComboBox;
+
 @property (nonatomic, retain) IBOutlet NSColorWell*			methodColor;
 @property (nonatomic, retain) IBOutlet NSTextField*			methodPrecision;
 
