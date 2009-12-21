@@ -14,4 +14,5 @@ NSString* const kUMatrix			= @"u-matrix";
 NSString* const kMethodDateBegin	= @"date-begin";
 NSString* const kMethodDateEnd		= @"date-end";
 NSString* const kMethodElapsed		= @"elapsed";
-
+NSString* const kMethodBenchmark    = @"benchmark";
+NSString* const kMatrixRank			= @"matrix-rank";

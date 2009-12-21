@@ -55,6 +55,10 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	NSString* selKey = [keys objectAtIndex: [_methodKeyComboBox indexOfSelectedItem]];
 	[keys release];
 	
+	NSDictionary* userInfo = [NSDictionary dictionary];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAddPlotMethod object:self userInfo:userInfo];
+	
 	[self.window close];
 }
 

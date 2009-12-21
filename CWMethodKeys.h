@@ -14,3 +14,5 @@ extern NSString* const kSourceMatrix;
 extern NSString* const kMethodDateBegin;
 extern NSString* const kMethodDateEnd;
 extern NSString* const kMethodElapsed;
+extern NSString* const kMatrixRank;
+extern NSString* const kMethodBenchmark;

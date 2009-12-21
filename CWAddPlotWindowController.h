@@ -12,7 +12,7 @@ extern NSString* const kNotificationAddPlotMethod;
 
 @interface CWAddPlotWindowController : NSWindowController<NSComboBoxDelegate> {
 	// add/edit method pane
-	NSButton*					_methodAddButton;
+	NSButton*				_methodAddButton;
 	NSComboBox*				_methodNameComboBox;
 	NSComboBox*				_methodKeyComboBox;
 	NSColorWell*			_methodColor;
