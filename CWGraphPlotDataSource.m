@@ -23,6 +23,9 @@
 @synthesize outputKey = _outputKey;
 @synthesize enabled = _enabled;
 @synthesize resource = _resource;
+@synthesize inputKey = _inputKey;
+
+@synthesize rangeBegin = _rangeBegin, rangeEnd = _rangeEnd, rangeStep = _rangeStep;
 
 #pragma mark -
 + (NSString*) keyForArgument:(double)arg {
@@ -42,6 +45,8 @@
 		self.inputValues = [NSMutableDictionary dictionaryWithDictionary:inputs];
 		self.outputValues = [NSMutableDictionary dictionary];
 		self.outputKey =  aKey;
+		
+		_locker = [[NSLock alloc] init];
 	}
 	return self;
 }
@@ -59,7 +64,34 @@
 }
 
 - (void)prepareDataInRangeBegin:(double)argBegin rangeEnd:(double)argEnd delegate:(id<CWOperationDelegate>)delegate {
+	_rangeBegin = argBegin;
+	_rangeEnd = argEnd;
+
+	if ( _rangeEnd < _rangeBegin ) {
+		_rangeEnd = argBegin;
+		_rangeBegin = argEnd;
+	}
 	
+	if ( _rangeStep == 0 ) {
+		_rangeStep = (_rangeEnd - _rangeBegin) / 1000.0f;
+	}
+	
+	_prepareDelegate = delegate; // we'll call him when everything's done
+	
+	_operationsDone = 0;
+	_operationsTotal = 0;
+	
+	[_outputValues removeAllObjects];
+	
+	
+	
+}
+
+- (double) progressPercent {
+	if ( _operationsTotal == 0 )
+		return 0;
+	
+	return _operationsTotal / (_operationsDone * 1.0);
 }
 
 - (BOOL) canProvideDataForArgument:(double)arg {
@@ -70,7 +102,22 @@
 #pragma mark operation delegate
 
 - (void) operationSucceeded:(CWMethodOperation *)operation {
-	
+	if ( [operation isKindOfClass:_resource] ) {
+		[_locker lock];
+		@try {
+			NSString* key = [[self class] keyForArgument:[[operation.inputs valueForKey:_inputKey] doubleValue]];
+			[_outputValues setValue:operation.outputs forKey:key];
+			_operationsDone++;
+		}
+		@finally {
+			[_locker unlock];
+		}
+	}
+	else {
+		// everything done?
+		
+	}
+
 }
 
 - (void) operationFailed:(CWMethodOperation *)operation {
@@ -79,8 +126,11 @@
 
 #pragma mark -
 - (void) dealloc {
+	[_locker release];
+	
 	self.outputKey = nil;
 	self.inputValues = nil;
+	self.inputKey = nil;
 	self.outputValues = nil;
 	
 	[super dealloc];
