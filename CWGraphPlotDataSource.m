@@ -7,6 +7,7 @@
 //
 
 #import "CWGraphPlotDataSource.h"
+#import "CWMethodExecutor.h"
 
 @interface CWGraphPlotDataSource ( )
 
@@ -54,13 +55,15 @@
 #pragma mark -
 #pragma mark graph delegate
 - (double) graphicPlotView:(CWGraphPlotView*)plotView valueForArgument:(double)arg {
-	if ( [self canProvideDataForArgument:arg] ) {
-		return [[_outputValues valueForKey:[CWGraphPlotDataSource keyForArgument:arg]] doubleValue];
+	id value = [_outputValues valueForKey:[CWGraphPlotDataSource keyForArgument:arg]];
+	if ( value ) {
+		return [value doubleValue];
 	}
 	else {
-		return 0.0;
+		// provide some extrapolation? :)
+		
+		return 0;
 	}
-
 }
 
 - (void)prepareDataInRangeBegin:(double)argBegin rangeEnd:(double)argEnd delegate:(id<CWOperationDelegate>)delegate {
@@ -83,8 +86,19 @@
 	
 	[_outputValues removeAllObjects];
 	
+	CWMethodOperation* generalOperation = [[CWMethodOperation alloc] init];
+	for (double fval =_rangeBegin; fval <= _rangeEnd; fval += _rangeStep) {
+		_operationsTotal++;
+		
+		CWMethodOperation* calcOperation = [[_resource alloc] init];
+		[calcOperation.inputs addEntriesFromDictionary:_inputValues];
+		[calcOperation.inputs setValue:[NSNumber numberWithDouble:fval] forKey:_inputKey];
+		
+		[generalOperation addDependency:calcOperation];
+		[[CWMethodExecutor sharedInstance] addOperation:calcOperation];
+	}
 	
-	
+	[[CWMethodExecutor sharedInstance] addOperation:generalOperation];
 }
 
 - (double) progressPercent {
@@ -114,8 +128,7 @@
 		}
 	}
 	else {
-		// everything done?
-		
+		[_prepareDelegate operationSucceeded:operation];
 	}
 
 }
