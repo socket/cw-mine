@@ -11,23 +11,26 @@
 #import "CWGraphPlotView.h"
 
 @interface CWGraphPlotDataSource : NSObject<CWOperationDelegate,
-											CWGraphPlotViewDelegate> 
+											CWGraphPlotViewDataSource> 
 {
+	@private
+	
 	NSMutableDictionary*		_inputValues;
 	NSMutableDictionary*		_outputValues;  // contains dictionary->outputKey
 	NSString*					_outputKey;
 	Class						_resource;
+	BOOL						_enabled;
 	
 }
 
-+ (id)dataSourceWithResourceClass:	(Class)aClass inputValues:(NSDictionary*)inputs outputKey:(NSString*)aKey;
-- (id)initWithResourceClass:		(Class)aClass inputValues:(NSDictionary*)inputs outputKey:(NSString*)aKey;
++ (id) dataSourceWithResourceClass:	(Class)aClass inputValues:(NSDictionary*)inputs outputKey:(NSString*)aKey;
+- (id) initWithResourceClass:		(Class)aClass inputValues:(NSDictionary*)inputs outputKey:(NSString*)aKey;
 
-- (void)prepareDataInRangeBegin:(double)argBegin rangeEnd:(double)argEnd delegate:(id<CWOperationDelegate>)delegate;
+- (BOOL) canProvideDataForArgument:(double)arg;
+- (void) prepareDataInRangeBegin:(double)argBegin rangeEnd:(double)argEnd delegate:(id<CWOperationDelegate>)delegate;
 
 @property (nonatomic, copy)		NSString*				outputKey;
-@property (nonatomic, readonly)	NSMutableDictionary*	outputValues;
-@property (nonatomic, readonly)	NSMutableDictionary*	inputValues;
 @property (nonatomic, readonly) Class					resource;
+@property (nonatomic, assign)   BOOL					enabled;
 
 @end

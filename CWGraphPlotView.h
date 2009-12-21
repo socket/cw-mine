@@ -24,7 +24,6 @@
 @optional
 - (void)	graphicPlotView:(CWGraphPlotView*) didSelectGraphicWithDataSource:(id<CWGraphPlotViewDataSource>)dataSource;
 - (NSColor*) graphicPlotView:(CWGraphPlotView*) colorForDataSource:(id<CWGraphPlotViewDataSource>)dataSource;
-
 @end
 
 
