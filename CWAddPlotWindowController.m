@@ -36,14 +36,25 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	[_methodNameComboBox setDataSource:[CWMethodDataSource useableMethodArray]];
 	[_methodNameComboBox setDelegate:self];
 	[_methodNameComboBox reloadData];
+	[_methodKeyComboBox setDelegate:self];
 }
 
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
 	// update available keys
+	Class selClass = [[CWMethodDataSource useableMethodArray] objectAtIndex:[_methodNameComboBox indexOfSelectedItem]];
+	[_methodKeyComboBox setDataSource:[[selClass outputKeys] retain] ];  // FIXME: memory leak
+	[_methodKeyComboBox reloadData];
 	
+	BOOL enabled = ([_methodKeyComboBox indexOfSelectedItem] >= 0) && ([_methodNameComboBox indexOfSelectedItem] >= 0);
+	[_methodAddButton setEnabled:enabled];
 }
 
 - (IBAction)performAdd:(id)sender {
+	Class selClass = [[CWMethodDataSource useableMethodArray] objectAtIndex:[_methodNameComboBox indexOfSelectedItem]];
+	NSArray* keys = [[selClass outputKeys] retain];
+	NSString* selKey = [keys objectAtIndex: [_methodKeyComboBox indexOfSelectedItem]];
+	[keys release];
+	
 	[self.window close];
 }
 

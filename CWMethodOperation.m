@@ -84,7 +84,7 @@
 }
 
 + (NSArray*) outputKeys {
-	return [NSArray arrayWithObjects:kMethodElapsed, kMethodDateBegin, kMethodDateEnd];
+	return [NSArray arrayWithObjects:kMethodElapsed, kMethodDateBegin, kMethodDateEnd, nil];
 }
 
 @end
