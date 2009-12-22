@@ -23,6 +23,7 @@
 		B83B6CDF10DED045009F6373 /* CWAddPlotWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6CDE10DED045009F6373 /* CWAddPlotWindowController.m */; };
 		B83B6CE910DED198009F6373 /* CWAddPlotWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83B6CE810DED198009F6373 /* CWAddPlotWindowController.xib */; };
 		B83B6D0B10DED5C0009F6373 /* NSArray+ComboDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6D0A10DED5C0009F6373 /* NSArray+ComboDataSource.m */; };
+		B83B6E8E10DF8B04009F6373 /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B6E8D10DF8B04009F6373 /* NSArray+Additions.m */; };
 		B86661E510BEFB31008E8942 /* CWMatrixInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */; };
 		B86661EA10BEFB9C008E8942 /* CWCourseWorkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */; };
 		B86661EB10BEFB9C008E8942 /* CWMatrixInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = B86661E910BEFB9C008E8942 /* CWMatrixInputController.m */; };
@@ -72,6 +73,8 @@
 		B83B6CE810DED198009F6373 /* CWAddPlotWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CWAddPlotWindowController.xib; sourceTree = "<group>"; };
 		B83B6D0910DED5C0009F6373 /* NSArray+ComboDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ComboDataSource.h"; sourceTree = "<group>"; };
 		B83B6D0A10DED5C0009F6373 /* NSArray+ComboDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ComboDataSource.m"; sourceTree = "<group>"; };
+		B83B6E8C10DF8B04009F6373 /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
+		B83B6E8D10DF8B04009F6373 /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
 		B86661E410BEFB31008E8942 /* CWMatrixInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CWMatrixInputController.xib; path = Resources/CWMatrixInputController.xib; sourceTree = "<group>"; };
 		B86661E610BEFB9C008E8942 /* CWCourseWorkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CWCourseWorkAppDelegate.h; path = Classes/CWCourseWorkAppDelegate.h; sourceTree = "<group>"; };
 		B86661E710BEFB9C008E8942 /* CWCourseWorkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CWCourseWorkAppDelegate.m; path = Classes/CWCourseWorkAppDelegate.m; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				B86661C410BEF870008E8942 /* Drawing */,
 				B86661C310BEF863008E8942 /* Model */,
 				B86661C210BEF85A008E8942 /* Controllers */,
+				B83B6E8C10DF8B04009F6373 /* NSArray+Additions.h */,
+				B83B6E8D10DF8B04009F6373 /* NSArray+Additions.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				B83B6C3A10DEB22B009F6373 /* NSArray+TableDataSource.m in Sources */,
 				B83B6CDF10DED045009F6373 /* CWAddPlotWindowController.m in Sources */,
 				B83B6D0B10DED5C0009F6373 /* NSArray+ComboDataSource.m in Sources */,
+				B83B6E8E10DF8B04009F6373 /* NSArray+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
