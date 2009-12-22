@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "CWMethodKeys.h"
+#import "NSArray+Additions.h"
 
 @class CWMethodOperation;
 

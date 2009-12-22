@@ -31,6 +31,8 @@
 	int							_operationsTotal;
 	int							_operationsDone;
 	
+	NSColor*					_plotColor;
+	
 	id<CWOperationDelegate>		_prepareDelegate;
 }
 
@@ -48,6 +50,7 @@
 @property (nonatomic, readonly) Class					resource;
 @property (nonatomic, assign)   BOOL					enabled;
 
+@property (nonatomic, copy)		NSColor*				plotColor;
 
 @property (nonatomic, assign) double rangeBegin;
 @property (nonatomic, assign) double rangeEnd;

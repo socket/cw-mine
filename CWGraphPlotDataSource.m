@@ -25,6 +25,7 @@
 @synthesize enabled = _enabled;
 @synthesize resource = _resource;
 @synthesize inputKey = _inputKey;
+@synthesize plotColor = _plotColor;
 
 @synthesize rangeBegin = _rangeBegin, rangeEnd = _rangeEnd, rangeStep = _rangeStep;
 
@@ -145,6 +146,7 @@
 	self.inputValues = nil;
 	self.inputKey = nil;
 	self.outputValues = nil;
+	self.plotColor = nil;
 	
 	[super dealloc];
 }

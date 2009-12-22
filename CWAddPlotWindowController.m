@@ -59,11 +59,14 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	
 	NSString* selKey = [keys objectAtIndex: [_methodKeyComboBox indexOfSelectedItem]];
 	[keys release];
+	NSString* selInputKey = [inputKeys objectAtIndex: [_methodInputKeyComboBox indexOfSelectedItem]];
+	[inputKeys release];
 	
-	
+	CWGraphPlotDataSource* dataSource = [[CWGraphPlotDataSource alloc] initWithResourceClass:selClass inputValues:[NSDictionary dictionary] outputKey:selKey]
+	dataSource.inputKey = selInputKey;
 	
 	NSDictionary* userInfo = [NSDictionary dictionary];	
-	[[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAddPlotMethod object:self userInfo:userInfo];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAddPlotMethod object:dataSource userInfo:userInfo];
 	[self.window close];
 }
 

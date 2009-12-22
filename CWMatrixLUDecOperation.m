@@ -80,7 +80,12 @@
 + (NSArray*) inputKeys {
 	return [NSArray arrayByAddingArray:[super inputKeys] andArray:[NSArray arrayWithObjects:
 																   kSourceMatrix,
-																   kMatrixRank]];
+																   kMatrixRank, nil]];
 }
 
++ (NSArray*) outputKeys {
+	return [NSArray arrayByAddingArray:[super outputKeys] andArray:[NSArray arrayWithObjects:
+																   kUMatrix,
+																   kLMatrix, nil]];
+}
 @end
