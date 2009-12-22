@@ -7,6 +7,7 @@
 //
 
 #import "CWMatrixLUDecOperation.h"
+#import "CWMatrixInitializer.h"
 
 @implementation CWMatrixLUDecOperation
 
@@ -20,8 +21,20 @@
 }
 
 - (BOOL) process {
+	CWMatrix* u_matrix;
 	unsigned int rank = [self.srcMatrix rank];
-	CWMatrix* u_matrix = [[self.srcMatrix  copy] autorelease]; // A(0) -- U-matrix
+	if ( [_inputs valueForKey:kMatrixRank] ) {
+		rank = [[_inputs valueForKey:kMatrixRank] intValue];
+		u_matrix = [CWMatrixInitializer matrixWithRank:rank qCoeff:rank];
+	}
+	else {
+		u_matrix = [[self.srcMatrix  copy] autorelease]; // A(0) -- U-matrix
+	}
+
+	if ( ! u_matrix ) {
+		return NO;
+	}
+	
 	CWMatrix* l_matrix = [CWMatrix matrixWithRows:rank columns:rank];
 	
 	// get L- and U- matrices
@@ -55,12 +68,19 @@
 	return [_inputs valueForKey:kSourceMatrix];
 }
 
+
 - (void) dealloc {
 	[super dealloc];
 }
 
 + (NSString*) description {
 	return @"LU-decomposition";
+}
+
++ (NSArray*) inputKeys {
+	return [NSArray arrayByAddingArray:[super inputKeys] andArray:[NSArray arrayWithObjects:
+																   kSourceMatrix,
+																   kMatrixRank]];
 }
 
 @end
