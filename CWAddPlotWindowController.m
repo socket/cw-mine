@@ -45,6 +45,9 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	[_methodKeyComboBox setDataSource:[[selClass outputKeys] retain] ];  // FIXME: memory leak
 	[_methodKeyComboBox reloadData];
 	
+	[_methodInputKeyComboBox setDataSource:[[selClass inputKeys] retain] ];  // FIXME: memory leak
+	[_methodInputKeyComboBox reloadData];
+		
 	BOOL enabled = ([_methodKeyComboBox indexOfSelectedItem] >= 0) && ([_methodNameComboBox indexOfSelectedItem] >= 0);
 	[_methodAddButton setEnabled:enabled];
 }

@@ -11,7 +11,7 @@
 
 @interface NSArray (Additions)
 
-+ (NSArray*) arrayByAddingArray:(NSArray*)array1 andArray:(NSArray*)array2
++ (NSArray*) arrayByAddingArray:(NSArray*)array1 andArray:(NSArray*)array2;
 
 
 @end
