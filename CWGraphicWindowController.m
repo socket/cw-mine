@@ -46,6 +46,10 @@
 	[super dealloc];
 }
 
+- (void)awakeFromNib {
+	[_graphView setDelegate:self];
+}
+
 - (void) windowDidLoad {
 	// Test code
 	/*CWGraphPlotDataSource* ds = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWMatrixLUDecOperation class] inputValues:[NSDictionary dictionary] outputKey:kMethodElapsed];

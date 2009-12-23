@@ -24,7 +24,7 @@
 		self.axisTitle = title;
 		_axisMinValue = minValue;
 		_axisMaxValue = maxValue;
-		_step = 0.1;
+		_step = 1;
 	}
 	return self;
 }

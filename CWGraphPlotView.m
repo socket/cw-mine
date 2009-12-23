@@ -66,6 +66,11 @@ const int AXIS_SPACING = 20;
 	
 	[self drawAxisToContext:context];
 	
+	if ( !_horAxis ) 
+	{
+		NSAssert(0, @"no horizontal axis!");
+		return;
+	}
 	
 	for (id<CWGraphPlotViewDataSource> dataSource in _dataSources) {
 		if ( ![dataSource enabled] ) {
@@ -78,10 +83,10 @@ const int AXIS_SPACING = 20;
 		}
 		
 		for (double curArg = _horAxis.axisMinValue; curArg <= _horAxis.axisMaxValue; curArg += _horAxis.step) {
-			if ( [dataSource canProvideDataForArgument:curArg] ) {
-				double value = [dataSource graphicPlotView:self valueForArgument:curArg];
-				break;
-			}
+			//if ( [dataSource canProvideDataForArgument:curArg] ) {
+			double value = [dataSource graphicPlotView:self valueForArgument:curArg];
+			//	break;
+			//}
 			
 			//FIXME: add to path
 		}
