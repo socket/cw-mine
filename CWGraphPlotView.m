@@ -10,7 +10,7 @@
 #import "CWGraphPlotDataSource.h"
 
 const int AXIS_SPACING = 20;
-const int GUIDE_SPACING = 20;
+const int GUIDE_SPACING = 40;
 const int GUIDE_LENGTH = 5;
 
 @interface CWGraphPlotView ( )
@@ -117,24 +117,29 @@ const int GUIDE_LENGTH = 5;
 		[[NSColor grayColor] setStroke];
 		
 		// horizontal guide
-		NSDictionary* fontAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSFont fontWithName:@"Helvetica" size:10.0], [NSColor grayColor], nil] forKeys:[NSArray arrayWithObjects:NSFontAttributeName, NSForegroundColorAttributeName, nil]];
+		NSDictionary* fontAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSFont fontWithName:@"Helvetica" size:9.0], [NSColor grayColor], nil] forKeys:[NSArray arrayWithObjects:NSFontAttributeName, NSForegroundColorAttributeName, nil]];
 		
 		NSBezierPath* hguide = [NSBezierPath bezierPath];
-		for( int i = 0; i < self.frame.size.width / GUIDE_SPACING; ++i) {
+		for( int i = 1; i < self.frame.size.width / GUIDE_SPACING+1; ++i) {
 			[hguide moveToPoint:CGPointMake(i * GUIDE_SPACING, 0)];
 			[hguide lineToPoint:CGPointMake(i * GUIDE_SPACING, GUIDE_LENGTH)];
 			
-			NSString* title = [NSString stringWithFormat:@"@.2f", i * xratio];
+			NSString* title = [NSString stringWithFormat:@"%.2f", i * GUIDE_SPACING * 1.0 / xratio];
 			CGSize sizeTitle = [title sizeWithAttributes:fontAttributes];
-			[title drawAtPoint:CGPointMake(i*GUIDE_SPACING-sizeTitle.width/2, GUIDE_LENGTH+1 + sizeTitle.height) withAttributes:fontAttributes];
+			[title drawAtPoint:CGPointMake(i*GUIDE_SPACING-sizeTitle.width/2, GUIDE_LENGTH) withAttributes:fontAttributes];
 		}
 		[hguide stroke];
 
 		// vertical guide
 		NSBezierPath* vguide = [NSBezierPath bezierPath];
-		for( int i = 0; i < self.frame.size.height / GUIDE_SPACING; ++i) {
+		for( int i = 1; i < self.frame.size.height / GUIDE_SPACING + 1; ++i) {
 			[vguide moveToPoint:CGPointMake(0, i * GUIDE_SPACING)];
 			[vguide lineToPoint:CGPointMake(GUIDE_LENGTH, i * GUIDE_SPACING)];
+			
+			NSString* title = [NSString stringWithFormat:@"%.2f", i * GUIDE_SPACING * 1.0 / yratio];
+			CGSize sizeTitle = [title sizeWithAttributes:fontAttributes];
+			[title drawAtPoint:CGPointMake(GUIDE_LENGTH, i*GUIDE_SPACING-sizeTitle.height/2) withAttributes:fontAttributes];
+			
 		}
 		[vguide stroke];
 		
