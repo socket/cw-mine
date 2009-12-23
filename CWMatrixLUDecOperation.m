@@ -25,6 +25,9 @@
 	unsigned int rank = [self.srcMatrix rank];
 	if ( [_inputs valueForKey:kMatrixRank] ) {
 		rank = [[_inputs valueForKey:kMatrixRank] intValue];
+		if ( rank == 0 )
+			return YES;
+		
 		u_matrix = [CWMatrixInitializer matrixWithRank:rank qCoeff:rank];
 	}
 	else {

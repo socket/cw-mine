@@ -87,7 +87,7 @@ const int GUIDE_LENGTH = 5;
 		// get values from datasource and find global extremum for all datasources
 		for (double curArg = _horAxis.axisMinValue; curArg <= _horAxis.axisMaxValue; curArg += _horAxis.step) {
 			if ( ! [dataSource canProvideDataForArgument:curArg] ) {
-				break;
+				continue;
 			}
 			
 			double value = [dataSource graphicPlotView:self valueForArgument:curArg];

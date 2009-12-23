@@ -42,8 +42,9 @@
 	
 	NSDate* endDate = [NSDate date];
 	[self.outputs setValue:endDate forKey:kMethodDateEnd];
-	[self.outputs setValue:[NSNumber numberWithDouble: [beginDate timeIntervalSinceNow] ] forKey:kMethodElapsed];
+	[self.outputs setValue:[NSNumber numberWithDouble: -[beginDate timeIntervalSinceNow] ] forKey:kMethodElapsed];
 	
+	//NSLog(@"Operation succeeded in %f", [beginDate timeIntervalSinceNow] );
 	result ? [self succceed] : [self fail];
 }
 

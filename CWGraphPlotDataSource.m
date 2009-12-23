@@ -62,7 +62,7 @@
 - (double) graphicPlotView:(CWGraphPlotView*)plotView valueForArgument:(double)arg {
 	id value = [_outputValues valueForKey:[CWGraphPlotDataSource keyForArgument:arg]];
 	if ( value ) {
-		return [value doubleValue];
+		return [[value valueForKey:_outputKey] doubleValue];
 	}
 	else {
 		// make it happen SYNCHRONOUSLY
@@ -112,10 +112,13 @@
 		
 		CWMethodOperation *calcOperation = [self operationForArgument: fval];
 
+		calcOperation.delegate = self;
 		[generalOperation addDependency:calcOperation];
+		
 		[[CWMethodExecutor sharedInstance] addOperation:calcOperation];
 	}
 	
+	generalOperation.delegate = self;
 	[[CWMethodExecutor sharedInstance] addOperation:generalOperation];
 }
 

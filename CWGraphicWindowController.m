@@ -33,11 +33,11 @@
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMethod:) name:kNotificationAddPlotMethod object:nil];
 		
-		_timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
+		_timer = [[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
 		
 		_rangeBegin = 0.0;
 		_rangeStep = 1.0;
-		_rangeEnd = 1000.0;
+		_rangeEnd = 300.0;
 		
 	}
 	return self;
@@ -61,12 +61,13 @@
 
 - (void) windowDidLoad {
 	// Test code
-	/*CWGraphPlotDataSource* ds = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWMatrixLUDecOperation class] inputValues:[NSDictionary dictionary] outputKey:kMethodElapsed];
+	CWGraphPlotDataSource* ds = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWMatrixLUDecOperation class] inputValues:[NSDictionary dictionary] outputKey:kMethodElapsed];
 	ds.inputKey = kMatrixRank;
+	ds.enabled = YES;
 	ds.plotColor = [NSColor redColor];
-	[_graphView.dataSources addObject:ds];*/
+	[_graphView.dataSources addObject:ds];
 	
-	CWGraphPlotDataSource* ds = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWParabolaOperation class] inputValues:[NSDictionary dictionary] outputKey:@"y"];
+	/*CWGraphPlotDataSource* ds = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWParabolaOperation class] inputValues:[NSDictionary dictionary] outputKey:@"y"];
 	ds.inputKey = @"x";
 	ds.plotColor = [NSColor redColor];
 	ds.enabled = YES;
@@ -74,7 +75,7 @@
 	[ds setRangeEnd:100.0];
 	[ds setRangeStep:1.0];
 	[_graphView.dataSources addObject:ds];
-	
+	*/
 	[_graphListTableView reloadData];
 }
 
@@ -153,6 +154,14 @@
 		}
 	}
 	[_graphListTableView reloadData];
+}
+
+- (void) operationSucceeded:(CWMethodOperation *)operation {
+	
+}
+
+- (void) operationFailed:(CWMethodOperation *)operation {
+	
 }
 
 - (IBAction) showAddMethodPane:(id)sender {

@@ -16,7 +16,8 @@
 															NSTextFieldDelegate,
 															NSComboBoxDelegate,
 															NSTableViewDataSource,
-															CWGraphPlotViewDelegate >
+															CWGraphPlotViewDelegate,
+															CWOperationDelegate>
 {
 	@private
 	CWGraphPlotView*		_graphView;
