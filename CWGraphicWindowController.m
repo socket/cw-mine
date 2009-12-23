@@ -18,6 +18,7 @@
 @interface CWGraphicWindowController ( )
 - (void) populateMethodClasses;
 - (void)addMethod:(NSNotification*)notification;
+- (void) updateGraphPeriodic:(id)sender;
 
 @end;
 
@@ -32,12 +33,17 @@
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMethod:) name:kNotificationAddPlotMethod object:nil];
 		
+		_timer = [[NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
+		[_timer fire];
+		
 	}
 	return self;
 }
 
 - (void) dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
+	[_timer release];
 	
 	self.graphListTableView = nil;
 	self.graphView = nil;
@@ -68,6 +74,11 @@
 	
 	[_graphListTableView reloadData];
 }
+
+-(void) updateGraphPeriodic:(id)sender {
+	
+}
+
 
 - (void) populateMethodClasses {
 	//_methodsDataSource = [[NSArray arrayWithObjects:[CWMatrixLUDecOperation class], [CWMethodOperation class], nil] retain];

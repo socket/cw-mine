@@ -15,6 +15,7 @@
 - (double) graphicPlotView:(CWGraphPlotView*)plotView valueForArgument:(double)arg;
 - (BOOL) canProvideDataForArgument:(double)arg;
 - (BOOL) enabled;
+- (NSColor*) plotColor;
 @end
 
 @protocol CWGraphPlotViewDelegate<NSObject>

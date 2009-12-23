@@ -7,6 +7,7 @@
 //
 
 #import "CWGraphPlotView.h"
+#import "CWGraphPlotDataSource.h"
 
 const int AXIS_SPACING = 20;
 
@@ -71,35 +72,61 @@ const int AXIS_SPACING = 20;
 	double minYValue = INFINITY;
 	double maxYValue = -INFINITY;
 	
+	NSMutableArray* paths = [NSMutableArray array];
+	
 	for (id<CWGraphPlotViewDataSource> dataSource in _dataSources) {
 		if ( ![dataSource enabled] ) {
 			continue;
 		}
 		
-		NSBezierPath* aPath = [NSBezierPath bezierPath];
-		[aPath moveToPoint:NSMakePoint(0, 0)];
-		NSColor* lineColor = [dataSource plotColor];
-		[lineColor setStroke];
+		int capacity = (_horAxis.axisMaxValue - _horAxis.axisMinValue) / _horAxis.step;
 		
+		NSMutableArray* points = [NSMutableArray arrayWithCapacity:capacity];
+		// get values from datasource and find global extremum for all datasources
 		for (double curArg = _horAxis.axisMinValue; curArg <= _horAxis.axisMaxValue; curArg += _horAxis.step) {
 			if ( ! [dataSource canProvideDataForArgument:curArg] ) {
 				break;
 			}
 			
 			double value = [dataSource graphicPlotView:self valueForArgument:curArg];
-			[aPath lineToPoint:NSMakePoint(curArg, value)];
 			
-			minYValue = min( minYValue, value );
-			maxYValue = max( maxYValue, value );
+			minYValue = MIN( minYValue, value );
+			maxYValue = MAX( maxYValue, value );
+			
+			[points addObject: [NSValue valueWithPoint:CGPointMake(curArg, value)]];
 		}
 		
-		double ratio = self.frame.size.height / (maxYValue - minYValue);
+				
+		[paths addObject:points];
+	}
+	
+	if ( minYValue != INFINITY && maxYValue != INFINITY ) {
+		double size = (maxYValue - minYValue);
+		if ( size == 0 ) size = 1.0;
+		
+		double ratio = self.frame.size.height / size;
 		if ( ratio < 0 ) ratio *= (-1.0);
 		
-		// make affine transform
+		//NSAffineTransform* xform = [NSAffineTransform transform];
+		//[xform scaleXBy:2 yBy:2];
+		//[xform concat];	
+				
+		int i = 0;
 		
-		[aPath stroke];
+		for (NSMutableArray* points in paths) {
+			NSBezierPath* aPath = [NSBezierPath bezierPath];
+			[aPath moveToPoint:NSMakePoint(0, 0)];
+			
+			NSColor* lineColor = [[_dataSources objectAtIndex:i++] plotColor];
+			[lineColor setStroke];
+			
+			for (NSValue* point in points) {
+				[aPath lineToPoint:NSPointToCGPoint( [point pointValue] ) ];
+			}
+			[aPath stroke];
+		}
 	}
+	
 	
 	[super drawRect:dirtyRect];
 }

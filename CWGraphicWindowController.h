@@ -23,6 +23,7 @@
 	NSTableView*			_graphListTableView;
 	NSSegmentedControl*		_segmentedControl;
 	
+	NSTimer*				_timer;
 	NSArray*				_methodsDataSource;					// list of all available methods
 	NSMutableArray*			_methodsSelected;			// list of current methods
 }
