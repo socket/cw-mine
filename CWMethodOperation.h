@@ -36,6 +36,8 @@
 @property (nonatomic, assign) id<CWOperationDelegate> delegate;
 @property (nonatomic, retain) NSError*	error;
 
++ (BOOL) allowsSynchronousExecution;
+
 + (NSArray*) outputKeys;
 + (NSArray*) inputKeys;
 

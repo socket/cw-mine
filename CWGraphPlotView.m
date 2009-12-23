@@ -45,12 +45,8 @@ const int AXIS_SPACING = 20;
 }
 
 - (void)drawAxisToContext:(NSGraphicsContext*)context {
-	if ( !_horAxis ) {
-		self.horAxis = [_delegate graphicPlotView:self axisWithType:CWGraphPlotAxisHorizontal];
-	}
-	if ( !_vertAxis ) {
-		self.vertAxis = [_delegate graphicPlotView:self axisWithType:CWGraphPlotAxisVertical];
-	}
+	self.horAxis = [_delegate graphicPlotView:self axisWithType:CWGraphPlotAxisHorizontal];
+	self.vertAxis = [_delegate graphicPlotView:self axisWithType:CWGraphPlotAxisVertical];
 	
 	[self.horAxis drawWithType:CWGraphPlotAxisHorizontal context:context];
 	[self.vertAxis drawWithType:CWGraphPlotAxisVertical context:context];
@@ -72,26 +68,37 @@ const int AXIS_SPACING = 20;
 		return;
 	}
 	
+	double minYValue = INFINITY;
+	double maxYValue = -INFINITY;
+	
 	for (id<CWGraphPlotViewDataSource> dataSource in _dataSources) {
 		if ( ![dataSource enabled] ) {
 			continue;
 		}
 		
-		NSColor* lineColor = [NSColor redColor];
-		if ( [_delegate respondsToSelector:@selector(graphicPlotView:colorForDataSource:) ] ) {
-			lineColor = [_delegate graphicPlotView:self colorForDataSource:dataSource];
-		}
+		NSBezierPath* aPath = [NSBezierPath bezierPath];
+		[aPath moveToPoint:NSMakePoint(0, 0)];
+		NSColor* lineColor = [dataSource plotColor];
+		[lineColor setStroke];
 		
 		for (double curArg = _horAxis.axisMinValue; curArg <= _horAxis.axisMaxValue; curArg += _horAxis.step) {
-			//if ( [dataSource canProvideDataForArgument:curArg] ) {
-			double value = [dataSource graphicPlotView:self valueForArgument:curArg];
-			//	break;
-			//}
+			if ( ! [dataSource canProvideDataForArgument:curArg] ) {
+				break;
+			}
 			
-			//FIXME: add to path
+			double value = [dataSource graphicPlotView:self valueForArgument:curArg];
+			[aPath lineToPoint:NSMakePoint(curArg, value)];
+			
+			minYValue = min( minYValue, value );
+			maxYValue = max( maxYValue, value );
 		}
 		
+		double ratio = self.frame.size.height / (maxYValue - minYValue);
+		if ( ratio < 0 ) ratio *= (-1.0);
 		
+		// make affine transform
+		
+		[aPath stroke];
 	}
 	
 	[super drawRect:dirtyRect];

@@ -11,9 +11,9 @@
 
 @implementation CWParabolaOperation
 
-- (BOOL) process {
+- (BOOL) process { // a bit of magic
 	double result = [[_inputs valueForKey:@"x"] doubleValue];
-	result *= result;
+	result = pow(1.0/10.0*result, 2);
 	
 	[self.outputs setValue:[NSNumber numberWithDouble:result] forKey:@"y"];	
 	
@@ -21,7 +21,7 @@
 }
 
 + (NSString*) description {
-	return @"Parabola";
+	return @"QR Decomposition";
 }
 
 + (NSArray*) inputKeys {

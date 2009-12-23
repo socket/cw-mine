@@ -113,7 +113,7 @@
 #pragma mark -
 #pragma mark actions
 - (CWGraphPlotViewAxis*) graphicPlotView:(CWGraphPlotView*)view axisWithType:(CWGraphPlotAxisType)aType {
-	return [CWGraphPlotViewAxis axisWithTitle:@"axis" minValue:0 maxValue:100];
+	return [CWGraphPlotViewAxis axisWithTitle:@"axis" minValue:0 maxValue:1000];
 }
 
 - (IBAction) segmentedSelector:(id)sender {

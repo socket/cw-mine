@@ -66,10 +66,15 @@
 	}
 	else {
 		// make it happen SYNCHRONOUSLY
-		CWMethodOperation* op = [self operationForArgument:arg];
-		[op main];
-		
-		return [[[op outputs] valueForKey:_outputKey] doubleValue];
+		if ( [_resource allowsSynchronousExecution] ) {
+			CWMethodOperation* op = [self operationForArgument:arg];
+			[op main];
+			
+			return [[[op outputs] valueForKey:_outputKey] doubleValue];			
+		}
+		else {
+			return 0.0;
+		}
 	}
 }
 
@@ -122,6 +127,9 @@
 }
 
 - (BOOL) canProvideDataForArgument:(double)arg {
+	if ( [_resource allowsSynchronousExecution] )
+		return YES;
+	
 	return ( [_outputValues valueForKey:[CWGraphPlotDataSource keyForArgument:arg] ]!= nil );
 }
 

@@ -91,4 +91,7 @@
 	return [NSArray array];
 }
 
++ (BOOL) allowsSynchronousExecution {
+	return YES;
+}
 @end

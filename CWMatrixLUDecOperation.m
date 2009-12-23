@@ -88,4 +88,8 @@
 																   kUMatrix,
 																   kLMatrix, nil]];
 }
+
++ (BOOL) allowsSynchronousExecution {
+	return NO;
+}
 @end
