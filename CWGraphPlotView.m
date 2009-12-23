@@ -117,20 +117,26 @@ const int GUIDE_LENGTH = 5;
 		[[NSColor grayColor] setStroke];
 		
 		// horizontal guide
+		NSDictionary* fontAttributes = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSFont fontWithName:@"Helvetica" size:10.0], [NSColor grayColor], nil] forKeys:[NSArray arrayWithObjects:NSFontAttributeName, NSForegroundColorAttributeName, nil]];
+		
 		NSBezierPath* hguide = [NSBezierPath bezierPath];
-		for( int i = 0; i < frame.size.width / GUIDE_SPACING; ++i) {
+		for( int i = 0; i < self.frame.size.width / GUIDE_SPACING; ++i) {
 			[hguide moveToPoint:CGPointMake(i * GUIDE_SPACING, 0)];
 			[hguide lineToPoint:CGPointMake(i * GUIDE_SPACING, GUIDE_LENGTH)];
+			
+			NSString* title = [NSString stringWithFormat:@"@.2f", i * xratio];
+			CGSize sizeTitle = [title sizeWithAttributes:fontAttributes];
+			[title drawAtPoint:CGPointMake(i*GUIDE_SPACING-sizeTitle.width/2, GUIDE_LENGTH+1 + sizeTitle.height) withAttributes:fontAttributes];
 		}
 		[hguide stroke];
 
 		// vertical guide
 		NSBezierPath* vguide = [NSBezierPath bezierPath];
-		for( int i = 0; i < frame.size.height / GUIDE_SPACING; ++i) {
-			[hguide moveToPoint:CGPointMake(0, i * GUIDE_SPACING)];
-			[hguide lineToPoint:CGPointMake(GUIDE_LENGTH, i * GUIDE_SPACING)];
+		for( int i = 0; i < self.frame.size.height / GUIDE_SPACING; ++i) {
+			[vguide moveToPoint:CGPointMake(0, i * GUIDE_SPACING)];
+			[vguide lineToPoint:CGPointMake(GUIDE_LENGTH, i * GUIDE_SPACING)];
 		}
-		[hguide stroke];
+		[vguide stroke];
 		
 		NSAffineTransform* xform = [NSAffineTransform transform];
 		[xform scaleXBy:xratio yBy:yratio];
