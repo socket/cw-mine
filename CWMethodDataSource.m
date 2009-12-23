@@ -10,13 +10,13 @@
 #import "CWMethodOperation.h"
 #import "CWMatrixLUDecOperation.h"
 #import "CWParabolaOperation.h"
+#import "CWMatrixQRDecOperation.h"
 
 @implementation CWMethodDataSource
 
 + (NSArray*) useableMethodArray {
 	return [[NSArray arrayWithObjects:
-			 [CWMatrixLUDecOperation class], [CWParabolaOperation class], 
-			 [CWMethodOperation class], nil] 
+			 [CWMatrixLUDecOperation class], [CWMatrixQRDecOperation class], [CWParabolaOperation class], nil] 
 			retain];
 }
 

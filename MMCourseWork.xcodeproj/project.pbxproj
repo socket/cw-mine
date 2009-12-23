@@ -14,6 +14,7 @@
 		B818881410E2778700DDB356 /* CWParabolaOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B818881310E2778700DDB356 /* CWParabolaOperation.m */; };
 		B8188A3610E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8188A3310E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m */; };
 		B8188A3710E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8188A3510E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m */; };
+		B8188AD310E2B53400DDB356 /* CWMatrixQRDecOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B8188AD210E2B53400DDB356 /* CWMatrixQRDecOperation.m */; };
 		B818960810BF4D7C00502F39 /* CWMatrixInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B818960710BF4D7C00502F39 /* CWMatrixInitializer.m */; };
 		B81B1A5E10CFB5AA00605363 /* CWMatrixEditableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A5D10CFB5AA00605363 /* CWMatrixEditableDataSource.m */; };
 		B81B1A7810CFB77F00605363 /* CWSolutionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */; };
@@ -61,6 +62,8 @@
 		B8188A3310E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMIndeterminateProgressIndicatorCell.m; sourceTree = "<group>"; };
 		B8188A3410E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMProgressIndicatorTableColumnController.h; sourceTree = "<group>"; };
 		B8188A3510E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMProgressIndicatorTableColumnController.m; sourceTree = "<group>"; };
+		B8188AD110E2B53400DDB356 /* CWMatrixQRDecOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixQRDecOperation.h; sourceTree = "<group>"; };
+		B8188AD210E2B53400DDB356 /* CWMatrixQRDecOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixQRDecOperation.m; sourceTree = "<group>"; };
 		B818960610BF4D7C00502F39 /* CWMatrixInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixInitializer.h; sourceTree = "<group>"; };
 		B818960710BF4D7C00502F39 /* CWMatrixInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixInitializer.m; sourceTree = "<group>"; };
 		B81B1A5C10CFB5AA00605363 /* CWMatrixEditableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixEditableDataSource.h; sourceTree = "<group>"; };
@@ -303,6 +306,8 @@
 				B83B6C1010DEA8F2009F6373 /* CWMethodKeys.m */,
 				B818881210E2778600DDB356 /* CWParabolaOperation.h */,
 				B818881310E2778700DDB356 /* CWParabolaOperation.m */,
+				B8188AD110E2B53400DDB356 /* CWMatrixQRDecOperation.h */,
+				B8188AD210E2B53400DDB356 /* CWMatrixQRDecOperation.m */,
 			);
 			name = Method;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				B818881410E2778700DDB356 /* CWParabolaOperation.m in Sources */,
 				B8188A3610E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m in Sources */,
 				B8188A3710E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m in Sources */,
+				B8188AD310E2B53400DDB356 /* CWMatrixQRDecOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

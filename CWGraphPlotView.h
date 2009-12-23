@@ -15,6 +15,7 @@
 - (double) graphicPlotView:(CWGraphPlotView*)plotView valueForArgument:(double)arg;
 - (BOOL) canProvideDataForArgument:(double)arg;
 - (BOOL) enabled;
+- (double) rangeStep;
 - (NSColor*) plotColor;
 @end
 

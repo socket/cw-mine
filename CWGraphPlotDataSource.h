@@ -42,7 +42,7 @@
 - (BOOL) canProvideDataForArgument:(double)arg;
 - (void) prepareDataInRangeBegin:(double)argBegin rangeEnd:(double)argEnd delegate:(id<CWOperationDelegate>)delegate;
 
-- (double) progressPercent;
+@property (nonatomic, readonly) int progressPercent;
 
 @property (nonatomic, copy)		NSString*				outputKey;
 @property (nonatomic, copy)		NSString*				inputKey;

@@ -85,7 +85,7 @@ const int GUIDE_LENGTH = 5;
 		
 		NSMutableArray* points = [NSMutableArray arrayWithCapacity:capacity];
 		// get values from datasource and find global extremum for all datasources
-		for (double curArg = _horAxis.axisMinValue; curArg <= _horAxis.axisMaxValue; curArg += _horAxis.step) {
+		for (double curArg = _horAxis.axisMinValue; curArg <= _horAxis.axisMaxValue; curArg += [dataSource rangeStep]) {
 			if ( ! [dataSource canProvideDataForArgument:curArg] ) {
 				continue;
 			}

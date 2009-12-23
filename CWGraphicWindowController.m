@@ -24,16 +24,19 @@
 
 @implementation CWGraphicWindowController
 
-@synthesize graphListTableView = _graphListTableView, graphView = _graphView;;
+@synthesize graphListTableView = _graphListTableView, graphView = _graphView;
 @synthesize segmentedControl = _segmentedControl;
+@synthesize rangeBeginText = _rangeBeginText, rangeEndText = _rangeEndText;
 
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
 		[self populateMethodClasses];
 		
+		[_graphListTableView setFont:[NSFont fontWithName:@"Helvetica" size:10]];
+		 
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMethod:) name:kNotificationAddPlotMethod object:nil];
 		
-		_timer = [[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
+		_timer = [[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
 		
 		_rangeBegin = 0.0;
 		_rangeStep = 1.0;
@@ -51,10 +54,24 @@
 	self.graphListTableView = nil;
 	self.graphView = nil;
 	self.segmentedControl = nil;
+	self.rangeEndText = nil;
+	self.rangeBeginText = nil;
 	
 	[super dealloc];
 }
 
+- (IBAction) updateGraphRanges:(id)sender {
+	_rangeBegin = [_rangeBeginText doubleValue];
+	_rangeEnd = [_rangeEndText doubleValue];
+	
+	[_graphView reloadData];
+	
+	for (CWGraphPlotDataSource* ds in _graphView.dataSources) {
+		//ds.rangeStep = _rangeStep;
+		[ds prepareDataInRangeBegin:_rangeBegin rangeEnd:_rangeEnd delegate:self];
+	}
+	
+}
 - (void)awakeFromNib {
 	[_graphView setDelegate:self];
 }
@@ -81,6 +98,7 @@
 
 -(void) updateGraphPeriodic:(id)sender {
 	[_graphView reloadData];
+	[_graphListTableView reloadData];
 }
 
 
@@ -146,11 +164,15 @@
 		//[self showSettings:sender];
 	}
 	else if ( [_segmentedControl selectedSegment] == 3 ) {
-		[_graphView reloadData];
-		
-		for (CWGraphPlotDataSource* ds in _graphView.dataSources) {
-			//ds.rangeStep = _rangeStep;
-			[ds prepareDataInRangeBegin:_rangeBegin rangeEnd:_rangeEnd delegate:self];
+		int row = [_graphListTableView selectedRow];
+		if ( row >= 0 ) { 
+			[[_graphView.dataSources objectAtIndex:row]  prepareDataInRangeBegin:_rangeBegin rangeEnd:_rangeEnd delegate:self];
+		}
+		else {
+			for (CWGraphPlotDataSource* ds in _graphView.dataSources) {
+				//ds.rangeStep = _rangeStep;
+				[ds prepareDataInRangeBegin:_rangeBegin rangeEnd:_rangeEnd delegate:self];
+			}	
 		}
 	}
 	[_graphListTableView reloadData];

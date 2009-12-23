@@ -52,6 +52,7 @@
 		self.outputValues = [NSMutableDictionary dictionary];
 		self.outputKey =  aKey;
 		
+		_rangeStep = 1.0;
 		_locker = [[NSLock alloc] init];
 	}
 	return self;
@@ -122,11 +123,11 @@
 	[[CWMethodExecutor sharedInstance] addOperation:generalOperation];
 }
 
-- (double) progressPercent {
+- (int) progressPercent {
 	if ( _operationsTotal == 0 )
 		return 0;
 	
-	return _operationsTotal / (_operationsDone * 1.0);
+	return (_operationsDone * 1.0) / _operationsTotal  * 100;
 }
 
 - (BOOL) canProvideDataForArgument:(double)arg {
