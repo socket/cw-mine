@@ -13,6 +13,9 @@
 
 + (NSString*) keyForArgument:(double)arg;
 
+- (CWMethodOperation *) operationForArgument: (double) fval;
+
+
 @property (nonatomic, retain)	NSMutableDictionary*	outputValues;
 @property (nonatomic, retain)	NSMutableDictionary*	inputValues;
 
@@ -63,8 +66,10 @@
 	}
 	else {
 		// make it happen SYNCHRONOUSLY
+		CWMethodOperation* op = [self operationForArgument:arg];
+		[op main];
 		
-		return 0;
+		return [[[op outputs] valueForKey:_outputKey] doubleValue];
 	}
 }
 

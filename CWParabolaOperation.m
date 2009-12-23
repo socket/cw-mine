@@ -9,13 +9,13 @@
 #import "CWParabolaOperation.h"
 
 
-@implementation CWParabolaOperation<CWMethodOperation>
+@implementation CWParabolaOperation
 
 - (BOOL) process {
 	double result = [[_inputs valueForKey:@"x"] doubleValue];
 	result *= result;
 	
-	[self.outputs setValue:result forKey:@"y"];	
+	[self.outputs setValue:[NSNumber numberWithDouble:result] forKey:@"y"];	
 	
 	return YES;
 }

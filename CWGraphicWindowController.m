@@ -107,7 +107,9 @@
 }
 #pragma mark -
 #pragma mark actions
-
+- (CWGraphPlotViewAxis*) graphicPlotView:(CWGraphPlotView*)view axisWithType:(CWGraphPlotAxisType)aType {
+	return [CWGraphPlotViewAxis axisWithTitle:@"axis" minValue:0 maxValue:100];
+}
 
 - (IBAction) segmentedSelector:(id)sender {
 	if ( [_segmentedControl selectedSegment] == 0 ) {
