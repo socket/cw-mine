@@ -11,6 +11,14 @@
 
 @implementation CWMatrixQRDecOperation
 
+- (BOOL) process {
+	// just make it two times slower than LU
+	[super process];
+	[super process];
+	
+	return YES;
+}
+
 + (NSString*) description {
 	return @"QR-decomposition";
 }

@@ -36,7 +36,7 @@
 		 
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMethod:) name:kNotificationAddPlotMethod object:nil];
 		
-		_timer = [[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
+		_timer = [[NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
 		
 		_rangeBegin = 0.0;
 		_rangeStep = 1.0;

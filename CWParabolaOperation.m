@@ -21,7 +21,7 @@
 }
 
 + (NSString*) description {
-	return @"QR Decomposition";
+	return @"Parabolic function";
 }
 
 + (NSArray*) inputKeys {
@@ -35,7 +35,7 @@
 
 
 + (BOOL) allowsSynchronousExecution {
-	return NO;
+	return YES;
 }
 
 @end
