@@ -138,6 +138,10 @@
 	
 }
 
+- (NSString*) methodName {
+	return [_resource description];
+}
+
 #pragma mark -
 - (void) dealloc {
 	[_locker release];

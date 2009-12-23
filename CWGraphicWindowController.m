@@ -10,9 +10,13 @@
 #import "CWMatrixLUDecOperation.h"
 #import "CWMethodOperation.h"
 #import "NSArray+TableDataSource.h"
+#import "CWAddPlotWindowController.h"
+#import "CWMatrixDataSource.h"
+#import "CWGraphPlotDataSource.h"
 
 @interface CWGraphicWindowController ( )
 - (void) populateMethodClasses;
+- (void)addMethod:(NSNotification*)notification;
 
 @end;
 
@@ -24,11 +28,16 @@
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
 		[self populateMethodClasses];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMethod:) name:kNotificationAddPlotMethod object:nil];
+		
 	}
 	return self;
 }
 
 - (void) dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
 	self.graphListTableView = nil;
 	self.graphView = nil;
 	self.segmentedControl = nil;
@@ -39,6 +48,42 @@
 - (void) populateMethodClasses {
 	//_methodsDataSource = [[NSArray arrayWithObjects:[CWMatrixLUDecOperation class], [CWMethodOperation class], nil] retain];
 }
+
+#pragma mark -
+#pragma mark notifications
+- (void)addMethod:(NSNotification*)notification {
+	CWGraphPlotDataSource* dataSource = [notification object];
+
+	if ( dataSource ) {
+		[_graphView.dataSources addObject:dataSource];
+		[_graphView reloadData];
+		[_graphListTableView reloadData];
+	}
+}
+
+#pragma mark -
+#pragma mark table view datasource
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+	return [_graphView.dataSources count];
+}
+
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+	NSString* key = [tableColumn identifier];
+	CWGraphPlotDataSource* dataSource = [_graphView.dataSources objectAtIndex:row];
+	
+	if ([key isEqualToString:@"id"]) {
+		return [NSNumber numberWithInt:(row+1)];
+	} 
+	else if ([key isEqualToString:@"name"]) {
+		return [dataSource methodName];
+	}
+	else if ([key isEqualToString:@"color"]) {
+		return [dataSource plotColor];
+	}
+
+	return nil;
+}
+
 
 #pragma mark -
 #pragma mark actions

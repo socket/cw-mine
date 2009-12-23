@@ -14,7 +14,8 @@
 
 @interface CWGraphicWindowController : NSWindowController<	NSTableViewDelegate, 
 															NSTextFieldDelegate,
-															NSComboBoxDelegate	>
+															NSComboBoxDelegate,
+															NSTableViewDataSource >
 {
 	@private
 	CWGraphPlotView*		_graphView;

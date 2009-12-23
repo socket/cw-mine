@@ -9,6 +9,7 @@
 #import "CWAddPlotWindowController.h"
 #import "NSArray+ComboDataSource.h"
 #import "CWMethodDataSource.h"
+#import "CWGraphPlotDataSource.h"
 
 NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method";
 
@@ -62,8 +63,10 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	NSString* selInputKey = [inputKeys objectAtIndex: [_methodInputKeyComboBox indexOfSelectedItem]];
 	[inputKeys release];
 	
-	CWGraphPlotDataSource* dataSource = [[CWGraphPlotDataSource alloc] initWithResourceClass:selClass inputValues:[NSDictionary dictionary] outputKey:selKey]
+	CWGraphPlotDataSource* dataSource = [[[CWGraphPlotDataSource alloc] initWithResourceClass:selClass inputValues:[NSDictionary dictionary] outputKey:selKey] autorelease]; // FIXME: check if object'll be alive
+	
 	dataSource.inputKey = selInputKey;
+	dataSource.plotColor = [_methodColor color];
 	
 	NSDictionary* userInfo = [NSDictionary dictionary];	
 	[[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAddPlotMethod object:dataSource userInfo:userInfo];

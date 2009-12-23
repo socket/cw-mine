@@ -44,6 +44,8 @@
 
 - (double) progressPercent;
 
+- (NSString*) methodName;
+
 @property (nonatomic, copy)		NSString*				outputKey;
 @property (nonatomic, copy)		NSString*				inputKey;
 

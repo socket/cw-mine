@@ -31,6 +31,7 @@ const int AXIS_SPACING = 20;
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
+		_dataSources = [[NSMutableArray array] retain];
     }
     return self;
 }
