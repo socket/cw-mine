@@ -53,9 +53,10 @@
 	ds.plotColor = [NSColor redColor];
 	[_graphView.dataSources addObject:ds];*/
 	
-	CWGraphPlotDataSource* dw = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWParabolaOperation class] inputValues:[NSDictionary dictionary] outputKey:@"y"];
+	CWGraphPlotDataSource* ds = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWParabolaOperation class] inputValues:[NSDictionary dictionary] outputKey:@"y"];
 	ds.inputKey = @"x";
 	ds.plotColor = [NSColor redColor];
+	ds.enabled = YES;
 	[ds setRangeBegin:0.0];
 	[ds setRangeEnd:100.0];
 	[ds setRangeStep:1.0];
@@ -121,6 +122,9 @@
 	}
 	else if ( [_segmentedControl selectedSegment] == 2 ) {
 		//[self showSettings:sender];
+	}
+	else if ( [_segmentedControl selectedSegment] == 4 ) {
+		[_graphListTableView reloadData];
 	}
 }
 
