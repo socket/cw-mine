@@ -104,11 +104,13 @@ const int AXIS_SPACING = 20;
 		double size = (maxYValue - minYValue);
 		if ( size == 0 ) size = 1.0;
 		
-		double ratio = self.frame.size.height / size;
-		if ( ratio < 0 ) ratio *= (-1.0);
+		double yratio = self.frame.size.height / size;
+		if ( yratio < 0 ) yratio *= (-1.0);
 		
-		//NSAffineTransform* xform = [NSAffineTransform transform];
-		//[xform scaleXBy:2 yBy:2];
+		double xratio = self.frame.size.width / (_horAxis.axisMaxValue - _horAxis.axisMinValue);
+		
+		NSAffineTransform* xform = [NSAffineTransform transform];
+		[xform scaleXBy:xratio yBy:yratio];
 		//[xform concat];	
 				
 		int i = 0;
@@ -121,7 +123,10 @@ const int AXIS_SPACING = 20;
 			[lineColor setStroke];
 			
 			for (NSValue* point in points) {
-				[aPath lineToPoint:NSPointToCGPoint( [point pointValue] ) ];
+				CGPoint aPoint = NSPointToCGPoint( [point pointValue] );
+				
+				aPoint = [xform transformPoint:aPoint];
+				[aPath lineToPoint:aPoint ];
 			}
 			[aPath stroke];
 		}

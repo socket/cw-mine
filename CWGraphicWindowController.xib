@@ -47,6 +47,7 @@
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSWindowContentMinSize">{701, 364}</string>
 				<object class="NSView" key="NSWindowView" id="309355836">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -177,7 +178,7 @@
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Color</string>
 														<reference key="NSSupport" ref="26"/>
-														<object class="NSColor" key="NSBackgroundColor" id="140310396">
+														<object class="NSColor" key="NSBackgroundColor" id="481178392">
 															<int key="NSColorSpace">6</int>
 															<string key="NSCatalogName">System</string>
 															<string key="NSColorName">headerColor</string>
@@ -201,7 +202,7 @@
 													<bool key="NSIsResizeable">YES</bool>
 													<reference key="NSTableView" ref="592316255"/>
 												</object>
-												<object class="NSTableColumn" id="533994587">
+												<object class="NSTableColumn" id="133983647">
 													<string key="NSIdentifier">inputKey</string>
 													<double key="NSWidth">40</double>
 													<double key="NSMinWidth">10</double>
@@ -211,10 +212,10 @@
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Input</string>
 														<reference key="NSSupport" ref="26"/>
-														<reference key="NSBackgroundColor" ref="140310396"/>
+														<reference key="NSBackgroundColor" ref="481178392"/>
 														<reference key="NSTextColor" ref="374323013"/>
 													</object>
-													<object class="NSTextFieldCell" key="NSDataCell" id="94987729">
+													<object class="NSTextFieldCell" key="NSDataCell" id="991291963">
 														<int key="NSCellFlags">337772096</int>
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Text Cell</string>
@@ -227,7 +228,7 @@
 													<bool key="NSIsResizeable">YES</bool>
 													<reference key="NSTableView" ref="592316255"/>
 												</object>
-												<object class="NSTableColumn" id="242107983">
+												<object class="NSTableColumn" id="876660932">
 													<string key="NSIdentifier">outputKey</string>
 													<double key="NSWidth">57</double>
 													<double key="NSMinWidth">10</double>
@@ -237,10 +238,10 @@
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Output</string>
 														<reference key="NSSupport" ref="26"/>
-														<reference key="NSBackgroundColor" ref="140310396"/>
+														<reference key="NSBackgroundColor" ref="481178392"/>
 														<reference key="NSTextColor" ref="374323013"/>
 													</object>
-													<object class="NSTextFieldCell" key="NSDataCell" id="689790823">
+													<object class="NSTextFieldCell" key="NSDataCell" id="844946640">
 														<int key="NSCellFlags">337772096</int>
 														<int key="NSCellFlags2">2048</int>
 														<string key="NSContents">Text Cell</string>
@@ -430,6 +431,7 @@
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
+				<string key="NSMinSize">{701, 386}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 			</object>
 		</object>
@@ -570,8 +572,8 @@
 							<reference ref="764810094"/>
 							<reference ref="971901939"/>
 							<reference ref="912535825"/>
-							<reference ref="533994587"/>
-							<reference ref="242107983"/>
+							<reference ref="133983647"/>
+							<reference ref="876660932"/>
 						</object>
 						<reference key="parent" ref="941995101"/>
 					</object>
@@ -652,31 +654,31 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">104</int>
-						<reference key="object" ref="533994587"/>
+						<reference key="object" ref="133983647"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="94987729"/>
+							<reference ref="991291963"/>
 						</object>
 						<reference key="parent" ref="592316255"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">105</int>
-						<reference key="object" ref="94987729"/>
-						<reference key="parent" ref="533994587"/>
+						<reference key="object" ref="991291963"/>
+						<reference key="parent" ref="133983647"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">106</int>
-						<reference key="object" ref="242107983"/>
+						<reference key="object" ref="876660932"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="689790823"/>
+							<reference ref="844946640"/>
 						</object>
 						<reference key="parent" ref="592316255"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">107</int>
-						<reference key="object" ref="689790823"/>
-						<reference key="parent" ref="242107983"/>
+						<reference key="object" ref="844946640"/>
+						<reference key="parent" ref="876660932"/>
 					</object>
 				</object>
 			</object>
@@ -688,6 +690,8 @@
 					<string>1.IBPluginDependency</string>
 					<string>1.IBWindowTemplateEditedContentRect</string>
 					<string>1.NSWindowTemplate.visibleAtLaunch</string>
+					<string>1.windowTemplate.hasMinSize</string>
+					<string>1.windowTemplate.minSize</string>
 					<string>11.IBPluginDependency</string>
 					<string>12.IBPluginDependency</string>
 					<string>13.IBPluginDependency</string>
@@ -711,6 +715,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{180, 150}, {701, 364}}</string>
 					<boolean value="YES"/>
+					<boolean value="YES"/>
+					<string>{701, 364}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
