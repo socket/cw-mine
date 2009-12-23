@@ -33,4 +33,9 @@
 																	@"y",nil]];
 }
 
+
++ (BOOL) allowsSynchronousExecution {
+	return NO;
+}
+
 @end

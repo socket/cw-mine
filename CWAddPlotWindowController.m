@@ -67,6 +67,8 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	
 	dataSource.inputKey = selInputKey;
 	dataSource.plotColor = [_methodColor color];
+	dataSource.enabled = YES;
+	dataSource.rangeStep = [_methodPrecision doubleValue];
 	
 	NSDictionary* userInfo = [NSDictionary dictionary];	
 	[[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAddPlotMethod object:dataSource userInfo:userInfo];

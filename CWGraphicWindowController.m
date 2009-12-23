@@ -35,6 +35,10 @@
 		
 		_timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
 		
+		_rangeBegin = 0.0;
+		_rangeStep = 1.0;
+		_rangeEnd = 1000.0;
+		
 	}
 	return self;
 }
@@ -123,7 +127,7 @@
 #pragma mark -
 #pragma mark actions
 - (CWGraphPlotViewAxis*) graphicPlotView:(CWGraphPlotView*)view axisWithType:(CWGraphPlotAxisType)aType {
-	return [CWGraphPlotViewAxis axisWithTitle:@"axis" minValue:0 maxValue:1000];
+	return [CWGraphPlotViewAxis axisWithTitle:@"axis" minValue:_rangeBegin maxValue:_rangeEnd];
 }
 
 - (IBAction) segmentedSelector:(id)sender {
@@ -132,15 +136,23 @@
 		[controller showWindow:self];
 	}
 	else if ( [_segmentedControl selectedSegment] == 1 ) {
-		//[self removeMethod:sender];
+		int row = [_graphListTableView selectedRow];
+		if ( row >= 0 ) {
+			[_graphView.dataSources removeObjectAtIndex:row];	
+		}		
 	}
 	else if ( [_segmentedControl selectedSegment] == 2 ) {
 		//[self showSettings:sender];
 	}
 	else if ( [_segmentedControl selectedSegment] == 3 ) {
 		[_graphView reloadData];
-		[_graphListTableView reloadData];
+		
+		for (CWGraphPlotDataSource* ds in _graphView.dataSources) {
+			//ds.rangeStep = _rangeStep;
+			[ds prepareDataInRangeBegin:_rangeBegin rangeEnd:_rangeEnd delegate:self];
+		}
 	}
+	[_graphListTableView reloadData];
 }
 
 - (IBAction) showAddMethodPane:(id)sender {
