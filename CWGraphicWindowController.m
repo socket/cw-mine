@@ -33,8 +33,7 @@
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addMethod:) name:kNotificationAddPlotMethod object:nil];
 		
-		_timer = [[NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
-		[_timer fire];
+		_timer = [[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateGraphPeriodic:) userInfo:nil repeats:YES] retain];
 		
 	}
 	return self;
@@ -76,7 +75,7 @@
 }
 
 -(void) updateGraphPeriodic:(id)sender {
-	
+	[_graphView reloadData];
 }
 
 
