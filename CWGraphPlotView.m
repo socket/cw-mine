@@ -10,6 +10,8 @@
 #import "CWGraphPlotDataSource.h"
 
 const int AXIS_SPACING = 20;
+const int GUIDE_SPACING = 20;
+const int GUIDE_LENGTH = 5;
 
 @interface CWGraphPlotView ( )
 - (void)drawAxisToContext:(NSGraphicsContext*)context;
@@ -102,19 +104,39 @@ const int AXIS_SPACING = 20;
 	
 	if ( minYValue != INFINITY && maxYValue != INFINITY ) {
 		double size = (maxYValue - minYValue);
+		double hsize = (_horAxis.axisMaxValue - _horAxis.axisMinValue);
+		
 		if ( size == 0 ) size = 1.0;
+		if ( hsize == 0 ) hsize = 1.0;
 		
 		double yratio = self.frame.size.height / size;
 		if ( yratio < 0 ) yratio *= (-1.0);
+		double xratio = self.frame.size.width / hsize;
 		
-		double xratio = self.frame.size.width / (_horAxis.axisMaxValue - _horAxis.axisMinValue);
+		// draw guides
+		[[NSColor grayColor] setStroke];
+		
+		// horizontal guide
+		NSBezierPath* hguide = [NSBezierPath bezierPath];
+		for( int i = 0; i < frame.size.width / GUIDE_SPACING; ++i) {
+			[hguide moveToPoint:CGPointMake(i * GUIDE_SPACING, 0)];
+			[hguide lineToPoint:CGPointMake(i * GUIDE_SPACING, GUIDE_LENGTH)];
+		}
+		[hguide stroke];
+
+		// vertical guide
+		NSBezierPath* vguide = [NSBezierPath bezierPath];
+		for( int i = 0; i < frame.size.height / GUIDE_SPACING; ++i) {
+			[hguide moveToPoint:CGPointMake(0, i * GUIDE_SPACING)];
+			[hguide lineToPoint:CGPointMake(GUIDE_LENGTH, i * GUIDE_SPACING)];
+		}
+		[hguide stroke];
 		
 		NSAffineTransform* xform = [NSAffineTransform transform];
 		[xform scaleXBy:xratio yBy:yratio];
 		//[xform concat];	
 				
 		int i = 0;
-		
 		for (NSMutableArray* points in paths) {
 			NSBezierPath* aPath = [NSBezierPath bezierPath];
 			[aPath moveToPoint:NSMakePoint(0, 0)];

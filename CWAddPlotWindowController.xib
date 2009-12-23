@@ -437,8 +437,9 @@
 							<object class="NSTextFieldCell" key="NSCell" id="127992521">
 								<int key="NSCellFlags">-1804468671</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents"/>
+								<string key="NSContents">1</string>
 								<reference key="NSSupport" ref="348581189"/>
+								<string key="NSPlaceholderString">precision</string>
 								<reference key="NSControlView" ref="1048865440"/>
 								<bool key="NSDrawsBackground">YES</bool>
 								<reference key="NSBackgroundColor" ref="966604055"/>
