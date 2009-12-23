@@ -123,7 +123,7 @@
 	else if ( [_segmentedControl selectedSegment] == 2 ) {
 		//[self showSettings:sender];
 	}
-	else if ( [_segmentedControl selectedSegment] == 4 ) {
+	else if ( [_segmentedControl selectedSegment] == 3 ) {
 		[_graphListTableView reloadData];
 	}
 }
