@@ -26,6 +26,7 @@
 @synthesize resource = _resource;
 @synthesize inputKey = _inputKey;
 @synthesize plotColor = _plotColor;
+@synthesize methodName;
 
 @synthesize rangeBegin = _rangeBegin, rangeEnd = _rangeEnd, rangeStep = _rangeStep;
 
@@ -61,10 +62,18 @@
 		return [value doubleValue];
 	}
 	else {
-		// provide some extrapolation? :)
+		// make it happen SYNCHRONOUSLY
 		
 		return 0;
 	}
+}
+
+- (CWMethodOperation *) operationForArgument: (double) fval  {
+	CWMethodOperation* calcOperation = [[_resource alloc] init];
+	[calcOperation.inputs addEntriesFromDictionary:_inputValues];
+	[calcOperation.inputs setValue:[NSNumber numberWithDouble:fval] forKey:_inputKey];
+
+	return [calcOperation autorelease];
 }
 
 - (void)prepareDataInRangeBegin:(double)argBegin rangeEnd:(double)argEnd delegate:(id<CWOperationDelegate>)delegate {
@@ -91,10 +100,8 @@
 	for (double fval =_rangeBegin; fval <= _rangeEnd; fval += _rangeStep) {
 		_operationsTotal++;
 		
-		CWMethodOperation* calcOperation = [[_resource alloc] init];
-		[calcOperation.inputs addEntriesFromDictionary:_inputValues];
-		[calcOperation.inputs setValue:[NSNumber numberWithDouble:fval] forKey:_inputKey];
-		
+		CWMethodOperation *calcOperation = [self operationForArgument: fval];
+
 		[generalOperation addDependency:calcOperation];
 		[[CWMethodExecutor sharedInstance] addOperation:calcOperation];
 	}
@@ -141,6 +148,7 @@
 - (NSString*) methodName {
 	return [_resource description];
 }
+
 
 #pragma mark -
 - (void) dealloc {

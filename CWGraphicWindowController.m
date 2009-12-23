@@ -13,6 +13,7 @@
 #import "CWAddPlotWindowController.h"
 #import "CWMatrixDataSource.h"
 #import "CWGraphPlotDataSource.h"
+#import "CWParabolaOperation.h"
 
 @interface CWGraphicWindowController ( )
 - (void) populateMethodClasses;
@@ -45,6 +46,24 @@
 	[super dealloc];
 }
 
+- (void) windowDidLoad {
+	// Test code
+	/*CWGraphPlotDataSource* ds = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWMatrixLUDecOperation class] inputValues:[NSDictionary dictionary] outputKey:kMethodElapsed];
+	ds.inputKey = kMatrixRank;
+	ds.plotColor = [NSColor redColor];
+	[_graphView.dataSources addObject:ds];*/
+	
+	CWGraphPlotDataSource* dw = [[CWGraphPlotDataSource alloc] initWithResourceClass:[CWParabolaOperation class] inputValues:[NSDictionary dictionary] outputKey:@"y"];
+	ds.inputKey = @"x";
+	ds.plotColor = [NSColor redColor];
+	[ds setRangeBegin:0.0];
+	[ds setRangeEnd:100.0];
+	[ds setRangeStep:1.0];
+	[_graphView.dataSources addObject:ds];
+	
+	[_graphListTableView reloadData];
+}
+
 - (void) populateMethodClasses {
 	//_methodsDataSource = [[NSArray arrayWithObjects:[CWMatrixLUDecOperation class], [CWMethodOperation class], nil] retain];
 }
@@ -74,17 +93,18 @@
 	if ([key isEqualToString:@"id"]) {
 		return [NSNumber numberWithInt:(row+1)];
 	} 
-	else if ([key isEqualToString:@"name"]) {
-		return [dataSource methodName];
-	}
-	else if ([key isEqualToString:@"color"]) {
-		return [dataSource plotColor];
+	else {
+		return [dataSource valueForKeyPath:key];
 	}
 
 	return nil;
 }
 
-
+- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+	if ( [[tableColumn identifier] isEqualToString:@"color"] ) {
+		
+	}
+}
 #pragma mark -
 #pragma mark actions
 

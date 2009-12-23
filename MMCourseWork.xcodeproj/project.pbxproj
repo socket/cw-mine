@@ -11,6 +11,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B802F2C510DA71BA0018F124 /* CWMatrixLUDecOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */; };
+		B818881410E2778700DDB356 /* CWParabolaOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B818881310E2778700DDB356 /* CWParabolaOperation.m */; };
 		B818960810BF4D7C00502F39 /* CWMatrixInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B818960710BF4D7C00502F39 /* CWMatrixInitializer.m */; };
 		B81B1A5E10CFB5AA00605363 /* CWMatrixEditableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A5D10CFB5AA00605363 /* CWMatrixEditableDataSource.m */; };
 		B81B1A7810CFB77F00605363 /* CWSolutionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A7710CFB77F00605363 /* CWSolutionWindowController.m */; };
@@ -52,6 +53,8 @@
 		8D1107320486CEB800E47090 /* MMCourseWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMCourseWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixLUDecOperation.h; sourceTree = "<group>"; };
 		B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixLUDecOperation.m; sourceTree = "<group>"; };
+		B818881210E2778600DDB356 /* CWParabolaOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWParabolaOperation.h; sourceTree = "<group>"; };
+		B818881310E2778700DDB356 /* CWParabolaOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWParabolaOperation.m; sourceTree = "<group>"; };
 		B818960610BF4D7C00502F39 /* CWMatrixInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixInitializer.h; sourceTree = "<group>"; };
 		B818960710BF4D7C00502F39 /* CWMatrixInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixInitializer.m; sourceTree = "<group>"; };
 		B81B1A5C10CFB5AA00605363 /* CWMatrixEditableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixEditableDataSource.h; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				B83B6B3710DE7EA8009F6373 /* CWMethodExecutor.m */,
 				B83B6C0F10DEA8F2009F6373 /* CWMethodKeys.h */,
 				B83B6C1010DEA8F2009F6373 /* CWMethodKeys.m */,
+				B818881210E2778600DDB356 /* CWParabolaOperation.h */,
+				B818881310E2778700DDB356 /* CWParabolaOperation.m */,
 			);
 			name = Method;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				B83B6CDF10DED045009F6373 /* CWAddPlotWindowController.m in Sources */,
 				B83B6D0B10DED5C0009F6373 /* NSArray+ComboDataSource.m in Sources */,
 				B83B6E8E10DF8B04009F6373 /* NSArray+Additions.m in Sources */,
+				B818881410E2778700DDB356 /* CWParabolaOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

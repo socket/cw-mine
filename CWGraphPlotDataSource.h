@@ -44,8 +44,6 @@
 
 - (double) progressPercent;
 
-- (NSString*) methodName;
-
 @property (nonatomic, copy)		NSString*				outputKey;
 @property (nonatomic, copy)		NSString*				inputKey;
 
@@ -57,5 +55,8 @@
 @property (nonatomic, assign) double rangeBegin;
 @property (nonatomic, assign) double rangeEnd;
 @property (nonatomic, assign) double rangeStep;
+
+@property (nonatomic, readonly) NSString* methodName;
+
 
 @end

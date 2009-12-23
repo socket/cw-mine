@@ -58,8 +58,14 @@ const int AXIS_SPACING = 20;
 
 - (void)drawRect:(NSRect)dirtyRect {
     NSGraphicsContext* context = [NSGraphicsContext currentContext];
+
+	// make background color
+	NSBezierPath *bp = [NSBezierPath bezierPathWithRect:NSMakeRect(0, 0, self.frame.size.width, self.frame.size.height)];
+	[[NSColor whiteColor] set];
+	[bp fill];
 	
 	[self drawAxisToContext:context];
+	
 	
 	for (id<CWGraphPlotViewDataSource> dataSource in _dataSources) {
 		if ( ![dataSource enabled] ) {
