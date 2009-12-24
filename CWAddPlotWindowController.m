@@ -13,6 +13,13 @@
 
 NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method";
 
+@interface CWAddPlotWindowController ( ) 
+
+- (void) updateButton;
+
+@end
+
+
 @implementation CWAddPlotWindowController
 
 @synthesize methodAddButton = _methodAddButton;
@@ -33,11 +40,18 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	return self;
 }
 
+- (void) updateButton {
+	BOOL enabled = ([_methodKeyComboBox indexOfSelectedItem] >= 0) && ([_methodNameComboBox indexOfSelectedItem] >= 0) && ([_methodInputKeyComboBox indexOfSelectedItem] >= 0);
+	[_methodAddButton setEnabled:enabled];
+}
+
 - (void) awakeFromNib {
 	[_methodNameComboBox setDataSource:[CWMethodDataSource useableMethodArray]];
 	[_methodNameComboBox setDelegate:self];
 	[_methodNameComboBox reloadData];
 	[_methodKeyComboBox setDelegate:self];
+	
+	[self updateButton];
 }
 
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
@@ -48,9 +62,8 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	
 	[_methodInputKeyComboBox setDataSource:[[selClass inputKeys] retain] ];  // FIXME: memory leak
 	[_methodInputKeyComboBox reloadData];
-		
-	BOOL enabled = ([_methodKeyComboBox indexOfSelectedItem] >= 0) && ([_methodNameComboBox indexOfSelectedItem] >= 0);
-	[_methodAddButton setEnabled:enabled];
+	
+	[self updateButton];
 }
 
 - (IBAction)performAdd:(id)sender {

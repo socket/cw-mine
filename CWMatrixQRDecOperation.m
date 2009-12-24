@@ -11,6 +11,12 @@
 #import "CWMatrixInitializer.h"
 
 @implementation CWMatrixQRDecOperation
+- (id) initWithMatrix:(CWMatrix*)matrix {
+	if ( self = [self init] ) {
+		[_inputs setValue:matrix forKey:kSourceMatrix];
+	}
+	return self;
+}
 
 - (BOOL) process {
 	CWMatrix* matrix;
@@ -38,6 +44,12 @@
 	return YES;
 }
 
+
+-(CWMatrix*) srcMatrix {
+	return [_inputs valueForKey:kSourceMatrix];
+}
+
+
 + (NSString*) description {
 	return @"QR-decomposition";
 }
@@ -47,4 +59,16 @@
 																	kQMatrix,
 																	kRMatrix, kHMatrix, nil]];
 }
+
++ (NSArray*) inputKeys {
+	return [NSArray arrayByAddingArray:[super inputKeys] andArray:[NSArray arrayWithObjects:
+																   kSourceMatrix,
+																   kMatrixRank, nil]];
+}
+
+
++ (BOOL) allowsSynchronousExecution {
+	return NO;
+}
+
 @end

@@ -7,10 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CWMatrixLUDecOperation.h"
+#import "CWMethodOperation.h"
+#import "CWMatrix.h"
 
-@interface CWMatrixQRDecOperation : CWMatrixLUDecOperation {
+@interface CWMatrixQRDecOperation : CWMethodOperation {
 
 }
+
+- (CWMatrix*) srcMatrix;
+- (id) initWithMatrix:(CWMatrix*)matrix;
 
 @end
