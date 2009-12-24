@@ -8,24 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 #import "CWMatrix.h"
+#import "CWMatrixDecomposition.h"
 
-@interface CWQRDecomposition : NSObject {
+@interface CWQRDecomposition : CWMatrixDecomposition {
 	@private
-	CWMatrix* _matrix;
 	double*	  _QR;
 	double*   _RDiag;
-	int		  _m;
-	int		  _n;
 }
-
-- (id) initWithMatrix:(CWMatrix*)matrix;
-
-- (void) decompose;
 
 - (CWMatrix*) matrixQ;
 - (CWMatrix*) matrixR;
 - (CWMatrix*) matrixH;		// householder vectors
 - (BOOL) isFullRank;
-- (CWMatrix*) solveWithMatrix:(CWMatrix*)B;
 
 @end

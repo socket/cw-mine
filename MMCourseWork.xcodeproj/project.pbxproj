@@ -36,6 +36,9 @@
 		B866625710BF1B2D008E8942 /* CWMatrixDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B866625610BF1B2D008E8942 /* CWMatrixDataSource.m */; };
 		B866625A10BF1FB6008E8942 /* CWMatrixTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B866625910BF1FB6008E8942 /* CWMatrixTableView.m */; };
 		B876D49210E3EB1C0019D034 /* CWQRDecomposition.m in Sources */ = {isa = PBXBuildFile; fileRef = B876D49110E3EB1C0019D034 /* CWQRDecomposition.m */; };
+		B876D57410E41B770019D034 /* CWLUDecomposition.m in Sources */ = {isa = PBXBuildFile; fileRef = B876D57310E41B770019D034 /* CWLUDecomposition.m */; };
+		B876D57710E41B8E0019D034 /* CWLUGaussianDecomposition.m in Sources */ = {isa = PBXBuildFile; fileRef = B876D57610E41B8E0019D034 /* CWLUGaussianDecomposition.m */; };
+		B876D57A10E41BCA0019D034 /* CWMatrixDecomposition.m in Sources */ = {isa = PBXBuildFile; fileRef = B876D57910E41BCA0019D034 /* CWMatrixDecomposition.m */; };
 		B8777C9510DE173B00DE59B5 /* CWDecompositionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */; };
 		B8C3A21110C5656800BE164C /* CWGraphPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21010C5656800BE164C /* CWGraphPlotView.m */; };
 		B8C3A21410C565A600BE164C /* CWMethodOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21310C565A600BE164C /* CWMethodOperation.m */; };
@@ -102,6 +105,12 @@
 		B866625910BF1FB6008E8942 /* CWMatrixTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixTableView.m; sourceTree = "<group>"; };
 		B876D49010E3EB1C0019D034 /* CWQRDecomposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWQRDecomposition.h; sourceTree = "<group>"; };
 		B876D49110E3EB1C0019D034 /* CWQRDecomposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWQRDecomposition.m; sourceTree = "<group>"; };
+		B876D57210E41B770019D034 /* CWLUDecomposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLUDecomposition.h; sourceTree = "<group>"; };
+		B876D57310E41B770019D034 /* CWLUDecomposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWLUDecomposition.m; sourceTree = "<group>"; };
+		B876D57510E41B8E0019D034 /* CWLUGaussianDecomposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLUGaussianDecomposition.h; sourceTree = "<group>"; };
+		B876D57610E41B8E0019D034 /* CWLUGaussianDecomposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWLUGaussianDecomposition.m; sourceTree = "<group>"; };
+		B876D57810E41BCA0019D034 /* CWMatrixDecomposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixDecomposition.h; sourceTree = "<group>"; };
+		B876D57910E41BCA0019D034 /* CWMatrixDecomposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixDecomposition.m; sourceTree = "<group>"; };
 		B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWDecompositionController.h; sourceTree = "<group>"; };
 		B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWDecompositionController.m; sourceTree = "<group>"; };
 		B8C3A20F10C5656800BE164C /* CWGraphPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphPlotView.h; sourceTree = "<group>"; };
@@ -289,8 +298,14 @@
 		B876D48F10E3EB090019D034 /* Math */ = {
 			isa = PBXGroup;
 			children = (
+				B876D57810E41BCA0019D034 /* CWMatrixDecomposition.h */,
+				B876D57910E41BCA0019D034 /* CWMatrixDecomposition.m */,
 				B876D49010E3EB1C0019D034 /* CWQRDecomposition.h */,
 				B876D49110E3EB1C0019D034 /* CWQRDecomposition.m */,
+				B876D57210E41B770019D034 /* CWLUDecomposition.h */,
+				B876D57310E41B770019D034 /* CWLUDecomposition.m */,
+				B876D57510E41B8E0019D034 /* CWLUGaussianDecomposition.h */,
+				B876D57610E41B8E0019D034 /* CWLUGaussianDecomposition.m */,
 			);
 			name = Math;
 			sourceTree = "<group>";
@@ -413,6 +428,9 @@
 				B8188A3710E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m in Sources */,
 				B8188AD310E2B53400DDB356 /* CWMatrixQRDecOperation.m in Sources */,
 				B876D49210E3EB1C0019D034 /* CWQRDecomposition.m in Sources */,
+				B876D57410E41B770019D034 /* CWLUDecomposition.m in Sources */,
+				B876D57710E41B8E0019D034 /* CWLUGaussianDecomposition.m in Sources */,
+				B876D57A10E41BCA0019D034 /* CWMatrixDecomposition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

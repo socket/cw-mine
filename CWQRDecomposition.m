@@ -8,16 +8,12 @@
 
 #import "CWQRDecomposition.h"
 
-#define MXE(m, i, j) m[i*_m + j]
 
 @implementation CWQRDecomposition
 
 - (id) initWithMatrix:(CWMatrix*)matrix {
-	if ( self = [super init] ) {
+	if ( self = [super initWithMatrix:matrix] ) {
 		_QR = [matrix copyAsArray];
-		_m = matrix.rows;
-		_n = matrix.columns;
-		_matrix = [matrix retain];
 		_RDiag = calloc(_n, sizeof(double));
 	}
 	return self;
@@ -132,7 +128,6 @@
 	if ( _RDiag )
 		free(_RDiag);
 	
-	[_matrix release];
 	[super dealloc];
 }
 @end
