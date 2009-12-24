@@ -146,8 +146,8 @@
 }
 
 - (double*) copyAsArray {
-	double* array = calloc(columns*rows, sizeof(double));
-	memcpy(array, _data, columns*rows * sizeof(double) );
+	double* array = calloc(self.columns*self.rows, sizeof(double));
+	memcpy(array, _data, self.columns*self.rows * sizeof(double) );
 	return array;
 }
 

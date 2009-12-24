@@ -112,7 +112,7 @@
 				}
 				s = -s/MXE(_QR,k,k);
 				for (int i = k; i < _m; i++) {
-					double v = [Q valueForRow:i column:j] + s*MXE(_QR,i,j);
+					double v = [Q valueForRow:i column:j] + s*MXE(_QR,i,k);
 					[Q setValue:v row:i column:j];
 				}
 			}

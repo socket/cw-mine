@@ -17,5 +17,6 @@
 + (double) cCoeffForRank:(NSUInteger)rank qCoeff:(double)qCoeff;
 + (CWMatrix*) matrixWithRank:(NSUInteger)rank qCoeff:(double)qCoeff;
 + (CWMatrix*) randomMatrixWithRank:(NSUInteger)rank;
++ (CWMatrix*) orderedMatrixWithRank:(NSUInteger)rank;
 
 @end

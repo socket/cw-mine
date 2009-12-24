@@ -46,4 +46,18 @@
 	return matrix;
 }
 
++ (CWMatrix*) orderedMatrixWithRank:(NSUInteger)rank {
+	CWMatrix* matrix = [CWMatrix matrixWithRows:rank columns:rank];
+	
+	int n=0;
+	for ( int i = 0; i < rank; ++i ) {
+		for ( int j = 0; j < rank; ++j ) {
+			[matrix setValue:++n row:i column:j];
+		}
+	}
+	
+	return matrix;
+}
+
+
 @end
