@@ -121,6 +121,11 @@
 	return Q;
 }
 
+- (CWMatrix*) solveWithMatrix:(CWMatrix*)B {
+	
+	return B;
+}
+
 - (void) dealloc {
 	if (_QR)
 		free(_QR);

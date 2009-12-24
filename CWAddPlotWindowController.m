@@ -50,6 +50,7 @@ NSString* const kNotificationAddPlotMethod		= @"CW.Notification.Add.Plot.Method"
 	[_methodNameComboBox setDelegate:self];
 	[_methodNameComboBox reloadData];
 	[_methodKeyComboBox setDelegate:self];
+	[_methodInputKeyComboBox setDelegate:self];
 	
 	[self updateButton];
 }
