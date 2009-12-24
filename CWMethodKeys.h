@@ -10,6 +10,10 @@
 
 extern NSString* const kLMatrix;
 extern NSString* const kUMatrix;
+extern NSString* const kQMatrix;
+extern NSString* const kRMatrix;
+extern NSString* const kHMatrix;
+
 extern NSString* const kSourceMatrix;
 extern NSString* const kMethodDateBegin;
 extern NSString* const kMethodDateEnd;

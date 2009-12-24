@@ -11,6 +11,9 @@
 NSString* const kSourceMatrix		= @"src-matrix";
 NSString* const kLMatrix			= @"l-matrix";
 NSString* const kUMatrix			= @"u-matrix";
+NSString* const kQMatrix			= @"q-matrix";
+NSString* const kRMatrix			= @"r-matrix";
+NSString* const kHMatrix			= @"h-matrix";
 NSString* const kMethodDateBegin	= @"date-begin";
 NSString* const kMethodDateEnd		= @"date-end";
 NSString* const kMethodElapsed		= @"elapsed";
