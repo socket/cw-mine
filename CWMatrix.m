@@ -145,6 +145,12 @@
 	return (self.rows == self.columns);
 }
 
+- (double*) copyAsArray {
+	double* array = calloc(columns*rows, sizeof(double));
+	memcpy(array, _data, columns*rows * sizeof(double) );
+	return array;
+}
+
 - (void) dealloc {
 	free(_data);
 	

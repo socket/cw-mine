@@ -30,6 +30,8 @@
 
 - (NSString*)description;
 
+- (double*) copyAsArray;
+
 //
 
 @property (nonatomic, readonly) BOOL square;

@@ -286,14 +286,6 @@
 							<string key="NSTitle">Actions</string>
 							<object class="NSMutableArray" key="NSMenuItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSMenuItem" id="141383195">
-									<reference key="NSMenu" ref="847055137"/>
-									<string key="NSTitle">Solve System</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="502551668"/>
-								</object>
 								<object class="NSMenuItem" id="837564135">
 									<reference key="NSMenu" ref="847055137"/>
 									<string key="NSTitle">Decompose Matrix</string>
@@ -533,14 +525,6 @@
 						<reference key="destination" ref="1008646730"/>
 					</object>
 					<int key="connectionID">541</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">showSolutionWindow:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="141383195"/>
-					</object>
-					<int key="connectionID">542</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -856,16 +840,10 @@
 						<reference key="object" ref="847055137"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="141383195"/>
 							<reference ref="837564135"/>
 							<reference ref="941077580"/>
 						</object>
 						<reference key="parent" ref="168527382"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">540</int>
-						<reference key="object" ref="141383195"/>
-						<reference key="parent" ref="847055137"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">543</int>
@@ -937,7 +915,6 @@
 					<string>538.IBPluginDependency</string>
 					<string>539.IBEditorWindowLastContentRect</string>
 					<string>539.IBPluginDependency</string>
-					<string>540.IBPluginDependency</string>
 					<string>543.IBPluginDependency</string>
 					<string>544.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
@@ -1021,8 +998,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{566, 609}, {180, 63}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>{{566, 629}, {180, 43}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
