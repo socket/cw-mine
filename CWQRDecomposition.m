@@ -69,11 +69,11 @@
 	CWMatrix* H = [CWMatrix matrixWithRows:_m columns:_n];
 	for (int i = 0; i < _m; i++) {
 		for (int j = 0; j < _n; j++) {
-            if (i >= j) {
+			if (i >= j) {
 				[H setValue:MXE(_QR,i,j) row:i column:j];
-            } else {
+			} else {
 				[H setValue:0 row:i column:j];
-            }
+			}
 		}
 	}
 	return H;
