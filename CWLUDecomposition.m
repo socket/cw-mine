@@ -24,30 +24,6 @@
 	return self;
 }
 
-/* for (int j = 0; j < n; j++) {
- 
- // Make a copy of the j-th column to localize references.
- 
- for (int i = 0; i < m; i++) {
- LUcolj[i] = LU[i][j];
- }
- 
- // Apply previous transformations.
- 
- for (int i = 0; i < m; i++) {
- LUrowi = LU[i];
- 
- // Most of the time is spent in the following dot product.
- 
- int kmax = Math.min(i,j);
- double s = 0.0;
- for (int k = 0; k < kmax; k++) {
- s += LUrowi[k]*LUcolj[k];
- }
- 
- LUrowi[j] = LUcolj[i] -= s;
- }*/
-
 - (void) decompose {
 	double* LUrowi;
 	double* LUcolj = calloc(_m, sizeof(double));
@@ -99,7 +75,7 @@
 	}
 }
 
-- (BOOL) isNonsingular {
+- (BOOL) nonsingular {
 	for (int j = 0; j < _n; j++) {
 		if (MXE(_LU, j, j) == 0)
 			return NO;
@@ -137,6 +113,14 @@
 	return U;	
 }
 
+- (NSArray*) pivots {
+	NSMutableArray* pivotArray = [NSArray array];
+	for (int i=0; i<_m; i++) {
+		[pivotArray addObject:[NSNumber numberWithInt:_piv[i]]];
+	}
+	return pivotArray;
+}
+
 - (void) dealloc {
 	if ( _LU )
 		free( _LU );
@@ -146,4 +130,5 @@
 	
 	[super dealloc];
 }
+
 @end

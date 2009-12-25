@@ -20,7 +20,7 @@
 
 - (BOOL) process {
 	CWMatrix* matrix;
-	unsigned int rank = [self.srcMatrix rank];
+	unsigned int rank;
 	if ( [_inputs valueForKey:kMatrixRank] ) {
 		rank = [[_inputs valueForKey:kMatrixRank] intValue];
 		if ( rank == 0 )
@@ -29,7 +29,7 @@
 		matrix = [CWMatrixInitializer matrixWithRank:rank qCoeff:rank];
 	}
 	else {
-		matrix = [[self.srcMatrix copy] autorelease]; // A(0) -- U-matrix
+		matrix = self.srcMatrix; // A(0) -- U-matrix
 	}
 	
 	CWQRDecomposition* dc = [[CWQRDecomposition alloc] initWithMatrix:matrix];

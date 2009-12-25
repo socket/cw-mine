@@ -15,9 +15,11 @@
 	double* _LU;
 }
 
-- (BOOL) isNonsingular;
+- (BOOL) nonsingular;
 
--(CWMatrix*) matrixL;
--(CWMatrix*) matrixU;
+- (CWMatrix*) matrixL;
+- (CWMatrix*) matrixU;
+
+- (NSArray*) pivots;
 
 @end

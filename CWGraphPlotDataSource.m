@@ -113,14 +113,15 @@
 		
 		CWMethodOperation *calcOperation = [self operationForArgument: fval];
 
+		int k = [calcOperation retainCount];
 		calcOperation.delegate = self;
-		[generalOperation addDependency:calcOperation];
-		
+		//[generalOperation addDependency:calcOperation];
 		[[CWMethodExecutor sharedInstance] addOperation:calcOperation];
 	}
 	
 	generalOperation.delegate = self;
-	[[CWMethodExecutor sharedInstance] addOperation:generalOperation];
+	//[[CWMethodExecutor sharedInstance] addOperation:generalOperation];
+	[generalOperation release];
 }
 
 - (int) progressPercent {
