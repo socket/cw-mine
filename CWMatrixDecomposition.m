@@ -12,7 +12,9 @@
 @implementation CWMatrixDecomposition
 
 + (id) decomposeMatrix:(CWMatrix*)matrix {
-	return [[[[self class] alloc] initWithMatrix:matrix] autorelease];
+	id m = [[[self class] alloc] initWithMatrix:matrix];
+	[m decompose];
+	return [m autorelease];
 }
 
 - (id) initWithMatrix:(CWMatrix*)matrix {

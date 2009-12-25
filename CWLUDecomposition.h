@@ -10,7 +10,14 @@
 #import "CWMatrixDecomposition.h"
 
 @interface CWLUDecomposition : CWMatrixDecomposition {
-
+	int		_pivsign;
+	int*	_piv;
+	double* _LU;
 }
+
+- (BOOL) isNonsingular;
+
+-(CWMatrix*) matrixL;
+-(CWMatrix*) matrixU;
 
 @end

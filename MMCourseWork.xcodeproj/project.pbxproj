@@ -310,6 +310,19 @@
 			name = Math;
 			sourceTree = "<group>";
 		};
+		B876D59A10E41DF20019D034 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */,
+				B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */,
+				B818881210E2778600DDB356 /* CWParabolaOperation.h */,
+				B818881310E2778700DDB356 /* CWParabolaOperation.m */,
+				B8188AD110E2B53400DDB356 /* CWMatrixQRDecOperation.h */,
+				B8188AD210E2B53400DDB356 /* CWMatrixQRDecOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		B8C3A20210C5645700BE164C /* Matrix */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,18 +337,13 @@
 		B8C3A20310C5646100BE164C /* Method */ = {
 			isa = PBXGroup;
 			children = (
+				B876D59A10E41DF20019D034 /* Operations */,
 				B8C3A21210C565A600BE164C /* CWMethodOperation.h */,
 				B8C3A21310C565A600BE164C /* CWMethodOperation.m */,
-				B802F2C310DA71BA0018F124 /* CWMatrixLUDecOperation.h */,
-				B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */,
 				B83B6B3610DE7EA8009F6373 /* CWMethodExecutor.h */,
 				B83B6B3710DE7EA8009F6373 /* CWMethodExecutor.m */,
 				B83B6C0F10DEA8F2009F6373 /* CWMethodKeys.h */,
 				B83B6C1010DEA8F2009F6373 /* CWMethodKeys.m */,
-				B818881210E2778600DDB356 /* CWParabolaOperation.h */,
-				B818881310E2778700DDB356 /* CWParabolaOperation.m */,
-				B8188AD110E2B53400DDB356 /* CWMatrixQRDecOperation.h */,
-				B8188AD210E2B53400DDB356 /* CWMatrixQRDecOperation.m */,
 			);
 			name = Method;
 			sourceTree = "<group>";
