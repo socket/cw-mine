@@ -136,7 +136,7 @@
 	// Copy right hand side with pivoting
 	int nx = [B columns];
 	CWMatrix* X = [B submatrixWithRows:[self pivots] initialColumn:0 finalColumn:nx-1];
-	int rx = [X rows];
+	int rx = [X columns];
 	
 	// Solve L*Y = B(piv,:)
 	for (int k = 0; k < _n; k++) {
