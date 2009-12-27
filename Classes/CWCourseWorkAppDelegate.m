@@ -26,7 +26,6 @@
 	
 	_matrixInputController = [[CWMatrixInputController alloc] initWithWindowNibName:@"CWMatrixInputController"];	
 	_solutionController = [[CWSolutionWindowController alloc] initWithWindowNibName:@"CWSolutionWindowController"];
-	
 }
 
 - (IBAction) showMatrixInputWindow:(id)sender {

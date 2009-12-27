@@ -57,6 +57,16 @@
 	return YES;
 }
 
+- (void)copy:(id)sender {
+	if ( self.matrix ) {
+		NSPasteboard *pb = [NSPasteboard generalPasteboard];
+		//NSArray *pb_types = [NSArray arrayWithObjects:@"CW.Matrix.Data",NULL];
+		//[pb declareTypes:pb_types owner:self];
+		[pb declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:nil];
+		[pb setString:[self.matrix description] forType:NSStringPboardType];
+	}
+}
+
 - (void) dealloc {
 	[_matrixDataSource release];
 	[super dealloc];

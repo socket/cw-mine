@@ -20,6 +20,7 @@
 - (IBAction) showSolutionWindow:	(id)sender;
 - (IBAction) showDecomposeWindow:	(id)sender;
 - (IBAction) showGraphWindow:		(id)sender;
+- (BOOL) canCopy;
 
 @property (assign) IBOutlet NSWindow *window;
 

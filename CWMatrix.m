@@ -8,8 +8,8 @@
 
 #import "CWMatrix.h"
 
-#define VAL(i, j)		_data[i*_rows + j]
-#define VALM(m, i, j)	m.data[i*m.rows+j]
+#define VAL(i, j)		_data[i*_columns + j]
+#define VALM(m, i, j)	m.data[i*m.columns+j]
 
 @interface CWMatrix ()
 
@@ -125,7 +125,8 @@
 	@try {
 		for (int i=0; i < [rows count]; i++ ) {
 			for (int j = j0; j <= j1; j++ ) {
-				VALM(X, i, j-j0) = VAL([[rows objectAtIndex:i] intValue], j);
+				int row = [[rows objectAtIndex:i] intValue];
+				VALM(X, i, j-j0) = VAL(row, j);
 			}
 		}
 	}
