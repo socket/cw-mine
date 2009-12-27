@@ -16,13 +16,16 @@
 	@private
 	CWMatrixTableView*		_srcMatrixView;
 	CWMatrixTableView*		_resultMatrixView;
+	
 	NSTextField*			_rankTextField;
+	NSTextField*			_resultTextField;
+	
 	NSComboBox*				_methodComboBox;
 	NSComboBox*				_displayKeyComboBox;
 	NSButton*				_execButton;
 	NSProgressIndicator*	_progressIndicator;
 	CWMethodOperation*		_operation;
-	NSMutableArray*			_outputKeys;
+	NSArray*				_outputKeys;
 }
 
 @property (nonatomic, retain) IBOutlet CWMatrixTableView*	srcMatrixView;
@@ -33,6 +36,8 @@
 @property (nonatomic, retain) IBOutlet NSButton*			execButton;
 
 @property (nonatomic, retain) IBOutlet NSTextField*	rankTextField;
+
+@property (nonatomic, retain) IBOutlet NSTextField*	resultTextField;
 
 - (IBAction) makeRandomValues:(id)sender;
 - (IBAction) makeDefaultValues:(id)sender;

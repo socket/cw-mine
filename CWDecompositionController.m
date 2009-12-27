@@ -16,7 +16,7 @@
 
 - (void)updateSourceMatrix;
 
-@property (nonatomic, retain) NSMutableArray* outputKeys;
+@property (nonatomic, retain) NSArray* outputKeys;
 @property (nonatomic, readonly) NSInteger selectedRank;
 @property (nonatomic, retain) CWMethodOperation* operation;
 @end
@@ -32,6 +32,7 @@
 @synthesize operation			= _operation;
 @synthesize execButton			= _execButton;
 @synthesize outputKeys			= _outputKeys;
+@synthesize resultTextField		= _resultTextField;
 
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
@@ -96,13 +97,6 @@
 -(void)operationSucceeded:(CWMethodOperation*)operation {
 	self.operation = operation;
 	[_progressIndicator stopAnimation:self];
-	
-	self.outputKeys = [NSMutableArray arrayWithCapacity:[operation.outputs count]];
-	for (NSString* key in operation.outputs) {
-		[self.outputKeys addObject:[key copy]];
-	}
-	[_displayKeyComboBox setDataSource:self.outputKeys];
-	[_displayKeyComboBox reloadData];
 }
 
 -(void)operationFailed:(CWMethodOperation*)operation {
@@ -121,11 +115,21 @@
 }
 
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
-	[_execButton setEnabled: ([_methodComboBox indexOfSelectedItem] >= 0)];
+	BOOL enabled = ([_methodComboBox indexOfSelectedItem] >= 0);
 	
+	[_execButton setEnabled: enabled];
+	
+
+	if ( enabled ) {
+		Class selClass = [[CWMethodDataSource useableMethodArray] objectAtIndex:[_methodComboBox indexOfSelectedItem]];
+		self.outputKeys = [selClass outputKeys];
+		[_displayKeyComboBox setDataSource:self.outputKeys];
+		[_displayKeyComboBox reloadData];
+	}
+
 	// change data in display
-	if ( _operation ) {
-		NSString* key = [_displayKeyComboBox objectValueOfSelectedItem];
+	if ( _operation && ( [_displayKeyComboBox indexOfSelectedItem] >= 0 ) ) {
+		NSString* key = [self.outputKeys objectAtIndex:[_displayKeyComboBox indexOfSelectedItem]];
 		if ( ! key ) 
 			return;
 		
@@ -143,6 +147,7 @@
 	self.operation = nil;
 	self.outputKeys = nil;
 	
+	[_resultTextField release];
 	[_execButton release];
 	[_methodComboBox release];
 	[_displayKeyComboBox release];
