@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="38"/>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -43,7 +43,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{131, 0}, {568, 499}}</string>
 				<int key="NSWTFlags">611844096</int>
-				<string key="NSWindowTitle">Window</string>
+				<string key="NSWindowTitle">Solution (A.x=B)</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
