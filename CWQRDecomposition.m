@@ -118,8 +118,46 @@
 }
 
 - (CWMatrix*) solveWithMatrix:(CWMatrix*)B {
+	if ([B rows] != _m) {
+		[[NSAlert alertWithMessageText:@"Unable to solve" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Matrix row dimensions must agree"] runModal];
+		return nil;
+	}
 	
-	return B;
+	if (![self isFullRank]) {
+		[[NSAlert alertWithMessageText:@"Unable to solve" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Matrix is rank deficient"] runModal];
+		return nil; 
+	}
+	
+	int nx = [B columns];
+	double* X = [B copyAsArray];
+	
+	// Compute Y = transpose(Q)*B
+	for (int k = 0; k < _n; k++) {
+		for (int j = 0; j < nx; j++) {
+			double s = 0.0; 
+			for (int i = k; i < _m; i++) {
+				s += MXE(_QR, i, k) * MXE1(X,nx,i,j);
+			}
+			s = -s/MXE(_QR, k, k);
+			for (int i = k; i < _m; i++) {
+				MXE1(X,nx,i,j) += s*MXE(_QR, i, k);
+			}			
+		}
+	}
+	// Solve R*X = Y;
+	for (int k = _n-1; k >= 0; k--) {
+		for (int j = 0; j < nx; j++) {
+			MXE1(X,nx,k,j) /= _RDiag[k];
+		}
+		for (int i = 0; i < k; i++) {
+			for (int j = 0; j < nx; j++) {
+				MXE1(X,nx,i,j) -= MXE1(X,nx,k,j)*MXE(_QR, i, k);
+			}
+		}
+	}
+	
+	CWMatrix* R = [[CWMatrix alloc] initWithData:X rows:_n columns:nx];
+	return [R submatrixWithInitialRow:0 finalRow:(_n-1) initialColumn:0 finalColumn:nx-1];
 }
 
 - (NSString*) description {

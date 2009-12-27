@@ -38,6 +38,23 @@
 	return self;
 }
 
+- (id) initWithData:(double*)data rows:(int)rows columns:(int)columns {
+	if ( rows == 0 || columns == 0 ) {
+		[self release];
+		return nil;
+	}
+	
+	if ( self = [super init] ) {
+		_columns = columns;
+		_rows = rows;
+		
+		_data = calloc(columns*rows, sizeof(double));
+		memcpy(_data, data, _rows*_columns*sizeof(double));
+	}
+	
+	return self;
+}
+
 - (id) copy {
 	CWMatrix* newMatrix = [[CWMatrix alloc] initWithRows:self.rows andColumns:self.columns];
 	assert(newMatrix);

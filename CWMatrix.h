@@ -19,6 +19,7 @@
 
 + (id) matrixWithRows:(int)rows columns:(int)columns;
 - (id) initWithRows:(int)rows andColumns:(int)columns;
+- (id) initWithData:(double*)data rows:(int)rows columns:(int)columns;
 
 - (CWMatrix*) addMatrix:(CWMatrix*)matrix;
 - (CWMatrix*) substractMatrix:(CWMatrix*)matrix;
