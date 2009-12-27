@@ -122,6 +122,10 @@
 	return B;
 }
 
+- (NSString*) description {
+	return @"QR Decomposition";
+}
+
 - (void) dealloc {
 	if (_QR)
 		free(_QR);

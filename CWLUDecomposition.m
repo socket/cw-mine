@@ -123,10 +123,13 @@
 
 - (CWMatrix*) solveWithMatrix:(CWMatrix*)B {
 	if ([B rows] != _m) {
+		[[NSAlert alertWithMessageText:@"Unable to solve" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Row count does not match"] runModal];
 		return nil;
 	}
 	
 	if (![self nonsingular]) {
+		[[NSAlert alertWithMessageText:@"Unable to solve" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Provided matrix is singular"] runModal];
+		
 		return nil; // matrix is singular
 	}
 	
@@ -155,6 +158,10 @@
 		}
 	}
 	return X;
+}
+
+- (NSString*) description {
+	return @"LU Decomposition (Crout)";
 }
 
 - (void) dealloc {

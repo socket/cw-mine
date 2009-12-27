@@ -46,4 +46,9 @@
 	}	
 }
 
+- (NSString*) description {
+	return @"LU Decomposition (Gaussian)";
+}
+
+
 @end

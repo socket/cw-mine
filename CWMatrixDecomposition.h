@@ -27,4 +27,6 @@
 #define MXE1(m, r, i, j)	m[i*r + j]
 #define ROW(m, i)			&m[i*_m]
 
+- (NSString*) description;
+
 @end

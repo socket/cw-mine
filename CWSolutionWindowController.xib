@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
+			<integer value="38"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -171,7 +171,7 @@
 											<object class="NSTextFieldCell" key="NSCell" id="1044360605">
 												<int key="NSCellFlags">-1804468671</int>
 												<int key="NSCellFlags2">272630784</int>
-												<string key="NSContents"/>
+												<string key="NSContents">5</string>
 												<reference key="NSSupport" ref="66111646"/>
 												<reference key="NSControlView" ref="1012423553"/>
 												<bool key="NSDrawsBackground">YES</bool>
@@ -234,11 +234,8 @@
 												<reference key="NSTextColor" ref="895273972"/>
 												<int key="NSVisibleItemCount">5</int>
 												<bool key="NSHasVerticalScroller">YES</bool>
-												<object class="NSMutableArray" key="NSPopUpListData">
-													<bool key="EncodedWithXMLCoder">YES</bool>
-													<string>QR</string>
-													<string>LR</string>
-												</object>
+												<bool key="NSUsesDataSource">YES</bool>
+												<nil key="NSDataSource"/>
 												<reference key="NSDelegate" ref="556556843"/>
 												<object class="NSComboTableView" key="NSTableView" id="525821747">
 													<reference key="NSNextResponder"/>
@@ -304,7 +301,6 @@
 													<string key="NSAction">tableViewAction:</string>
 													<int key="NSTvFlags">-765427712</int>
 													<reference key="NSDelegate" ref="204631795"/>
-													<reference key="NSDataSource" ref="204631795"/>
 													<reference key="NSTarget" ref="204631795"/>
 													<int key="NSColumnAutoresizingStyle">1</int>
 													<int key="NSDraggingSourceMaskForLocal">15</int>
@@ -313,6 +309,7 @@
 													<int key="NSTableViewDraggingDestinationStyle">0</int>
 												</object>
 											</object>
+											<nil key="NSDataSource"/>
 										</object>
 									</object>
 									<string key="NSFrame">{{1, 1}, {537, 71}}</string>
@@ -362,15 +359,6 @@
 								<int key="NSPeriodicDelay">200</int>
 								<int key="NSPeriodicInterval">25</int>
 							</object>
-						</object>
-						<object class="NSProgressIndicator" id="347895631">
-							<reference key="NSNextResponder" ref="87682794"/>
-							<int key="NSvFlags">1284</int>
-							<object class="NSPSMatrix" key="NSDrawMatrix"/>
-							<string key="NSFrame">{{180, 20}, {16, 16}}</string>
-							<reference key="NSSuperview" ref="87682794"/>
-							<int key="NSpiFlags">20746</int>
-							<double key="NSMaxValue">100</double>
 						</object>
 						<object class="NSScrollView" id="507748958">
 							<reference key="NSNextResponder" ref="87682794"/>
@@ -860,14 +848,6 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">progressIndicator</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="347895631"/>
-					</object>
-					<int key="connectionID">56</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">textField</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="1012423553"/>
@@ -974,7 +954,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="419133792"/>
 							<reference ref="540358377"/>
-							<reference ref="347895631"/>
 							<reference ref="507748958"/>
 							<reference ref="804638846"/>
 							<reference ref="559269169"/>
@@ -1094,11 +1073,6 @@
 						<int key="objectID">42</int>
 						<reference key="object" ref="766612078"/>
 						<reference key="parent" ref="660214620"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">45</int>
-						<reference key="object" ref="347895631"/>
-						<reference key="parent" ref="87682794"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">46</int>
@@ -1352,7 +1326,6 @@
 					<string>38.IBPluginDependency</string>
 					<string>41.IBPluginDependency</string>
 					<string>42.IBPluginDependency</string>
-					<string>45.IBPluginDependency</string>
 					<string>46.IBPluginDependency</string>
 					<string>47.IBPluginDependency</string>
 					<string>48.IBPluginDependency</string>
@@ -1391,7 +1364,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{101, 192}, {568, 499}}</string>
 					<boolean value="YES"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1496,7 +1468,6 @@
 							<string>aMatrixTableView</string>
 							<string>algComboBox</string>
 							<string>bMatrixTableView</string>
-							<string>progressIndicator</string>
 							<string>resultMatrixTableView</string>
 							<string>textField</string>
 						</object>
@@ -1505,7 +1476,6 @@
 							<string>CWMatrixTableView</string>
 							<string>NSComboBox</string>
 							<string>CWMatrixTableView</string>
-							<string>NSProgressIndicator</string>
 							<string>CWMatrixTableView</string>
 							<string>NSTextField</string>
 						</object>
@@ -1883,14 +1853,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">Foundation.framework/Headers/NSURLDownload.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSProgressIndicator</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBFrameworkSource</string>
-						<string key="minorKey">AppKit.framework/Headers/NSProgressIndicator.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

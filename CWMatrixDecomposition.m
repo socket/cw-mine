@@ -35,6 +35,10 @@
 	return B;
 }
 
+- (NSString*) description {
+	return @"Generic decomposition class";
+}
+
 - (void) dealloc {
 	[_matrix release];
 	[super dealloc];

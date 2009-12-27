@@ -9,16 +9,16 @@
 #import <Cocoa/Cocoa.h>
 #import "CWMatrixTableView.h"
 
-@interface CWSolutionWindowController : NSWindowController<NSTextFieldDelegate> {
+@interface CWSolutionWindowController : NSWindowController<NSTextFieldDelegate, NSComboBoxDelegate> {
 	@private
 	CWMatrixTableView*		_aMatrixTableView;
 	CWMatrixTableView*		_bMatrixTableView;
 	CWMatrixTableView*		_resultMatrixTableView;
-	
-	NSProgressIndicator*	_progressIndicator;
-	
+		
 	NSComboBox*				_algComboBox;
 	NSTextField*			_textField;
+	
+	NSArray*				_methods;
 }
 
 - (IBAction) solve:(id)sender;
@@ -28,7 +28,6 @@
 @property (nonatomic, retain) IBOutlet CWMatrixTableView* bMatrixTableView;
 @property (nonatomic, retain) IBOutlet CWMatrixTableView* resultMatrixTableView;
 @property (nonatomic, retain) IBOutlet NSTextField*	 textField;
-@property (nonatomic, retain) IBOutlet NSProgressIndicator* progressIndicator;
 @property (nonatomic, retain) IBOutlet NSComboBox*			algComboBox;
 
 @end
