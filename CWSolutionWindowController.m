@@ -66,8 +66,8 @@
 - (IBAction) revertToDefaults:(id)sender {
 	int rank = [_textField intValue];
 	
-	_aMatrixTableView.matrix = [ [CWMatrixInitializer orderedMatrixWithRank:rank] addMatrix:_aMatrixTableView.matrix];
-	_bMatrixTableView.matrix = [[CWMatrix matrixWithRows:rank columns:1] addMatrix:_bMatrixTableView.matrix];
+	_aMatrixTableView.matrix = [CWMatrixInitializer orderedMatrixWithRank:rank];
+	_bMatrixTableView.matrix = [CWMatrix matrixWithRows:rank columns:1];
 }
 
 - (BOOL) control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
