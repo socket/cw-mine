@@ -121,6 +121,42 @@
 	return pivotArray;
 }
 
+- (CWMatrix*) solveWithMatrix:(CWMatrix*)B {
+	if ([B rows] != _m) {
+		return nil;
+	}
+	
+	if (![self nonsingular]) {
+		return nil; // matrix is singular
+	}
+	
+	// Copy right hand side with pivoting
+	int nx = [B columns];
+	CWMatrix* X;  //= B.getMatrix(piv,0,nx-1);
+	int rx = [X rows];
+	
+	// Solve L*Y = B(piv,:)
+	for (int k = 0; k < _n; k++) {
+		for (int i = k+1; i < _n; i++) {
+            for (int j = 0; j < nx; j++) {
+				MXE1(X.data, rx, i, j) -= MXE1(X.data, rx, k, j) * MXE(_LU, i, k);
+            }
+		}
+	}
+	// Solve U*X = Y;
+	for (int k = _n-1; k >= 0; k--) {
+		for (int j = 0; j < nx; j++) {
+			MXE1(X.data, rx, k, j) /= MXE(_LU, k, k);
+		}
+		for (int i = 0; i < k; i++) {
+            for (int j = 0; j < nx; j++) {
+				MXE1(X.data, rx, i, j) -= MXE1(X.data, rx, k, j) * MXE(_LU, i ,k);
+            }
+		}
+	}
+	return X;
+}
+
 - (void) dealloc {
 	if ( _LU )
 		free( _LU );

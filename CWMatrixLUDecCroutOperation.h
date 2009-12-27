@@ -11,6 +11,9 @@
 
 @interface CWMatrixLUDecCroutOperation : CWMatrixLUDecOperation {
 
+	@protected
+	Class _decompositionClass;
+	
 }
 
 @end

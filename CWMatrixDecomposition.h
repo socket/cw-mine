@@ -23,6 +23,8 @@
 - (void) decompose;
 - (CWMatrix*) solveWithMatrix:(CWMatrix*)B;
 
-#define MXE(m, i, j)	m[i*_m + j]
-#define ROW(m, i)		&m[i*_m]
+#define MXE(m, i, j)		m[i*_m + j]
+#define MXE1(m, r, i, j)	m[i*r + j]
+#define ROW(m, i)			&m[i*_m]
+
 @end

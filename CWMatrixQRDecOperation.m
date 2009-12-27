@@ -51,7 +51,7 @@
 
 
 + (NSString*) description {
-	return @"QR-decomposition";
+	return @"QR-decomposition (Household reflections)";
 }
 
 + (NSArray*) outputKeys {

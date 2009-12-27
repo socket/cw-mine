@@ -12,6 +12,14 @@
 
 @implementation CWMatrixLUDecCroutOperation
 
+- (id) init {
+	self = [super init];
+	if (self != nil) {
+		_decompositionClass = [CWLUDecomposition class];
+	}
+	return self;
+}
+
 - (BOOL) process {
 	CWMatrix* matrix;
 	unsigned int rank = [self.srcMatrix rank];
@@ -26,7 +34,7 @@
 		matrix = [[self.srcMatrix copy] autorelease]; // A(0) -- U-matrix
 	}
 	
-	CWLUDecomposition* dc = [[CWLUDecomposition alloc] initWithMatrix:matrix];
+	CWLUDecomposition* dc = [[_decompositionClass alloc] initWithMatrix:matrix];
 	[dc decompose];
 	
 	[self.outputs setValue:[dc matrixL] forKey:kLMatrix];

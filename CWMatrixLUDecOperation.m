@@ -77,7 +77,7 @@
 }
 
 + (NSString*) description {
-	return @"LU-decomposition";
+	return @"LU-decomposition (slow)";
 }
 
 + (NSArray*) inputKeys {

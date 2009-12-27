@@ -41,6 +41,7 @@
 		B876D57A10E41BCA0019D034 /* CWMatrixDecomposition.m in Sources */ = {isa = PBXBuildFile; fileRef = B876D57910E41BCA0019D034 /* CWMatrixDecomposition.m */; };
 		B876D5FF10E47F9E0019D034 /* CWMatrixLUDecCroutOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B876D5FE10E47F9E0019D034 /* CWMatrixLUDecCroutOperation.m */; };
 		B8777C9510DE173B00DE59B5 /* CWDecompositionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */; };
+		B87AC8A310E7996C00FA7757 /* CWMatrixLUDecGaussOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B87AC8A210E7996C00FA7757 /* CWMatrixLUDecGaussOperation.m */; };
 		B8C3A21110C5656800BE164C /* CWGraphPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21010C5656800BE164C /* CWGraphPlotView.m */; };
 		B8C3A21410C565A600BE164C /* CWMethodOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21310C565A600BE164C /* CWMethodOperation.m */; };
 		B8C3A21710C565CA00BE164C /* CWMethodDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C3A21610C565CA00BE164C /* CWMethodDataSource.m */; };
@@ -116,6 +117,8 @@
 		B876D5FE10E47F9E0019D034 /* CWMatrixLUDecCroutOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixLUDecCroutOperation.m; sourceTree = "<group>"; };
 		B8777C9310DE173B00DE59B5 /* CWDecompositionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWDecompositionController.h; sourceTree = "<group>"; };
 		B8777C9410DE173B00DE59B5 /* CWDecompositionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWDecompositionController.m; sourceTree = "<group>"; };
+		B87AC8A110E7996C00FA7757 /* CWMatrixLUDecGaussOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixLUDecGaussOperation.h; sourceTree = "<group>"; };
+		B87AC8A210E7996C00FA7757 /* CWMatrixLUDecGaussOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixLUDecGaussOperation.m; sourceTree = "<group>"; };
 		B8C3A20F10C5656800BE164C /* CWGraphPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGraphPlotView.h; sourceTree = "<group>"; };
 		B8C3A21010C5656800BE164C /* CWGraphPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGraphPlotView.m; sourceTree = "<group>"; };
 		B8C3A21210C565A600BE164C /* CWMethodOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMethodOperation.h; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 				B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */,
 				B876D5FD10E47F9E0019D034 /* CWMatrixLUDecCroutOperation.h */,
 				B876D5FE10E47F9E0019D034 /* CWMatrixLUDecCroutOperation.m */,
+				B87AC8A110E7996C00FA7757 /* CWMatrixLUDecGaussOperation.h */,
+				B87AC8A210E7996C00FA7757 /* CWMatrixLUDecGaussOperation.m */,
 				B818881210E2778600DDB356 /* CWParabolaOperation.h */,
 				B818881310E2778700DDB356 /* CWParabolaOperation.m */,
 				B8188AD110E2B53400DDB356 /* CWMatrixQRDecOperation.h */,
@@ -445,6 +450,7 @@
 				B876D57710E41B8E0019D034 /* CWLUGaussianDecomposition.m in Sources */,
 				B876D57A10E41BCA0019D034 /* CWMatrixDecomposition.m in Sources */,
 				B876D5FF10E47F9E0019D034 /* CWMatrixLUDecCroutOperation.m in Sources */,
+				B87AC8A310E7996C00FA7757 /* CWMatrixLUDecGaussOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

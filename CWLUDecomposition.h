@@ -10,6 +10,7 @@
 #import "CWMatrixDecomposition.h"
 
 @interface CWLUDecomposition : CWMatrixDecomposition {
+	@protected
 	int		_pivsign;
 	int*	_piv;
 	double* _LU;

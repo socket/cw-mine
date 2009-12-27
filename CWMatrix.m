@@ -10,8 +10,6 @@
 
 @interface CWMatrix ()
 
-@property (nonatomic, readonly) double* data;
-
 @end
 
 @implementation CWMatrix

@@ -23,6 +23,7 @@
 	self = [super init];
 	if (self != nil) {
 		_queue = [[NSOperationQueue alloc] init];
+		//[_queue setMaxConcurrentOperationCount:1];
 	}
 	return self;
 }

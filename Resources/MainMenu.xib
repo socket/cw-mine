@@ -288,7 +288,15 @@
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMenuItem" id="837564135">
 									<reference key="NSMenu" ref="847055137"/>
-									<string key="NSTitle">Decompose Matrix</string>
+									<string key="NSTitle">Solution</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
+								<object class="NSMenuItem" id="576741977">
+									<reference key="NSMenu" ref="847055137"/>
+									<string key="NSTitle">Decompose</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -528,19 +536,27 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">showDecomposeWindow:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="837564135"/>
-					</object>
-					<int key="connectionID">545</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">showGraphWindow:</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="941077580"/>
 					</object>
 					<int key="connectionID">546</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showDecomposeWindow:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="576741977"/>
+					</object>
+					<int key="connectionID">548</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showSolutionWindow:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="837564135"/>
+					</object>
+					<int key="connectionID">549</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -842,6 +858,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="837564135"/>
 							<reference ref="941077580"/>
+							<reference ref="576741977"/>
 						</object>
 						<reference key="parent" ref="168527382"/>
 					</object>
@@ -853,6 +870,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">544</int>
 						<reference key="object" ref="941077580"/>
+						<reference key="parent" ref="847055137"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">547</int>
+						<reference key="object" ref="576741977"/>
 						<reference key="parent" ref="847055137"/>
 					</object>
 				</object>
@@ -917,6 +939,7 @@
 					<string>539.IBPluginDependency</string>
 					<string>543.IBPluginDependency</string>
 					<string>544.IBPluginDependency</string>
+					<string>547.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>57.IBEditorWindowLastContentRect</string>
@@ -998,7 +1021,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{566, 629}, {180, 43}}</string>
+					<string>{{566, 609}, {132, 63}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1046,7 +1070,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">546</int>
+			<int key="maxID">549</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

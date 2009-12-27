@@ -39,4 +39,7 @@
 @property (nonatomic, readonly) NSUInteger columns;
 @property (nonatomic, readonly) NSUInteger rank;
 
+
+@property (nonatomic, readonly) double* data;
+
 @end
