@@ -37,7 +37,7 @@
 	for (int i=0; i<matrix.rows; ++i) {
 		NSTableColumn* column = [[[NSTableColumn alloc]	initWithIdentifier:[NSNumber numberWithInt:i]] autorelease];
 		[column setDataCell:[[[NSCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
-		[column setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:[NSString stringWithFormat:@"x%d", i]] autorelease]];
+		[column setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
 		[column setEditable:YES];
 		
 		[self addTableColumn:column];

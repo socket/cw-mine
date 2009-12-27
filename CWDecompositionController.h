@@ -19,6 +19,7 @@
 	NSTextField*			_rankTextField;
 	NSComboBox*				_methodComboBox;
 	NSComboBox*				_displayKeyComboBox;
+	NSButton*				_execButton;
 	NSProgressIndicator*	_progressIndicator;
 	CWMethodOperation*		_operation;
 }
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) IBOutlet NSComboBox*			methodComboBox;
 @property (nonatomic, retain) IBOutlet NSComboBox*			displayKeyComboBox;
 @property (nonatomic, retain) IBOutlet NSProgressIndicator* progressIndicator;
+@property (nonatomic, retain) IBOutlet NSButton*			execButton;
 
 @property (nonatomic, retain) IBOutlet NSTextField*	rankTextField;
 
