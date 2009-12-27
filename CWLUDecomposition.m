@@ -139,7 +139,6 @@
 	int rx = [X rows];
 	
 	// Solve L*Y = B(piv,:)
-	/*
 	for (int k = 0; k < _n; k++) {
 		for (int i = k+1; i < _n; i++) {
             for (int j = 0; j < nx; j++) {
@@ -147,9 +146,7 @@
             }
 		}
 	}
-	 */
 	// Solve U*X = Y;
-	/*
 	for (int k = _n-1; k >= 0; k--) {
 		for (int j = 0; j < nx; j++) {
 			MXE1(X.data, rx, k, j) /= MXE(_LU, k, k);
@@ -159,7 +156,7 @@
 				MXE1(X.data, rx, i, j) -= MXE1(X.data, rx, k, j) * MXE(_LU, i ,k);
             }
 		}
-	}*/
+	}
 	return X;
 }
 
