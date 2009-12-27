@@ -8,6 +8,7 @@
 
 #import "CWMatrixTableView.h"
 
+#import "CWMatrixEditableDataSource.h"
 
 @implementation CWMatrixTableView
 
@@ -32,12 +33,15 @@
 	self.allowsColumnReordering = NO;
 	
 	if ( matrix ) {
-		_matrixDataSource = [[CWMatrixDataSource alloc] initWithMatrix:matrix];
+		_matrixDataSource = [[CWMatrixEditableDataSource alloc] initWithMatrix:matrix];
 		self.dataSource = _matrixDataSource;
+		self.delegate = self;
 		
 		for (int i=0; i<MIN(500, matrix.columns); ++i) {
 			NSTableColumn* column = [[[NSTableColumn alloc]	initWithIdentifier:[NSNumber numberWithInt:i]] autorelease];
-			[column setDataCell:[[[NSCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
+			NSTextFieldCell* cell = [[[NSTextFieldCell alloc] init] autorelease];
+			[cell setEditable:YES];
+			[column setDataCell:cell];
 			[column setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
 			[column setEditable:YES];
 			
@@ -47,6 +51,10 @@
 	
 	[self setColumnAutoresizingStyle:NSTableViewUniformColumnAutoresizingStyle];
 	[self reloadData];
+}
+
+- (BOOL)tableView:(NSTableView *)tableView shouldEditTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+	return YES;
 }
 
 - (void) dealloc {

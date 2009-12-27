@@ -10,7 +10,7 @@
 #import "CWMatrix.h"
 #import "CWMatrixDataSource.h"
 
-@interface CWMatrixTableView : NSTableView {
+@interface CWMatrixTableView : NSTableView<NSTableViewDelegate> {
 	@private
 	CWMatrixDataSource* _matrixDataSource;
 }
