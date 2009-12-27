@@ -128,7 +128,7 @@
 	}
 	
 	if (![self nonsingular]) {
-		[[NSAlert alertWithMessageText:@"Unable to solve" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Provided matrix is singular"] runModal];
+		[[NSAlert alertWithMessageText:@"Unable to solve" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Matrix is singular"] runModal];
 		
 		return nil; // matrix is singular
 	}

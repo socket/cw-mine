@@ -31,8 +31,7 @@
 - (void) windowDidLoad {
 	int rank = [_textField intValue];
 	
-	_aMatrixTableView.matrix		= [CWMatrixInitializer orderedMatrixWithRank:rank];
-	_bMatrixTableView.matrix		= [CWMatrix matrixWithRows:rank columns:1];
+	[self revertToDefaults:nil];
 	_resultMatrixTableView.matrix	= [CWMatrix matrixWithRows:rank columns:1];
 	
 	[_aMatrixTableView reloadData];
@@ -65,8 +64,10 @@
 }
 
 - (IBAction) revertToDefaults:(id)sender {
-	_aMatrixTableView.matrix		= [CWMatrixInitializer matrixWithRank:[_textField intValue] qCoeff:0.994];	
-	[_aMatrixTableView reloadData];
+	int rank = [_textField intValue];
+	
+	_aMatrixTableView.matrix = [ [CWMatrixInitializer orderedMatrixWithRank:rank] addMatrix:_aMatrixTableView.matrix];
+	_bMatrixTableView.matrix = [[CWMatrix matrixWithRows:rank columns:1] addMatrix:_bMatrixTableView.matrix];
 }
 
 - (BOOL) control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
