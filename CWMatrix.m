@@ -8,6 +8,9 @@
 
 #import "CWMatrix.h"
 
+#define VAL(i, j)		_data[i*_rows + j]
+#define VALM(m, i, j)	m.data[i*m.rows+j]
+
 @interface CWMatrix ()
 
 @end
@@ -105,15 +108,51 @@
 		for(NSUInteger j = 0; j < mColumns; j++) {
 			double sum = 0.0;
 			for(NSUInteger k = 0; k < _columns; k++) {
-				sum += [self valueForRow:i column:k] * [matrix valueForRow:k column:j];
+				//sum += [self valueForRow:i column:k] * [matrix valueForRow:k column:j];
+				sum += VAL(i,k) * VALM(matrix,k,j);
 			}
 			
-			[matris setValue:sum row:i column:j];
+			//[matris setValue:sum row:i column:j];
+			VALM(matris,i,j) = sum;
 		}
 	}
 	return matris;
 }
 
+#pragma mark submatrices
+- (CWMatrix*) submatrixWithRows:(NSArray*)rows initialColumn:(int)j0 finalColumn:(int)j1 {
+	CWMatrix* X = [CWMatrix matrixWithRows:[rows count] columns:j1-j0+1];
+	@try {
+		for (int i=0; i < [rows count]; i++ ) {
+			for (int j = j0; j <= j1; j++ ) {
+				VALM(X, i, j-j0) = VAL([[rows objectAtIndex:i] intValue], j);
+			}
+		}
+	}
+	@catch (NSException* e) {
+		X = nil;
+	}
+	@finally {
+		return X;
+	}
+}
+
+- (CWMatrix*) submatrixWithInitialRow:(int)i0 finalRow:(int)i1 initialColumn:(int)j0 finalColumn:(int)j1 {
+	CWMatrix* X = [CWMatrix matrixWithRows:i1-i0+1 columns:j1-j0+1];
+	@try {
+		for (int i = i0; i <= i1; i++) {
+			for (int j = j0; j <= j1; j++) {
+				VALM(X, i-i0, j-j0) = VAL(i,j);
+			}
+		}
+	}
+	@catch (NSException* e) {
+		X = nil;
+	}
+	@finally {
+		return X;
+	}
+}
 
 #pragma mark Properties
 - (NSUInteger) rows {

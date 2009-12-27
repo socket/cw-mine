@@ -132,7 +132,7 @@
 	
 	// Copy right hand side with pivoting
 	int nx = [B columns];
-	CWMatrix* X;  //= B.getMatrix(piv,0,nx-1);
+	CWMatrix* X = [B submatrixWithRows:[self pivots] initialColumn:0 finalColumn:nx-1];
 	int rx = [X rows];
 	
 	// Solve L*Y = B(piv,:)
