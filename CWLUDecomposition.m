@@ -114,7 +114,7 @@
 }
 
 - (NSArray*) pivots {
-	NSMutableArray* pivotArray = [NSArray array];
+	NSMutableArray* pivotArray = [NSMutableArray array];
 	for (int i=0; i<_m; i++) {
 		[pivotArray addObject:[NSNumber numberWithInt:_piv[i]]];
 	}
