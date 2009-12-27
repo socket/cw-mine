@@ -24,9 +24,6 @@
 }
 
 - (void) setMatrix:(CWMatrix *)matrix {
-	_matrixDataSource = [[CWMatrixDataSource alloc] initWithMatrix:matrix];
-	self.dataSource = _matrixDataSource;
-	
 	NSArray* arrColumns = [NSArray arrayWithArray:self.tableColumns];
 	for(NSTableColumn* column in arrColumns) {
 		[self removeTableColumn:column];
@@ -34,13 +31,18 @@
 
 	self.allowsColumnReordering = NO;
 	
-	for (int i=0; i<matrix.rows; ++i) {
-		NSTableColumn* column = [[[NSTableColumn alloc]	initWithIdentifier:[NSNumber numberWithInt:i]] autorelease];
-		[column setDataCell:[[[NSCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
-		[column setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
-		[column setEditable:YES];
+	if ( matrix ) {
+		_matrixDataSource = [[CWMatrixDataSource alloc] initWithMatrix:matrix];
+		self.dataSource = _matrixDataSource;
 		
-		[self addTableColumn:column];
+		for (int i=0; i<matrix.rows; ++i) {
+			NSTableColumn* column = [[[NSTableColumn alloc]	initWithIdentifier:[NSNumber numberWithInt:i]] autorelease];
+			[column setDataCell:[[[NSCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
+			[column setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
+			[column setEditable:YES];
+			
+			[self addTableColumn:column];
+		}
 	}
 	
 	[self setColumnAutoresizingStyle:NSTableViewUniformColumnAutoresizingStyle];

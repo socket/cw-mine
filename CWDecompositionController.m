@@ -15,6 +15,7 @@
 @interface CWDecompositionController ()
 
 - (void)updateSourceMatrix;
+- (void)updateKeys;
 
 @property (nonatomic, retain) NSArray* outputKeys;
 @property (nonatomic, readonly) NSInteger selectedRank;
@@ -89,7 +90,13 @@
 	[[CWMethodExecutor sharedInstance] addOperation:op];
 	[_progressIndicator startAnimation:self];
 	
-	[_displayKeyComboBox setDataSource:nil];
+	[self updateKeys];
+}
+
+- (void)updateKeys {
+	Class selClass = [[CWMethodDataSource useableMethodArray] objectAtIndex:[_methodComboBox indexOfSelectedItem]];
+	self.outputKeys = [selClass outputKeys];
+	[_displayKeyComboBox setDataSource:self.outputKeys];
 	[_displayKeyComboBox reloadData];
 }
 
@@ -121,10 +128,7 @@
 	
 
 	if ( enabled ) {
-		Class selClass = [[CWMethodDataSource useableMethodArray] objectAtIndex:[_methodComboBox indexOfSelectedItem]];
-		self.outputKeys = [selClass outputKeys];
-		[_displayKeyComboBox setDataSource:self.outputKeys];
-		[_displayKeyComboBox reloadData];
+		[self updateKeys];
 	}
 
 	// change data in display
@@ -134,12 +138,14 @@
 			return;
 		
 		id obj = [_operation.outputs valueForKey:key];
+		[_resultTextField setStringValue:[obj description]];
+		
 		if ( [obj isKindOfClass:[CWMatrix class]] ) {
 			_resultMatrixView.matrix = obj;
+		} else {
+			_resultMatrixView.matrix = nil;
 		}
-		else if ( [obj isKindOfClass:[NSNumber class]] ){
-			
-		}
+
 	}
 }
 
