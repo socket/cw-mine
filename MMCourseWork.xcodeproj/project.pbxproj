@@ -12,8 +12,6 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B802F2C510DA71BA0018F124 /* CWMatrixLUDecOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */; };
 		B818881410E2778700DDB356 /* CWParabolaOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B818881310E2778700DDB356 /* CWParabolaOperation.m */; };
-		B8188A3610E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8188A3310E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m */; };
-		B8188A3710E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8188A3510E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m */; };
 		B8188AD310E2B53400DDB356 /* CWMatrixQRDecOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B8188AD210E2B53400DDB356 /* CWMatrixQRDecOperation.m */; };
 		B818960810BF4D7C00502F39 /* CWMatrixInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B818960710BF4D7C00502F39 /* CWMatrixInitializer.m */; };
 		B81B1A5E10CFB5AA00605363 /* CWMatrixEditableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B81B1A5D10CFB5AA00605363 /* CWMatrixEditableDataSource.m */; };
@@ -64,10 +62,6 @@
 		B802F2C410DA71BA0018F124 /* CWMatrixLUDecOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixLUDecOperation.m; sourceTree = "<group>"; };
 		B818881210E2778600DDB356 /* CWParabolaOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWParabolaOperation.h; sourceTree = "<group>"; };
 		B818881310E2778700DDB356 /* CWParabolaOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWParabolaOperation.m; sourceTree = "<group>"; };
-		B8188A3210E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMIndeterminateProgressIndicatorCell.h; sourceTree = "<group>"; };
-		B8188A3310E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMIndeterminateProgressIndicatorCell.m; sourceTree = "<group>"; };
-		B8188A3410E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMProgressIndicatorTableColumnController.h; sourceTree = "<group>"; };
-		B8188A3510E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMProgressIndicatorTableColumnController.m; sourceTree = "<group>"; };
 		B8188AD110E2B53400DDB356 /* CWMatrixQRDecOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixQRDecOperation.h; sourceTree = "<group>"; };
 		B8188AD210E2B53400DDB356 /* CWMatrixQRDecOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMatrixQRDecOperation.m; sourceTree = "<group>"; };
 		B818960610BF4D7C00502F39 /* CWMatrixInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMatrixInitializer.h; sourceTree = "<group>"; };
@@ -187,7 +181,6 @@
 		29B97314FDCFA39411CA2CEA /* MMCourseWork */ = {
 			isa = PBXGroup;
 			children = (
-				B8188A2710E2A80600DDB356 /* External */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -228,17 +221,6 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B8188A2710E2A80600DDB356 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				B8188A3210E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.h */,
-				B8188A3310E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m */,
-				B8188A3410E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.h */,
-				B8188A3510E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m */,
-			);
-			name = External;
 			sourceTree = "<group>";
 		};
 		B83B6C3710DEB1C7009F6373 /* Data Sources */ = {
@@ -442,8 +424,6 @@
 				B83B6D0B10DED5C0009F6373 /* NSArray+ComboDataSource.m in Sources */,
 				B83B6E8E10DF8B04009F6373 /* NSArray+Additions.m in Sources */,
 				B818881410E2778700DDB356 /* CWParabolaOperation.m in Sources */,
-				B8188A3610E2A90D00DDB356 /* AMIndeterminateProgressIndicatorCell.m in Sources */,
-				B8188A3710E2A90D00DDB356 /* AMProgressIndicatorTableColumnController.m in Sources */,
 				B8188AD310E2B53400DDB356 /* CWMatrixQRDecOperation.m in Sources */,
 				B876D49210E3EB1C0019D034 /* CWQRDecomposition.m in Sources */,
 				B876D57410E41B770019D034 /* CWLUDecomposition.m in Sources */,
