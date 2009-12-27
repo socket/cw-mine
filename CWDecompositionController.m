@@ -14,9 +14,10 @@
 
 @interface CWDecompositionController ()
 
-@property (nonatomic, readonly) NSInteger selectedRank;
 - (void)updateSourceMatrix;
 
+@property (nonatomic, retain) NSMutableArray* outputKeys;
+@property (nonatomic, readonly) NSInteger selectedRank;
 @property (nonatomic, retain) CWMethodOperation* operation;
 @end
 
@@ -30,6 +31,7 @@
 @synthesize progressIndicator	= _progressIndicator;
 @synthesize operation			= _operation;
 @synthesize execButton			= _execButton;
+@synthesize outputKeys			= _outputKeys;
 
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
@@ -47,6 +49,8 @@
 	
 	[_methodComboBox setDataSource:[CWMethodDataSource useableMethodArray]];
 	[_methodComboBox reloadData];
+	
+	[_execButton setEnabled: ([_methodComboBox indexOfSelectedItem] >= 0)];
 }
 
 - (IBAction) doUpdateSourceMatrix:(id)sender {
@@ -79,10 +83,13 @@
 	Class selClass = [[CWMethodDataSource useableMethodArray] objectAtIndex:[_methodComboBox indexOfSelectedItem]];
 	CWMethodOperation* op = [[selClass alloc] init];
 	[op.inputs setValue:_srcMatrixView.matrix forKey:kSourceMatrix];
-		
+	
 	op.delegate = self;
 	[[CWMethodExecutor sharedInstance] addOperation:op];
 	[_progressIndicator startAnimation:self];
+	
+	[_displayKeyComboBox setDataSource:nil];
+	[_displayKeyComboBox reloadData];
 }
 
 #pragma mark operation delegate
@@ -90,11 +97,11 @@
 	self.operation = operation;
 	[_progressIndicator stopAnimation:self];
 	
-	NSMutableArray* outputKeys = [NSMutableArray arrayWithCapacity:[operation.outputs count]];
+	self.outputKeys = [NSMutableArray arrayWithCapacity:[operation.outputs count]];
 	for (NSString* key in operation.outputs) {
-		[outputKeys addObject:key];
+		[self.outputKeys addObject:[key copy]];
 	}
-	[_displayKeyComboBox setDataSource:outputKeys];
+	[_displayKeyComboBox setDataSource:self.outputKeys];
 	[_displayKeyComboBox reloadData];
 }
 
@@ -107,8 +114,9 @@
 #pragma mark -
 #pragma mark delegates
 - (BOOL) control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor {
+	[_rankTextField setIntValue:[self selectedRank]];
 	[self updateSourceMatrix]; 
-	
+
 	return YES;
 }
 
@@ -133,6 +141,7 @@
 
 - (void) dealloc {
 	self.operation = nil;
+	self.outputKeys = nil;
 	
 	[_execButton release];
 	[_methodComboBox release];

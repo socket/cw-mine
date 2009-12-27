@@ -22,6 +22,7 @@
 	NSButton*				_execButton;
 	NSProgressIndicator*	_progressIndicator;
 	CWMethodOperation*		_operation;
+	NSMutableArray*			_outputKeys;
 }
 
 @property (nonatomic, retain) IBOutlet CWMatrixTableView*	srcMatrixView;
