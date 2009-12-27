@@ -16,8 +16,6 @@ const int GUIDE_LENGTH = 5;
 @interface CWGraphPlotView ( )
 - (void)drawAxisToContext:(NSGraphicsContext*)context;
 
-- (void) drawFromDataSource:(id<CWGraphPlotViewDataSource>)dataSource;
-
 @property (nonatomic, retain) CWGraphPlotViewAxis* horAxis;
 @property (nonatomic, retain) CWGraphPlotViewAxis* vertAxis;
 
@@ -94,8 +92,8 @@ const int GUIDE_LENGTH = 5;
 			
 			minYValue = MIN( minYValue, value );
 			maxYValue = MAX( maxYValue, value );
-			
-			[points addObject: [NSValue valueWithPoint:CGPointMake(curArg, value)]];
+		
+			[points addObject: [NSValue valueWithPoint:NSPointFromCGPoint(CGPointMake(curArg, value))]];
 		}
 		
 				
@@ -121,24 +119,24 @@ const int GUIDE_LENGTH = 5;
 		
 		NSBezierPath* hguide = [NSBezierPath bezierPath];
 		for( int i = 1; i < self.frame.size.width / GUIDE_SPACING+1; ++i) {
-			[hguide moveToPoint:CGPointMake(i * GUIDE_SPACING, 0)];
-			[hguide lineToPoint:CGPointMake(i * GUIDE_SPACING, GUIDE_LENGTH)];
+			[hguide moveToPoint:NSPointFromCGPoint(CGPointMake(i * GUIDE_SPACING, 0))];
+			[hguide lineToPoint:NSPointFromCGPoint(CGPointMake(i * GUIDE_SPACING, GUIDE_LENGTH))];
 			
 			NSString* title = [NSString stringWithFormat:@"%.2f", i * GUIDE_SPACING * 1.0 / xratio];
-			CGSize sizeTitle = [title sizeWithAttributes:fontAttributes];
-			[title drawAtPoint:CGPointMake(i*GUIDE_SPACING-sizeTitle.width/2, GUIDE_LENGTH) withAttributes:fontAttributes];
+			NSSize sizeTitle = [title sizeWithAttributes:fontAttributes];
+			[title drawAtPoint:NSPointFromCGPoint(CGPointMake(i*GUIDE_SPACING-sizeTitle.width/2, GUIDE_LENGTH)) withAttributes:fontAttributes];
 		}
 		[hguide stroke];
 
 		// vertical guide
 		NSBezierPath* vguide = [NSBezierPath bezierPath];
 		for( int i = 1; i < self.frame.size.height / GUIDE_SPACING + 1; ++i) {
-			[vguide moveToPoint:CGPointMake(0, i * GUIDE_SPACING)];
-			[vguide lineToPoint:CGPointMake(GUIDE_LENGTH, i * GUIDE_SPACING)];
+			[vguide moveToPoint:NSPointFromCGPoint(CGPointMake(0, i * GUIDE_SPACING))];
+			[vguide lineToPoint:NSPointFromCGPoint(CGPointMake(GUIDE_LENGTH, i * GUIDE_SPACING))];
 			
 			NSString* title = [NSString stringWithFormat:@"%.2f", i * GUIDE_SPACING * 1.0 / yratio];
-			CGSize sizeTitle = [title sizeWithAttributes:fontAttributes];
-			[title drawAtPoint:CGPointMake(GUIDE_LENGTH, i*GUIDE_SPACING-sizeTitle.height/2) withAttributes:fontAttributes];
+			NSSize sizeTitle = [title sizeWithAttributes:fontAttributes];
+			[title drawAtPoint:NSPointFromCGPoint(CGPointMake(GUIDE_LENGTH, i*GUIDE_SPACING-sizeTitle.height/2)) withAttributes:fontAttributes];
 			
 		}
 		[vguide stroke];
@@ -156,7 +154,7 @@ const int GUIDE_LENGTH = 5;
 			[lineColor setStroke];
 			
 			for (NSValue* point in points) {
-				CGPoint aPoint = NSPointToCGPoint( [point pointValue] );
+				NSPoint aPoint =  [point pointValue];
 				
 				aPoint = [xform transformPoint:aPoint];
 				[aPath lineToPoint:aPoint ];

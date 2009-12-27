@@ -89,6 +89,7 @@
 	op.delegate = self;
 	[[CWMethodExecutor sharedInstance] addOperation:op];
 	[_progressIndicator startAnimation:self];
+	[_progressIndicator setHidden:NO];
 	
 	[self updateKeys];
 }
@@ -104,12 +105,14 @@
 -(void)operationSucceeded:(CWMethodOperation*)operation {
 	self.operation = operation;
 	[_progressIndicator stopAnimation:self];
+	[_progressIndicator setHidden:YES];
 }
 
 -(void)operationFailed:(CWMethodOperation*)operation {
 	[NSAlert alertWithError:operation.error];
 	self.operation = nil;
 	[_progressIndicator stopAnimation:self];
+	[_progressIndicator setHidden:YES];
 }
 
 #pragma mark -
@@ -138,11 +141,17 @@
 			return;
 		
 		id obj = [_operation.outputs valueForKey:key];
-		[_resultTextField setStringValue:[obj description]];
-		
-		if ( [obj isKindOfClass:[CWMatrix class]] ) {
-			_resultMatrixView.matrix = obj;
+		if ( obj ) {
+			
+			[_resultTextField setStringValue:[obj description]];
+			
+			if ( [obj isKindOfClass:[CWMatrix class]] ) {
+				_resultMatrixView.matrix = obj;
+			} else {
+				_resultMatrixView.matrix = nil;
+			}	
 		} else {
+			[_resultTextField setStringValue:@"nil"];
 			_resultMatrixView.matrix = nil;
 		}
 

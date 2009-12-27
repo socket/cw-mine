@@ -27,13 +27,6 @@
 	_matrixInputController = [[CWMatrixInputController alloc] initWithWindowNibName:@"CWMatrixInputController"];	
 	_solutionController = [[CWSolutionWindowController alloc] initWithWindowNibName:@"CWSolutionWindowController"];
 	
-	CWMatrix* mat = [CWMatrixInitializer orderedMatrixWithRank:3];
-	CWLUDecomposition* lu = [CWLUDecomposition decomposeMatrix:mat];
-	CWMatrix* l = [lu matrixL];
-	CWMatrix* u = [lu matrixU];
-	CWMatrix* a = [l multiplyByMatrix:u];
-	
-	int i=9;
 }
 
 - (IBAction) showMatrixInputWindow:(id)sender {

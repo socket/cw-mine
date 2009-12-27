@@ -35,7 +35,7 @@
 		_matrixDataSource = [[CWMatrixDataSource alloc] initWithMatrix:matrix];
 		self.dataSource = _matrixDataSource;
 		
-		for (int i=0; i<matrix.rows; ++i) {
+		for (int i=0; i<MIN(500, matrix.columns); ++i) {
 			NSTableColumn* column = [[[NSTableColumn alloc]	initWithIdentifier:[NSNumber numberWithInt:i]] autorelease];
 			[column setDataCell:[[[NSCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];
 			[column setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:[NSString stringWithFormat:@"%d", i]] autorelease]];

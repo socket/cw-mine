@@ -30,7 +30,7 @@
 
 #pragma mark Data Source
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-	return [_matrix rows];
+	return MIN(500, [_matrix rows]);
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {

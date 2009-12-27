@@ -29,7 +29,6 @@
 @synthesize resource = _resource;
 @synthesize inputKey = _inputKey;
 @synthesize plotColor = _plotColor;
-@synthesize methodName;
 
 @synthesize rangeBegin = _rangeBegin, rangeEnd = _rangeEnd, rangeStep = _rangeStep;
 
@@ -113,7 +112,6 @@
 		
 		CWMethodOperation *calcOperation = [self operationForArgument: fval];
 
-		int k = [calcOperation retainCount];
 		calcOperation.delegate = self;
 		//[generalOperation addDependency:calcOperation];
 		[[CWMethodExecutor sharedInstance] addOperation:calcOperation];
