@@ -15,13 +15,18 @@
 @property (nonatomic, readonly) NSInteger selectedRank;
 - (void)updateSourceMatrix;
 
+@property (nonatomic, retain) CWMethodOperation* operation;
 @end
 
 
 @implementation CWDecompositionController
-@synthesize srcMatrixView = _srcMatrixView, lMatrixView = _lMatrixView, uMatrixView = _uMatrixView;
-@synthesize rankTextField = _rankTextField;
 
+@synthesize srcMatrixView		= _srcMatrixView, resultMatrixView = _resultMatrixView;
+@synthesize rankTextField		= _rankTextField;
+@synthesize methodComboBox		= _methodComboBox;
+@synthesize displayKeyComboBox	= _displayKeyComboBox;
+@synthesize progressIndicator	= _progressIndicator;
+@synthesize operation			= _operation;
 
 - (id) initWithWindowNibName:(NSString *)windowNibName {
 	if ( self = [super initWithWindowNibName:windowNibName] ) {
@@ -61,33 +66,28 @@
 }
 
 - (IBAction) makeDefaultValues:(id)sender {
-	_srcMatrixView.matrix = [CWMatrixInitializer matrixWithRank:self.selectedRank qCoeff:0.994];;
+	_srcMatrixView.matrix = [CWMatrixInitializer matrixWithRank:self.selectedRank qCoeff:0.994];
 }
 
 - (IBAction) calculate:(id)sender {
-	NSLog( @"SRC:\n %@", [_srcMatrixView.matrix description] );
 	CWMatrixLUDecOperation* op = [[[CWMatrixLUDecOperation alloc] initWithMatrix:_srcMatrixView.matrix] autorelease];
 	op.delegate = self;
 	[[CWMethodExecutor sharedInstance] addOperation:op];
+	[_progressIndicator animate:self];
 }
 
 #pragma mark operation delegate
 -(void)operationSucceeded:(CWMethodOperation*)operation {
-	if ( [operation isKindOfClass:[CWMatrixLUDecOperation class]] ) {
-		_lMatrixView.matrix = [operation.outputs valueForKey:kLMatrix];
-		_uMatrixView.matrix = [operation.outputs valueForKey:kUMatrix];
-
-		NSLog( @"L:\n %@", [_lMatrixView.matrix description] );
-		NSLog( @"U:\n %@", [_uMatrixView.matrix description] );
-		NSLog( @"LU:\n %@", [_lMatrixView.matrix multiplyByMatrix:_uMatrixView.matrix] );
-	}
-	else if ( 0 ) {
-		
-	}
+	self.operation = operation;
+	[_progressIndicator stopAnimation:self];
+	
+	
 }
 
 -(void)operationFailed:(CWMethodOperation*)operation {
 	[NSAlert alertWithError:operation.error];
+	self.operation = nil;
+	[_progressIndicator stopAnimation:self];
 }
 
 #pragma mark -
@@ -98,10 +98,16 @@
 	return YES;
 }
 
+- (void)comboBoxSelectionDidChange:(NSNotification *)notification {
+
+}
 - (void) dealloc {
+	[_operation release];
+	[_methodComboBox release];
+	[_displayKeyComboBox release];
+	[_progressIndicator release];
 	[_srcMatrixView release];
-	[_lMatrixView release];
-	[_uMatrixView release];
+	[_resultMatrixView release];
 	[_rankTextField release];
 	[super dealloc];
 }

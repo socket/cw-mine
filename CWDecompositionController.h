@@ -12,17 +12,23 @@
 #import "CWMethodOperation.h"
 #import "CWMatrixLUDecOperation.h"
 
-@interface CWDecompositionController : NSWindowController<NSTextFieldDelegate, CWOperationDelegate> {
+@interface CWDecompositionController : NSWindowController<NSTextFieldDelegate, CWOperationDelegate, NSComboBoxDelegate> {
 	@private
-	CWMatrixTableView*	_srcMatrixView;
-	CWMatrixTableView*	_lMatrixView;
-	CWMatrixTableView*	_uMatrixView;
-	NSTextField*		_rankTextField;
+	CWMatrixTableView*		_srcMatrixView;
+	CWMatrixTableView*		_resultMatrixView;
+	NSTextField*			_rankTextField;
+	NSComboBox*				_methodComboBox;
+	NSComboBox*				_displayKeyComboBox;
+	NSProgressIndicator*	_progressIndicator;
+	CWMethodOperation*		_operation;
 }
 
 @property (nonatomic, retain) IBOutlet CWMatrixTableView*	srcMatrixView;
-@property (nonatomic, retain) IBOutlet CWMatrixTableView*	lMatrixView;
-@property (nonatomic, retain) IBOutlet CWMatrixTableView*	uMatrixView;
+@property (nonatomic, retain) IBOutlet CWMatrixTableView*	resultMatrixView;
+@property (nonatomic, retain) IBOutlet NSComboBox*			methodComboBox;
+@property (nonatomic, retain) IBOutlet NSComboBox*			displayKeyComboBox;
+@property (nonatomic, retain) IBOutlet NSProgressIndicator* progressIndicator;
+
 @property (nonatomic, retain) IBOutlet NSTextField*	rankTextField;
 
 - (IBAction) makeRandomValues:(id)sender;
