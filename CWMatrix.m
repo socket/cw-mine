@@ -67,27 +67,19 @@
 
 #pragma mark Base Matrix Operations
 - (CWMatrix*) addMatrix:(CWMatrix*)matrix {
-	if ( matrix.rows != self.rows || matrix.columns != self.columns ) {
-		return nil;
-	}
-	
 	CWMatrix* newMatrix = [self copy];
-	for (int i=0; i<_rows; ++i)
-		for (int j=0; j<_columns; ++j) 
-			newMatrix.data[i*_columns + j] += matrix.data[i*_columns+j];
+	for (int i=0; i < MIN(_rows, matrix.rows); ++i)
+		for (int j=0; j < MIN(_columns, matrix.columns); ++j) 
+			newMatrix.data[i*_columns + j] += matrix.data[i * matrix.columns + j];
 	
 	return [newMatrix autorelease];
 }
 
 - (CWMatrix*) substractMatrix:(CWMatrix*)matrix {
-	if ( matrix.rows != self.rows || matrix.columns != self.columns ) {
-		return nil;
-	}
-	
 	CWMatrix* newMatrix = [self copy];
-	for (int i=0; i<_rows; ++i)
-		for (int j=0; j<_columns; ++j) 
-			newMatrix.data[i*_columns + j] -= matrix.data[i*_columns+j];
+	for (int i=0; i < MIN(_rows, matrix.rows); ++i)
+		for (int j=0; j < MIN(_columns, matrix.columns); ++j) 
+			newMatrix.data[i*_columns + j] -= matrix.data[i * matrix.columns + j];
 	
 	return [newMatrix autorelease];
 }

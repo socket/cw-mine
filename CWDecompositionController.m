@@ -73,7 +73,7 @@
 	CWMatrixLUDecOperation* op = [[[CWMatrixLUDecOperation alloc] initWithMatrix:_srcMatrixView.matrix] autorelease];
 	op.delegate = self;
 	[[CWMethodExecutor sharedInstance] addOperation:op];
-	[_progressIndicator animate:self];
+	[_progressIndicator startAnimation:self];
 }
 
 #pragma mark operation delegate
